@@ -1,0 +1,14 @@
+E:\WebApps\Template\CommonLibrary\bin\Release\CommonLibrary.dll
+E:\WebApps\Template\CommonLibrary\bin\Release\CommonLibrary.pdb
+E:\WebApps\Template\CommonLibrary\bin\Release\CommonLibrary.xml
+E:\WebApps\Template\CommonLibrary\bin\Release\DataLibrary.dll
+E:\WebApps\Template\CommonLibrary\bin\Release\EntityFramework.dll
+E:\WebApps\Template\CommonLibrary\bin\Release\DataLibrary.pdb
+E:\WebApps\Template\CommonLibrary\bin\Release\DataLibrary.xml
+E:\WebApps\Template\CommonLibrary\bin\Release\EntityFramework.xml
+E:\WebApps\Template\CommonLibrary\obj\Release\CommonLibrary.vbprojResolveAssemblyReference.cache
+E:\WebApps\Template\CommonLibrary\obj\Release\CommonLibrary.Resources.resources
+E:\WebApps\Template\CommonLibrary\obj\Release\CommonLibrary.vbproj.GenerateResource.Cache
+E:\WebApps\Template\CommonLibrary\obj\Release\CommonLibrary.dll
+E:\WebApps\Template\CommonLibrary\obj\Release\CommonLibrary.xml
+E:\WebApps\Template\CommonLibrary\obj\Release\CommonLibrary.pdb

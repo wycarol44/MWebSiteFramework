@@ -1,0 +1,25 @@
+﻿
+.RadDataPager.miles-data-pager .RadComboBox_Silk.form-control,
+.RadDataPager.miles-data-pager .RadInput_Silk
+{
+    width: 75px !important;
+}
+
+.RadDataPager.miles-data-pager .rdpWrap,
+.RadDataPager.miles-data-pager .rdpWrapRight,
+.RadDataPager.miles-data-pager .rdpWrapNone
+{
+    line-height: 34px;
+}
+
+.RadDataPager.miles-data-pager .rdpNumPart a {
+    line-height: inherit;
+
+}
+
+.RadDataPager.miles-data-pager
+{
+    background-color: #eee;
+    border: none;
+    border-radius: 6px;
+}

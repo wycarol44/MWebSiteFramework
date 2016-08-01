@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CRMModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="CRMModelStoreContainer">
+    <EntitySet Name="CustomerContacts" EntityType="CRMModel.Store.CustomerContacts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Customers" EntityType="CRMModel.Store.Customers" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_CustomerContacts_Customers" Association="CRMModel.Store.FK_CustomerContacts_Customers">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="CustomerContacts" EntitySet="CustomerContacts" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="CustomerContacts">
+    <Key>
+      <PropertyRef Name="ContactID" />
+    </Key>
+    <Property Name="ContactID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerID" Type="int" />
+    <Property Name="Firstname" Type="varchar" MaxLength="50" />
+    <Property Name="Lastname" Type="varchar" MaxLength="50" />
+    <Property Name="Title" Type="varchar" MaxLength="50" />
+    <Property Name="AddressID" Type="int" />
+    <Property Name="Email" Type="varchar" MaxLength="100" />
+    <Property Name="WorkPhone" Type="varchar" MaxLength="50" />
+    <Property Name="WorkPhoneExt" Type="varchar" MaxLength="50" />
+    <Property Name="MobilePhone" Type="varchar" MaxLength="50" />
+    <Property Name="HomePhone" Type="varchar" MaxLength="50" />
+    <Property Name="Notes" Type="varchar(max)" />
+    <Property Name="NotesText" Type="varchar(max)" />
+    <Property Name="PictureID" Type="int" />
+    <Property Name="StatusID" Type="int" />
+    <Property Name="Archived" Type="bit" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="DateModified" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="Customers">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerName" Type="varchar" MaxLength="500" />
+    <Property Name="Notes" Type="varchar(max)" />
+    <Property Name="NotesText" Type="varchar(max)" />
+    <Property Name="AddressID" Type="int" />
+    <Property Name="Phone" Type="varchar" MaxLength="50" />
+    <Property Name="Fax" Type="varchar" MaxLength="50" />
+    <Property Name="Website" Type="varchar" MaxLength="200" />
+    <Property Name="StatusID" Type="int" />
+    <Property Name="Archived" Type="bit" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="DateModified" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+  </EntityType>
+  <Association Name="FK_CustomerContacts_Customers">
+    <End Role="Customers" Type="CRMModel.Store.Customers" Multiplicity="0..1" />
+    <End Role="CustomerContacts" Type="CRMModel.Store.CustomerContacts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="CustomerContacts">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

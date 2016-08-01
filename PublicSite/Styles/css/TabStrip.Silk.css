@@ -1,0 +1,63 @@
+﻿.RadTabStrip_Silk.miles-tabstrip .rtsLevel1
+{
+    background-image: none;
+    background-color: #e7f1f7;
+    border-radius: 3px 3px 0 0;
+}
+
+    .RadTabStrip_Silk.miles-tabstrip .rtsLevel1 .rtsLink
+    {
+        border-left: none;
+        border-right: none;
+    }
+
+.RadTabStrip_Silk.miles-tabstrip.RadTabStripVertical .rtsLevel1
+{
+    border-radius: 0;
+}
+
+.RadTabStrip_Silk.miles-tabstrip.RadTabStripVertical .rtsLevel1 .rtsLink
+{
+    border-top: none;
+    border-bottom: none;
+}
+
+.RadTabStrip_Silk.miles-tabstrip .rtsLevel1:not(.rtsCenter):not(.rtsRight) .rtsFirst .rtsLink.rtsSelected,
+.RadTabStrip_Silk.miles-tabstrip .rtsLevel1:not(.rtsCenter):not(.rtsRight) .rtsFirst .rtsLink:hover,
+.RadTabStrip_Silk.miles-tabstrip .rtsLevel1:not(.rtsCenter) .rtsLast .rtsLink.rtsSelected,
+.RadTabStrip_Silk.miles-tabstrip .rtsLevel1:not(.rtsCenter) .rtsLast .rtsLink:hover
+{
+    border-radius: 0 0 0 0;
+    box-shadow: none;
+    text-shadow: none;
+    background-image: none;
+}
+
+.RadTabStrip_Silk.miles-tabstrip .rtsLevel1 .rtsSelected
+{
+    box-shadow: none;
+    background-image: none;
+    background-color: #3f3f3f;
+}
+
+    .RadTabStrip_Silk.miles-tabstrip .rtsLevel1 .rtsSelected:hover,
+    .RadTabStrip_Silk.miles-tabstrip .rtsLevel1:not(.rtsCenter) .rtsLast .rtsLink.rtsSelected:hover,
+    .RadTabStrip_Silk.miles-tabstrip .rtsLevel1:not(.rtsCenter):not(.rtsRight) .rtsFirst .rtsLink.rtsSelected:hover
+    {
+        box-shadow: inset 0 5px 5px #892e65;
+        background-image: none;
+        background-color: #3f3f3f;
+    }
+
+.RadTabStrip_Silk.miles-tabstrip .rtsLevel1 .rtsLink:hover
+{
+    text-shadow: none;
+    background-image: none;
+}
+
+.RadTabStrip_Silk.miles-tabstrip div:not(.rtsLevel1)[class*='rtsLevel']
+{
+    border-radius: 0 0 0 0;
+    background-image: none;
+    background-color: #3f3f3f;
+}

@@ -1,0 +1,14 @@
+﻿<tabs>
+  <tab text="Basic Info" url="~/CRM/CustomerInfo.aspx" />
+  <tab text="Notes" url="~/CRM/CustomerNotes.aspx" />
+  <tab text="Documents" url="~/CRM/CustomerDocuments.aspx" />
+  
+  <tab text="Contacts" url="~/CRM/ManageContacts.aspx" >
+    <tab text="Dashboard" url="~/CRM/ContactDashboard.aspx" Visible="false"/>
+    <tab text="Basic Info" url="~/CRM/ContactInfo.aspx" Visible="false"/>
+  </tab>
+
+  <tab text="Billing" url="~/CRM/ManageCustomerAddress.aspx"/>
+  <tab text="Shipping" url="~/CRM/ManageCustomerAddress.aspx"/>
+
+</tabs>

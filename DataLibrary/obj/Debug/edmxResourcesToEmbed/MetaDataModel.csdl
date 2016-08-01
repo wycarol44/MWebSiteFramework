@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MetaModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="MetaEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="MetaForms" EntityType="MetaModel.MetaForm" />
+    <EntitySet Name="MetaFunctions" EntityType="MetaModel.MetaFunction" />
+    <EntitySet Name="MetaModules" EntityType="MetaModel.MetaModule" />
+    <EntitySet Name="MetaObjects" EntityType="MetaModel.MetaObject" />
+    <EntitySet Name="MetaTypeItems" EntityType="MetaModel.MetaTypeItem" />
+    <EntitySet Name="MetaTypes" EntityType="MetaModel.MetaType" />
+    <AssociationSet Name="FK_MetaFunctions_MetaModules" Association="MetaModel.FK_MetaFunctions_MetaModules">
+      <End Role="MetaModules" EntitySet="MetaModules" />
+      <End Role="MetaFunctions" EntitySet="MetaFunctions" />
+    </AssociationSet>
+    <AssociationSet Name="MetaFunctionForms" Association="MetaModel.MetaFunctionForms">
+      <End Role="MetaForms" EntitySet="MetaForms" />
+      <End Role="MetaFunctions" EntitySet="MetaFunctions" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="MetaForm">
+    <Key>
+      <PropertyRef Name="FormID" />
+    </Key>
+    <Property Name="FormID" Type="Int32" Nullable="false" />
+    <Property Name="FormName" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="FormPath" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="ModuleID" Type="Int32" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="MetaFunctions" Relationship="MetaModel.MetaFunctionForms" FromRole="MetaForms" ToRole="MetaFunctions" />
+  </EntityType>
+  <EntityType Name="MetaFunction">
+    <Key>
+      <PropertyRef Name="FunctionID" />
+    </Key>
+    <Property Name="FunctionID" Type="Int32" Nullable="false" />
+    <Property Name="FunctionName" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="ModuleID" Type="Int32" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="DateModified" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <NavigationProperty Name="MetaModule" Relationship="MetaModel.FK_MetaFunctions_MetaModules" FromRole="MetaFunctions" ToRole="MetaModules" />
+    <NavigationProperty Name="MetaForms" Relationship="MetaModel.MetaFunctionForms" FromRole="MetaFunctions" ToRole="MetaForms" />
+  </EntityType>
+  <EntityType Name="MetaModule">
+    <Key>
+      <PropertyRef Name="ModuleID" />
+    </Key>
+    <Property Name="ModuleID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="ModuleName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="ParentID" Type="Int32" />
+    <NavigationProperty Name="MetaFunctions" Relationship="MetaModel.FK_MetaFunctions_MetaModules" FromRole="MetaModules" ToRole="MetaFunctions" />
+  </EntityType>
+  <EntityType Name="MetaObject">
+    <Key>
+      <PropertyRef Name="ObjectID" />
+    </Key>
+    <Property Name="ObjectID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="ObjectName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="MetaTypeItem">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="TypeID" Type="Int32" />
+    <Property Name="ItemName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="MetaType">
+    <Key>
+      <PropertyRef Name="TypeID" />
+    </Key>
+    <Property Name="TypeID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="TypeName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_MetaFunctions_MetaModules">
+    <End Role="MetaModules" Type="MetaModel.MetaModule" Multiplicity="0..1" />
+    <End Role="MetaFunctions" Type="MetaModel.MetaFunction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MetaModules">
+        <PropertyRef Name="ModuleID" />
+      </Principal>
+      <Dependent Role="MetaFunctions">
+        <PropertyRef Name="ModuleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MetaFunctionForms">
+    <End Role="MetaForms" Type="MetaModel.MetaForm" Multiplicity="*" />
+    <End Role="MetaFunctions" Type="MetaModel.MetaFunction" Multiplicity="*" />
+  </Association>
+</Schema>

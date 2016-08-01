@@ -1,0 +1,1595 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Address">
+    <Key>
+      <PropertyRef Name="AddressID" />
+    </Key>
+    <Property Name="AddressID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Address1" Type="varchar" MaxLength="100" />
+    <Property Name="Address2" Type="varchar" MaxLength="100" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="StateID" Type="int" />
+    <Property Name="State" Type="varchar" MaxLength="50" />
+    <Property Name="PostalCode" Type="varchar" MaxLength="50" />
+    <Property Name="CountryID" Type="int" />
+    <Property Name="FullAddress" Type="varchar(max)" />
+    <Property Name="Archived" Type="bit" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="DateModified" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="AppSetting">
+    <Key>
+      <PropertyRef Name="AppSettingID" />
+    </Key>
+    <Property Name="AppSettingID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyName" Type="varchar" MaxLength="500" />
+    <Property Name="ApplicationName" Type="varchar" MaxLength="200" />
+    <Property Name="AddressID" Type="int" />
+    <Property Name="Phone" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="100" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="DateModified" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="Attachments">
+    <Key>
+      <PropertyRef Name="AttachmentID" />
+    </Key>
+    <Property Name="AttachmentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ObjectID" Type="int" />
+    <Property Name="KeyID" Type="int" />
+    <Property Name="AttachmentTypeID" Type="int" />
+    <Property Name="FileName" Type="varchar" MaxLength="500" />
+    <Property Name="OriginalFileName" Type="varchar" MaxLength="500" />
+    <Property Name="FilePath" Type="varchar" MaxLength="200" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="AuditLog">
+    <Key>
+      <PropertyRef Name="LogID" />
+    </Key>
+    <Property Name="LogID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ObjectID" Type="int" />
+    <Property Name="KeyID" Type="int" />
+    <Property Name="AttributeID" Type="int" />
+    <Property Name="AttributeKeyID" Type="int" />
+    <Property Name="AuditLogText" Type="varchar(max)" />
+    <Property Name="EffectiveDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="DateCreated" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Categories">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryName" Type="varchar" MaxLength="50" />
+    <Property Name="Description" Type="varchar" MaxLength="500" />
+    <Property Name="ParentID" Type="int" />
+    <Property Name="SortOrder" Type="int" />
+    <Property Name="Archived" Type="bit" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="DateModified" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="CMSCategories">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryName" Type="varchar" MaxLength="500" />
+    <Property Name="ContentTypeID" Type="int" />
+    <Property Name="EmailFromTypeID" Type="int" />
+    <Property Name="EmailFromID" Type="int" />
+    <Property Name="EmailFromName" Type="varchar" MaxLength="200" />
+    <Property Name="EmailFromEmail" Type="varchar" MaxLength="200" />
+    <Property Name="ContentSubject" Type="varchar" MaxLength="500" />
+    <Property Name="ContentBody" Type="varchar(max)" />
+    <Property Name="Archived" Type="bit" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CMSCategoryMergeFields">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+      <PropertyRef Name="MergeFieldID" />
+    </Key>
+    <Property Name="CategoryID" Type="int" Nullable="false" />
+    <Property Name="MergeFieldID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CMSMergeFields">
+    <Key>
+      <PropertyRef Name="MergeFieldID" />
+    </Key>
+    <Property Name="MergeFieldID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MergeField" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="CustomerAddresses">
+    <Key>
+      <PropertyRef Name="CustomerAddressID" />
+    </Key>
+    <Property Name="CustomerAddressID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerID" Type="int" />
+    <Property Name="AddressID" Type="int" />
+    <Property Name="AddressTypeID" Type="int" />
+    <Property Name="Archived" Type="bit" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="DateModified" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="CustomerContacts">
+    <Key>
+      <PropertyRef Name="ContactID" />
+    </Key>
+    <Property Name="ContactID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerID" Type="int" />
+    <Property Name="Firstname" Type="varchar" MaxLength="50" />
+    <Property Name="Lastname" Type="varchar" MaxLength="50" />
+    <Property Name="FullName" Type="varchar" MaxLength="101" StoreGeneratedPattern="Computed" />
+    <Property Name="Title" Type="varchar" MaxLength="50" />
+    <Property Name="AddressID" Type="int" />
+    <Property Name="Email" Type="varchar" MaxLength="100" />
+    <Property Name="WorkPhone" Type="varchar" MaxLength="50" />
+    <Property Name="WorkPhoneExt" Type="varchar" MaxLength="50" />
+    <Property Name="MobilePhone" Type="varchar" MaxLength="50" />
+    <Property Name="HomePhone" Type="varchar" MaxLength="50" />
+    <Property Name="Notes" Type="varchar(max)" />
+    <Property Name="NotesText" Type="varchar(max)" />
+    <Property Name="IsPrimary" Type="bit" Nullable="false" />
+    <Property Name="Archived" Type="bit" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="DateModified" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="Customers">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerName" Type="varchar" MaxLength="500" />
+    <Property Name="Notes" Type="varchar(max)" />
+    <Property Name="NotesText" Type="varchar(max)" />
+    <Property Name="AddressID" Type="int" />
+    <Property Name="Phone" Type="varchar" MaxLength="50" />
+    <Property Name="Fax" Type="varchar" MaxLength="50" />
+    <Property Name="Website" Type="varchar" MaxLength="200" />
+    <Property Name="StatusID" Type="int" />
+    <Property Name="Archived" Type="bit" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="DateModified" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="Documents">
+    <Key>
+      <PropertyRef Name="DocumentID" />
+    </Key>
+    <Property Name="DocumentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ObjectID" Type="int" />
+    <Property Name="KeyID" Type="int" />
+    <Property Name="DocumentName" Type="varchar" MaxLength="100" />
+    <Property Name="MimeType" Type="varchar" MaxLength="200" />
+    <Property Name="FilePath" Type="varchar" MaxLength="300" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="DateModified" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="EmailLog">
+    <Key>
+      <PropertyRef Name="EmailID" />
+    </Key>
+    <Property Name="EmailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ToAddress" Type="varchar(max)" Nullable="false" />
+    <Property Name="FromAddress" Type="varchar(max)" Nullable="false" />
+    <Property Name="Subject" Type="varchar(max)" Nullable="false" />
+    <Property Name="Body" Type="varchar(max)" Nullable="false" />
+    <Property Name="Sent" Type="bit" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="ManagedTypeAssociations">
+    <Key>
+      <PropertyRef Name="TypeID" />
+      <PropertyRef Name="ObjectID" />
+      <PropertyRef Name="KeyID" />
+    </Key>
+    <Property Name="TypeID" Type="int" Nullable="false" />
+    <Property Name="ObjectID" Type="int" Nullable="false" />
+    <Property Name="KeyID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ManagedTypeItems">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TypeID" Type="int" />
+    <Property Name="ItemName" Type="varchar" MaxLength="500" />
+    <Property Name="ParentID" Type="int" Nullable="false" />
+    <Property Name="Archived" Type="bit" Nullable="false" />
+    <Property Name="ReadOnly" Type="bit" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="DateModified" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="ManagedTypes">
+    <Key>
+      <PropertyRef Name="TypeID" />
+    </Key>
+    <Property Name="TypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TypeName" Type="varchar" MaxLength="500" />
+    <Property Name="FriendlyName" Type="varchar" MaxLength="500" />
+    <Property Name="IsHierarchy" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MetaAuditLogAttributes">
+    <Key>
+      <PropertyRef Name="AttributeID" />
+    </Key>
+    <Property Name="AttributeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AttributeName" Type="varchar" MaxLength="200" />
+    <Property Name="InsertLogText" Type="varchar" MaxLength="200" />
+    <Property Name="UpdateLogText" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="MetaCountries">
+    <Key>
+      <PropertyRef Name="CountryID" />
+    </Key>
+    <Property Name="CountryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CountryName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CountryCode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Include" Type="bit" Nullable="false" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MetaForms">
+    <Key>
+      <PropertyRef Name="FormID" />
+    </Key>
+    <Property Name="FormID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FormName" Type="varchar" MaxLength="200" />
+    <Property Name="FormPath" Type="varchar" MaxLength="500" />
+    <Property Name="CanBeFavorite" Type="bit" Nullable="false" />
+    <Property Name="ModuleID" Type="int" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MetaFunctionForms">
+    <Key>
+      <PropertyRef Name="FunctionID" />
+      <PropertyRef Name="FormID" />
+    </Key>
+    <Property Name="FunctionID" Type="int" Nullable="false" />
+    <Property Name="FormID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MetaFunctions">
+    <Key>
+      <PropertyRef Name="FunctionID" />
+    </Key>
+    <Property Name="FunctionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FunctionName" Type="varchar" MaxLength="200" />
+    <Property Name="ModuleID" Type="int" />
+    <Property Name="ViewOnly" Type="bit" Nullable="false" />
+    <Property Name="Archived" Type="bit" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="DateModified" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="MetaMenu">
+    <Key>
+      <PropertyRef Name="MenuID" />
+    </Key>
+    <Property Name="MenuID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ParentID" Type="int" />
+    <Property Name="Title" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NavigateUrl" Type="varchar" MaxLength="200" />
+    <Property Name="FormID" Type="int" />
+    <Property Name="IsInternalOnly" Type="bit" Nullable="false" />
+    <Property Name="SortOrder" Type="int" />
+  </EntityType>
+  <EntityType Name="MetaModules">
+    <Key>
+      <PropertyRef Name="ModuleID" />
+    </Key>
+    <Property Name="ModuleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ModuleName" Type="varchar" MaxLength="100" />
+    <Property Name="ParentID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MetaObjects">
+    <Key>
+      <PropertyRef Name="ObjectID" />
+    </Key>
+    <Property Name="ObjectID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ObjectName" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="MetaStates">
+    <Key>
+      <PropertyRef Name="StateID" />
+    </Key>
+    <Property Name="StateID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CountryID" Type="int" />
+    <Property Name="StateName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="StateCode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsTerritory" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MetaToolTips">
+    <Key>
+      <PropertyRef Name="ToolTipID" />
+    </Key>
+    <Property Name="ToolTipID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ToolTipName" Type="varchar" MaxLength="200" />
+    <Property Name="ToolTipDesc" Type="varchar(max)" />
+    <Property Name="DateCreated" Type="datetime" />
+  </EntityType>
+  <EntityType Name="MetaTypeItems">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TypeID" Type="int" />
+    <Property Name="ItemName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MetaTypes">
+    <Key>
+      <PropertyRef Name="TypeID" />
+    </Key>
+    <Property Name="TypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TypeName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Notes">
+    <Key>
+      <PropertyRef Name="NoteID" />
+    </Key>
+    <Property Name="NoteID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ObjectID" Type="int" Nullable="false" />
+    <Property Name="KeyID" Type="int" Nullable="false" />
+    <Property Name="NoteTypeID" Type="int" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="500" />
+    <Property Name="Notes" Type="varchar(max)" />
+    <Property Name="NotesText" Type="varchar(max)" />
+    <Property Name="LinkURL" Type="varchar" MaxLength="500" />
+    <Property Name="Pinned" Type="bit" Nullable="false" />
+    <Property Name="Archived" Type="bit" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="DateModified" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="OrderDetail">
+    <Key>
+      <PropertyRef Name="OrderDetailID" />
+    </Key>
+    <Property Name="OrderDetailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderID" Type="int" />
+    <Property Name="ProductID" Type="int" />
+    <Property Name="Qty" Type="int" />
+    <Property Name="Price" Type="float" />
+    <Property Name="Archived" Type="bit" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="DateModified" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="OrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerID" Type="int" />
+    <Property Name="DateOrdered" Type="date" />
+    <Property Name="PaymentTypeID" Type="int" />
+    <Property Name="BillingAddress1" Type="varchar" MaxLength="200" />
+    <Property Name="BillingAddress2" Type="varchar" MaxLength="200" />
+    <Property Name="BillingCity" Type="varchar" MaxLength="50" />
+    <Property Name="BillingState" Type="varchar" MaxLength="50" />
+    <Property Name="BillingZip" Type="varchar" MaxLength="50" />
+    <Property Name="ShippingAddress1" Type="varchar" MaxLength="200" />
+    <Property Name="ShippingAddress2" Type="varchar" MaxLength="200" />
+    <Property Name="ShippingCity" Type="varchar" MaxLength="50" />
+    <Property Name="ShippingState" Type="varchar" MaxLength="50" />
+    <Property Name="ShippingZip" Type="varchar" MaxLength="50" />
+    <Property Name="ContactPhone" Type="varchar" MaxLength="50" />
+    <Property Name="Tax" Type="float" />
+    <Property Name="Shipping" Type="float" />
+    <Property Name="OrderTotal" Type="float" />
+    <Property Name="OrderStatusID" Type="int" />
+    <Property Name="DateShipped" Type="datetime" />
+    <Property Name="TrackingNumber" Type="varchar" MaxLength="100" />
+    <Property Name="Archived" Type="bit" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="DateModified" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="Pictures">
+    <Key>
+      <PropertyRef Name="PictureID" />
+    </Key>
+    <Property Name="PictureID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ObjectID" Type="int" Nullable="false" />
+    <Property Name="KeyID" Type="int" Nullable="false" />
+    <Property Name="PicturePath" Type="varchar" MaxLength="500" />
+    <Property Name="ThumbnailPath" Type="varchar" MaxLength="500" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="DateModified" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="ProductImages">
+    <Key>
+      <PropertyRef Name="ProductImageID" />
+    </Key>
+    <Property Name="ProductImageID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductID" Type="int" />
+    <Property Name="ImageName" Type="varchar" MaxLength="200" />
+    <Property Name="IsPrimary" Type="bit" />
+    <Property Name="PictureID" Type="int" />
+    <Property Name="Archived" Type="bit" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="int" Nullable="false" />
+    <Property Name="ProductName" Type="varchar" MaxLength="50" />
+    <Property Name="ShortDescription" Type="varchar" MaxLength="100" />
+    <Property Name="LongDescription" Type="varchar" MaxLength="500" />
+    <Property Name="CategoryID" Type="int" />
+    <Property Name="SubCategoryID" Type="int" />
+    <Property Name="Cost" Type="float" />
+    <Property Name="Price" Type="float" />
+    <Property Name="IsFeatured" Type="bit" />
+    <Property Name="IsPrimary" Type="bit" />
+    <Property Name="Archived" Type="bit" />
+    <Property Name="DateCreated" Type="date" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="DateModified" Type="date" />
+    <Property Name="ModifiedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="ShoppingCart">
+    <Key>
+      <PropertyRef Name="CartID" />
+    </Key>
+    <Property Name="CartID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SessionID" Type="varchar" MaxLength="100" />
+    <Property Name="ProductID" Type="int" />
+    <Property Name="Qty" Type="int" />
+    <Property Name="Archived" Type="bit" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="DateModified" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="UserFavorites">
+    <Key>
+      <PropertyRef Name="FavoriteID" />
+    </Key>
+    <Property Name="FavoriteID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FormID" Type="int" Nullable="false" />
+    <Property Name="DisplayName" Type="varchar" MaxLength="100" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="IconColor" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ShowInFavoritesMenu" Type="bit" Nullable="false" />
+    <Property Name="ShowInIconBar" Type="bit" Nullable="false" />
+    <Property Name="IsLandingPage" Type="bit" Nullable="false" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="Archived" Type="bit" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="DateModified" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="UserJobTitles">
+    <Key>
+      <PropertyRef Name="JobTitleID" />
+    </Key>
+    <Property Name="JobTitleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JobTitle" Type="varchar" MaxLength="100" />
+    <Property Name="JobDescription" Type="varchar(max)" />
+    <Property Name="Archived" Type="bit" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="DateModified" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="UserLoginLog">
+    <Key>
+      <PropertyRef Name="LogID" />
+    </Key>
+    <Property Name="LogID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="DateCreated" Type="datetime" />
+  </EntityType>
+  <EntityType Name="UserRoleAssociations">
+    <Key>
+      <PropertyRef Name="UserRoleID" />
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserRoleID" Type="int" Nullable="false" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserRoleFunctionAccess">
+    <Key>
+      <PropertyRef Name="UserRoleID" />
+      <PropertyRef Name="FunctionID" />
+    </Key>
+    <Property Name="UserRoleID" Type="int" Nullable="false" />
+    <Property Name="FunctionID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserRoles">
+    <Key>
+      <PropertyRef Name="UserRoleID" />
+    </Key>
+    <Property Name="UserRoleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserRoleName" Type="varchar" MaxLength="100" />
+    <Property Name="UserRoleDesc" Type="varchar(max)" />
+    <Property Name="Archived" Type="bit" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="DateModified" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Firstname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Lastname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Fullname" Type="varchar" MaxLength="101" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserKey" Type="binary" MaxLength="64" />
+    <Property Name="Password" Type="binary" MaxLength="64" />
+    <Property Name="JobTitleID" Type="int" />
+    <Property Name="AddressID" Type="int" />
+    <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="WorkPhone" Type="varchar" MaxLength="50" />
+    <Property Name="WorkPhoneExt" Type="varchar" MaxLength="50" />
+    <Property Name="MobilePhone" Type="varchar" MaxLength="50" />
+    <Property Name="HomePhone" Type="varchar" MaxLength="50" />
+    <Property Name="Notes" Type="varchar(max)" />
+    <Property Name="NotesText" Type="varchar(max)" />
+    <Property Name="StatusID" Type="int" Nullable="false" />
+    <Property Name="ResetKey" Type="binary" MaxLength="64" />
+    <Property Name="DateResetKeyIssued" Type="datetime" />
+    <Property Name="Archived" Type="bit" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="DateModified" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="UserSearchFilters">
+    <Key>
+      <PropertyRef Name="FilterID" />
+    </Key>
+    <Property Name="FilterID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="FormID" Type="int" Nullable="false" />
+    <Property Name="SearchName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SearchValue" Type="varchar(max)" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Address_MetaCountries">
+    <End Role="MetaCountries" Type="Self.MetaCountries" Multiplicity="0..1" />
+    <End Role="Address" Type="Self.Address" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MetaCountries">
+        <PropertyRef Name="CountryID" />
+      </Principal>
+      <Dependent Role="Address">
+        <PropertyRef Name="CountryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Address_MetaStates">
+    <End Role="MetaStates" Type="Self.MetaStates" Multiplicity="0..1" />
+    <End Role="Address" Type="Self.Address" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MetaStates">
+        <PropertyRef Name="StateID" />
+      </Principal>
+      <Dependent Role="Address">
+        <PropertyRef Name="StateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AppSetting_Address">
+    <End Role="Address" Type="Self.Address" Multiplicity="0..1" />
+    <End Role="AppSetting" Type="Self.AppSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Address">
+        <PropertyRef Name="AddressID" />
+      </Principal>
+      <Dependent Role="AppSetting">
+        <PropertyRef Name="AddressID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Attachments_MetaTypeItems">
+    <End Role="MetaTypeItems" Type="Self.MetaTypeItems" Multiplicity="0..1" />
+    <End Role="Attachments" Type="Self.Attachments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MetaTypeItems">
+        <PropertyRef Name="ItemID" />
+      </Principal>
+      <Dependent Role="Attachments">
+        <PropertyRef Name="AttachmentTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Attachments_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Attachments" Type="Self.Attachments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Attachments">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AuditLog_MetaAuditLogAttributes">
+    <End Role="MetaAuditLogAttributes" Type="Self.MetaAuditLogAttributes" Multiplicity="0..1" />
+    <End Role="AuditLog" Type="Self.AuditLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MetaAuditLogAttributes">
+        <PropertyRef Name="AttributeID" />
+      </Principal>
+      <Dependent Role="AuditLog">
+        <PropertyRef Name="AttributeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AuditLog_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="AuditLog" Type="Self.AuditLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="AuditLog">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CMSCategories_MetaTypeItems">
+    <End Role="MetaTypeItems" Type="Self.MetaTypeItems" Multiplicity="0..1" />
+    <End Role="CMSCategories" Type="Self.CMSCategories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MetaTypeItems">
+        <PropertyRef Name="ItemID" />
+      </Principal>
+      <Dependent Role="CMSCategories">
+        <PropertyRef Name="EmailFromTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CMSCategories_MetaTypeItems1">
+    <End Role="MetaTypeItems" Type="Self.MetaTypeItems" Multiplicity="0..1" />
+    <End Role="CMSCategories" Type="Self.CMSCategories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MetaTypeItems">
+        <PropertyRef Name="ItemID" />
+      </Principal>
+      <Dependent Role="CMSCategories">
+        <PropertyRef Name="ContentTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CMSCategoryMergeFields_CMSCategories">
+    <End Role="CMSCategories" Type="Self.CMSCategories" Multiplicity="1" />
+    <End Role="CMSCategoryMergeFields" Type="Self.CMSCategoryMergeFields" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CMSCategories">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="CMSCategoryMergeFields">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CMSCategoryMergeFields_CMSMergeFields">
+    <End Role="CMSMergeFields" Type="Self.CMSMergeFields" Multiplicity="1" />
+    <End Role="CMSCategoryMergeFields" Type="Self.CMSCategoryMergeFields" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CMSMergeFields">
+        <PropertyRef Name="MergeFieldID" />
+      </Principal>
+      <Dependent Role="CMSCategoryMergeFields">
+        <PropertyRef Name="MergeFieldID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomerContacts_Address">
+    <End Role="Address" Type="Self.Address" Multiplicity="0..1" />
+    <End Role="CustomerContacts" Type="Self.CustomerContacts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Address">
+        <PropertyRef Name="AddressID" />
+      </Principal>
+      <Dependent Role="CustomerContacts">
+        <PropertyRef Name="AddressID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomerContacts_Customers">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="0..1" />
+    <End Role="CustomerContacts" Type="Self.CustomerContacts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="CustomerContacts">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Customers_Address">
+    <End Role="Address" Type="Self.Address" Multiplicity="0..1" />
+    <End Role="Customers" Type="Self.Customers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Address">
+        <PropertyRef Name="AddressID" />
+      </Principal>
+      <Dependent Role="Customers">
+        <PropertyRef Name="AddressID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Documents_CreatedBy">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Documents" Type="Self.Documents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Documents">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Documents_Customers">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="0..1" />
+    <End Role="Documents" Type="Self.Documents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Documents">
+        <PropertyRef Name="KeyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Documents_ModifiedBy">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Documents" Type="Self.Documents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Documents">
+        <PropertyRef Name="ModifiedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ManagedTypeAssociations_ManagedTypes">
+    <End Role="ManagedTypes" Type="Self.ManagedTypes" Multiplicity="1" />
+    <End Role="ManagedTypeAssociations" Type="Self.ManagedTypeAssociations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ManagedTypes">
+        <PropertyRef Name="TypeID" />
+      </Principal>
+      <Dependent Role="ManagedTypeAssociations">
+        <PropertyRef Name="TypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ManagedTypeAssociations_MetaObjects">
+    <End Role="MetaObjects" Type="Self.MetaObjects" Multiplicity="1" />
+    <End Role="ManagedTypeAssociations" Type="Self.ManagedTypeAssociations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MetaObjects">
+        <PropertyRef Name="ObjectID" />
+      </Principal>
+      <Dependent Role="ManagedTypeAssociations">
+        <PropertyRef Name="ObjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ManagedTypeItems_ManagedTypes">
+    <End Role="ManagedTypes" Type="Self.ManagedTypes" Multiplicity="0..1" />
+    <End Role="ManagedTypeItems" Type="Self.ManagedTypeItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ManagedTypes">
+        <PropertyRef Name="TypeID" />
+      </Principal>
+      <Dependent Role="ManagedTypeItems">
+        <PropertyRef Name="TypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MetaForms_MetaModules">
+    <End Role="MetaModules" Type="Self.MetaModules" Multiplicity="0..1" />
+    <End Role="MetaForms" Type="Self.MetaForms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MetaModules">
+        <PropertyRef Name="ModuleID" />
+      </Principal>
+      <Dependent Role="MetaForms">
+        <PropertyRef Name="ModuleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MetaFunctionForms_MetaForms">
+    <End Role="MetaForms" Type="Self.MetaForms" Multiplicity="1" />
+    <End Role="MetaFunctionForms" Type="Self.MetaFunctionForms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MetaForms">
+        <PropertyRef Name="FormID" />
+      </Principal>
+      <Dependent Role="MetaFunctionForms">
+        <PropertyRef Name="FormID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MetaFunctionForms_MetaFunctions">
+    <End Role="MetaFunctions" Type="Self.MetaFunctions" Multiplicity="1" />
+    <End Role="MetaFunctionForms" Type="Self.MetaFunctionForms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MetaFunctions">
+        <PropertyRef Name="FunctionID" />
+      </Principal>
+      <Dependent Role="MetaFunctionForms">
+        <PropertyRef Name="FunctionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MetaFunctions_MetaModules">
+    <End Role="MetaModules" Type="Self.MetaModules" Multiplicity="0..1" />
+    <End Role="MetaFunctions" Type="Self.MetaFunctions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MetaModules">
+        <PropertyRef Name="ModuleID" />
+      </Principal>
+      <Dependent Role="MetaFunctions">
+        <PropertyRef Name="ModuleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MetaMenu_MetaForms">
+    <End Role="MetaForms" Type="Self.MetaForms" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="MetaMenu" Type="Self.MetaMenu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MetaForms">
+        <PropertyRef Name="FormID" />
+      </Principal>
+      <Dependent Role="MetaMenu">
+        <PropertyRef Name="FormID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MetaMenu_MetaMenu">
+    <End Role="MetaMenu" Type="Self.MetaMenu" Multiplicity="0..1" />
+    <End Role="MetaMenu1" Type="Self.MetaMenu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MetaMenu">
+        <PropertyRef Name="MenuID" />
+      </Principal>
+      <Dependent Role="MetaMenu1">
+        <PropertyRef Name="ParentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MetaTypes_MetaTypeItems">
+    <End Role="MetaTypes" Type="Self.MetaTypes" Multiplicity="0..1" />
+    <End Role="MetaTypeItems" Type="Self.MetaTypeItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MetaTypes">
+        <PropertyRef Name="TypeID" />
+      </Principal>
+      <Dependent Role="MetaTypeItems">
+        <PropertyRef Name="TypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Notes_Customers">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="1" />
+    <End Role="Notes" Type="Self.Notes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Notes">
+        <PropertyRef Name="KeyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Notes_MetaTypeItems">
+    <End Role="MetaTypeItems" Type="Self.MetaTypeItems" Multiplicity="1" />
+    <End Role="Notes" Type="Self.Notes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MetaTypeItems">
+        <PropertyRef Name="ItemID" />
+      </Principal>
+      <Dependent Role="Notes">
+        <PropertyRef Name="NoteTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_States_Countries">
+    <End Role="MetaCountries" Type="Self.MetaCountries" Multiplicity="0..1" />
+    <End Role="MetaStates" Type="Self.MetaStates" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MetaCountries">
+        <PropertyRef Name="CountryID" />
+      </Principal>
+      <Dependent Role="MetaStates">
+        <PropertyRef Name="CountryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserFavorites_MetaForms">
+    <End Role="MetaForms" Type="Self.MetaForms" Multiplicity="1" />
+    <End Role="UserFavorites" Type="Self.UserFavorites" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MetaForms">
+        <PropertyRef Name="FormID" />
+      </Principal>
+      <Dependent Role="UserFavorites">
+        <PropertyRef Name="FormID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserFavorites_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="UserFavorites" Type="Self.UserFavorites" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="UserFavorites">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserLoginLog_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="UserLoginLog" Type="Self.UserLoginLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="UserLoginLog">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRoleAssociations_UserRoles">
+    <End Role="UserRoles" Type="Self.UserRoles" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="UserRoleAssociations" Type="Self.UserRoleAssociations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserRoles">
+        <PropertyRef Name="UserRoleID" />
+      </Principal>
+      <Dependent Role="UserRoleAssociations">
+        <PropertyRef Name="UserRoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRoleAssociations_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="UserRoleAssociations" Type="Self.UserRoleAssociations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="UserRoleAssociations">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRoleFunctionAccess_MetaFunctions">
+    <End Role="MetaFunctions" Type="Self.MetaFunctions" Multiplicity="1" />
+    <End Role="UserRoleFunctionAccess" Type="Self.UserRoleFunctionAccess" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MetaFunctions">
+        <PropertyRef Name="FunctionID" />
+      </Principal>
+      <Dependent Role="UserRoleFunctionAccess">
+        <PropertyRef Name="FunctionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRoleFunctionAccess_UserRoles">
+    <End Role="UserRoles" Type="Self.UserRoles" Multiplicity="1" />
+    <End Role="UserRoleFunctionAccess" Type="Self.UserRoleFunctionAccess" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserRoles">
+        <PropertyRef Name="UserRoleID" />
+      </Principal>
+      <Dependent Role="UserRoleFunctionAccess">
+        <PropertyRef Name="UserRoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_Address">
+    <End Role="Address" Type="Self.Address" Multiplicity="0..1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Address">
+        <PropertyRef Name="AddressID" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="AddressID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_JobTitles">
+    <End Role="UserJobTitles" Type="Self.UserJobTitles" Multiplicity="0..1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserJobTitles">
+        <PropertyRef Name="JobTitleID" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="JobTitleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_MetaTypeItems">
+    <End Role="MetaTypeItems" Type="Self.MetaTypeItems" Multiplicity="1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MetaTypeItems">
+        <PropertyRef Name="ItemID" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="StatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserSearchFilters_MetaForms">
+    <End Role="MetaForms" Type="Self.MetaForms" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="UserSearchFilters" Type="Self.UserSearchFilters" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MetaForms">
+        <PropertyRef Name="FormID" />
+      </Principal>
+      <Dependent Role="UserSearchFilters">
+        <PropertyRef Name="FormID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserSearchFilters_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="UserSearchFilters" Type="Self.UserSearchFilters" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="UserSearchFilters">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="AuditLog_GetListForDashBoard" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ObjectID" Type="int" Mode="In" />
+    <Parameter Name="KeyID" Type="int" Mode="In" />
+    <Parameter Name="NumberOfItems" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Calculate_OrderTotal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="OrderId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Category_GetList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PageIndex" Type="int" Mode="In" />
+    <Parameter Name="PageSize" Type="int" Mode="In" />
+    <Parameter Name="CategoryName" Type="varchar" Mode="In" />
+    <Parameter Name="Description" Type="varchar" Mode="In" />
+    <Parameter Name="CategoryID" Type="int" Mode="In" />
+    <Parameter Name="ParentID" Type="int" Mode="In" />
+    <Parameter Name="Archived" Type="bit" Mode="In" />
+    <Parameter Name="DateCreatedFrom" Type="varchar" Mode="In" />
+    <Parameter Name="DateCreatedTo" Type="varchar" Mode="In" />
+    <Parameter Name="SortExpression" Type="varchar" Mode="In" />
+    <Parameter Name="SortOrder" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Category_ToggleArchive" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CategoryID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="CategoryMenu_GetTreeList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Archived" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="CMSCategories_GetListByMergeFields" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CategoryName" Type="varchar" Mode="In" />
+    <Parameter Name="ContentTypeIDs" Type="xml" Mode="In" />
+    <Parameter Name="MergeFieldIDs" Type="xml" Mode="In" />
+    <Parameter Name="Archieved" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="CustomerAddress_GetList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PageIndex" Type="int" Mode="In" />
+    <Parameter Name="PageSize" Type="int" Mode="In" />
+    <Parameter Name="CustomerID" Type="int" Mode="In" />
+    <Parameter Name="CustomerAddressID" Type="int" Mode="In" />
+    <Parameter Name="AddressTypeID" Type="int" Mode="In" />
+    <Parameter Name="Archived" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="CustomerAddress_ToggleArchive" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AddressID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="CustomerContacts_GetDetailsByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ContactID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="CustomerContacts_GetList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CustomerID" Type="int" Mode="In" />
+    <Parameter Name="ContactName" Type="varchar" Mode="In" />
+    <Parameter Name="ContactEmail" Type="varchar" Mode="In" />
+    <Parameter Name="Phone" Type="varchar" Mode="In" />
+    <Parameter Name="Archived" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="Customers_GetDetailsByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CustomerID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Customers_GetList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PageIndex" Type="int" Mode="In" />
+    <Parameter Name="PageSize" Type="int" Mode="In" />
+    <Parameter Name="CustomerName" Type="varchar" Mode="In" />
+    <Parameter Name="Phone" Type="varchar" Mode="In" />
+    <Parameter Name="StatusIDs" Type="xml" Mode="In" />
+    <Parameter Name="ContactName" Type="varchar" Mode="In" />
+    <Parameter Name="ContactEmail" Type="varchar" Mode="In" />
+    <Parameter Name="Archived" Type="bit" Mode="In" />
+    <Parameter Name="SortExpression" Type="varchar" Mode="In" />
+    <Parameter Name="SortOrder" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Documents_GetByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DocumentID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Documents_GetList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ObjectID" Type="int" Mode="In" />
+    <Parameter Name="KeyID" Type="int" Mode="In" />
+    <Parameter Name="DocumentName" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Documents_GetListForDashBoard" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ObjectID" Type="int" Mode="In" />
+    <Parameter Name="KeyID" Type="int" Mode="In" />
+    <Parameter Name="NumberOfItems" Type="int" Mode="In" />
+  </Function>
+  <Function Name="FeaturedProductsImage_GetList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PageIndex" Type="int" Mode="In" />
+    <Parameter Name="PageSize" Type="int" Mode="In" />
+    <Parameter Name="PictureID" Type="int" Mode="In" />
+    <Parameter Name="ProductID" Type="int" Mode="In" />
+    <Parameter Name="Archived" Type="bit" Mode="In" />
+    <Parameter Name="PicIsPrimary" Type="bit" Mode="In" />
+    <Parameter Name="ProIsPrimary" Type="bit" Mode="In" />
+    <Parameter Name="IsFeatured" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="GetAuditLogCount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
+    <Parameter Name="ObjectID" Type="int" Mode="In" />
+    <Parameter Name="KeyID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetCommaSeparatedUserRoles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar(max)">
+    <Parameter Name="UserID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="MetaFunctions_GetAllFunctionsWithModules" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserRoleID" Type="int" Mode="In" />
+    <Parameter Name="FunctionName" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="MetaMenu_GetList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="MetaMenu_GetTreeList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Notes_GetList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ObjectID" Type="int" Mode="In" />
+    <Parameter Name="KeyID" Type="int" Mode="In" />
+    <Parameter Name="NoteTypeID" Type="xml" Mode="In" />
+    <Parameter Name="Title" Type="varchar" Mode="In" />
+    <Parameter Name="CreatedBy" Type="int" Mode="In" />
+    <Parameter Name="DateFrom" Type="date" Mode="In" />
+    <Parameter Name="DateTo" Type="date" Mode="In" />
+    <Parameter Name="Archived" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="Notes_GetListForDashBoard" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ObjectID" Type="int" Mode="In" />
+    <Parameter Name="KeyID" Type="int" Mode="In" />
+    <Parameter Name="NumberOfItems" Type="int" Mode="In" />
+  </Function>
+  <Function Name="OrderDetails_GetList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PageIndex" Type="int" Mode="In" />
+    <Parameter Name="PageSize" Type="int" Mode="In" />
+    <Parameter Name="OrderID" Type="int" Mode="In" />
+    <Parameter Name="CustomerID" Type="int" Mode="In" />
+    <Parameter Name="OrderDetailID" Type="int" Mode="In" />
+    <Parameter Name="ProductID" Type="int" Mode="In" />
+    <Parameter Name="Archived" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="Orders_GetList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PageIndex" Type="int" Mode="In" />
+    <Parameter Name="PageSize" Type="int" Mode="In" />
+    <Parameter Name="OrderID" Type="int" Mode="In" />
+    <Parameter Name="CustomerID" Type="int" Mode="In" />
+    <Parameter Name="CustomerName" Type="varchar" Mode="In" />
+    <Parameter Name="PaymentTypeID" Type="int" Mode="In" />
+    <Parameter Name="DateFrom" Type="varchar" Mode="In" />
+    <Parameter Name="DateTo" Type="varchar" Mode="In" />
+    <Parameter Name="Archived" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="OrdersShipment_GetList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PageIndex" Type="int" Mode="In" />
+    <Parameter Name="PageSize" Type="int" Mode="In" />
+    <Parameter Name="OrderID" Type="int" Mode="In" />
+    <Parameter Name="CustomerID" Type="int" Mode="In" />
+    <Parameter Name="CustomerName" Type="varchar" Mode="In" />
+    <Parameter Name="DateFrom" Type="varchar" Mode="In" />
+    <Parameter Name="DateTo" Type="varchar" Mode="In" />
+    <Parameter Name="Archived" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="OrdersStatus_GetList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PageIndex" Type="int" Mode="In" />
+    <Parameter Name="PageSize" Type="int" Mode="In" />
+    <Parameter Name="OrderID" Type="int" Mode="In" />
+    <Parameter Name="CustomerID" Type="int" Mode="In" />
+    <Parameter Name="CustomerName" Type="varchar" Mode="In" />
+    <Parameter Name="OrderStatusID" Type="int" Mode="In" />
+    <Parameter Name="OrderStatusName" Type="varchar" Mode="In" />
+    <Parameter Name="DateFrom" Type="varchar" Mode="In" />
+    <Parameter Name="DateTo" Type="varchar" Mode="In" />
+    <Parameter Name="Archived" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="Product_GetList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PageIndex" Type="int" Mode="In" />
+    <Parameter Name="PageSize" Type="int" Mode="In" />
+    <Parameter Name="ProductID" Type="int" Mode="In" />
+    <Parameter Name="ProductName" Type="varchar" Mode="In" />
+    <Parameter Name="Description" Type="varchar" Mode="In" />
+    <Parameter Name="CategoryID" Type="int" Mode="In" />
+    <Parameter Name="SubCategoryID" Type="int" Mode="In" />
+    <Parameter Name="Cost" Type="float" Mode="In" />
+    <Parameter Name="Price" Type="float" Mode="In" />
+    <Parameter Name="Archived" Type="bit" Mode="In" />
+    <Parameter Name="DateCreatedFrom" Type="varchar" Mode="In" />
+    <Parameter Name="DateCreatedTo" Type="varchar" Mode="In" />
+    <Parameter Name="SortExpression" Type="varchar" Mode="In" />
+    <Parameter Name="SortOrder" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ProductImage_GetList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PageIndex" Type="int" Mode="In" />
+    <Parameter Name="PageSize" Type="int" Mode="In" />
+    <Parameter Name="PictureID" Type="int" Mode="In" />
+    <Parameter Name="ProductID" Type="int" Mode="In" />
+    <Parameter Name="Archived" Type="bit" Mode="In" />
+    <Parameter Name="IsPrimary" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="ShoppingCart_GetList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PageIndex" Type="int" Mode="In" />
+    <Parameter Name="PageSize" Type="int" Mode="In" />
+    <Parameter Name="CartID" Type="int" Mode="In" />
+    <Parameter Name="SessionID" Type="varchar" Mode="In" />
+    <Parameter Name="ProductID" Type="int" Mode="In" />
+    <Parameter Name="Archived" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="UserFavorites_GetMenuList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UserRoles_GetByFunctionID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FunctionID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Users_GetComboBoxList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserID" Type="int" Mode="In" />
+    <Parameter Name="Fullname" Type="varchar" Mode="In" />
+    <Parameter Name="Skip" Type="int" Mode="In" />
+    <Parameter Name="Take" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Users_GetDetailsByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Users_GetFunctionAccess" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Users_GetList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserID" Type="int" Mode="In" />
+    <Parameter Name="Archived" Type="bit" Mode="In" />
+    <Parameter Name="Fullname" Type="varchar" Mode="In" />
+    <Parameter Name="Phone" Type="varchar" Mode="In" />
+    <Parameter Name="Email" Type="varchar" Mode="In" />
+    <Parameter Name="JobTitleIDs" Type="xml" Mode="In" />
+    <Parameter Name="StatusIDs" Type="xml" Mode="In" />
+  </Function>
+  <Function Name="Users_HasFunctionAccess" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserID" Type="int" Mode="In" />
+    <Parameter Name="FunctionID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Users_UpdatePassword" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserID" Type="int" Mode="In" />
+    <Parameter Name="Password" Type="varchar" Mode="In" />
+    <Parameter Name="ModifiedBy" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Users_UpdateResetKey" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserName" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Users_ValidateLogin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Username" Type="varchar" Mode="In" />
+    <Parameter Name="Password" Type="varchar" Mode="In" />
+    <Parameter Name="ResetKey" Type="binary" Mode="In" />
+    <Parameter Name="UserID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="XMLIdentifiers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="xml" Type="xml" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="id" Type="int" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="XMLKeyPairs" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="xml" Type="xml" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="id1" Type="int" />
+          <Property Name="id2" Type="int" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <EntityContainer Name="DataModelStoreContainer">
+    <EntitySet Name="Address" EntityType="Self.Address" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AppSetting" EntityType="Self.AppSetting" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Attachments" EntityType="Self.Attachments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AuditLog" EntityType="Self.AuditLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CMSCategories" EntityType="Self.CMSCategories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CMSCategoryMergeFields" EntityType="Self.CMSCategoryMergeFields" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CMSMergeFields" EntityType="Self.CMSMergeFields" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CustomerAddresses" EntityType="Self.CustomerAddresses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CustomerContacts" EntityType="Self.CustomerContacts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Documents" EntityType="Self.Documents" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmailLog" EntityType="Self.EmailLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ManagedTypeAssociations" EntityType="Self.ManagedTypeAssociations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ManagedTypeItems" EntityType="Self.ManagedTypeItems" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ManagedTypes" EntityType="Self.ManagedTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MetaAuditLogAttributes" EntityType="Self.MetaAuditLogAttributes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MetaCountries" EntityType="Self.MetaCountries" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MetaForms" EntityType="Self.MetaForms" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MetaFunctionForms" EntityType="Self.MetaFunctionForms" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MetaFunctions" EntityType="Self.MetaFunctions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MetaMenu" EntityType="Self.MetaMenu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MetaModules" EntityType="Self.MetaModules" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MetaObjects" EntityType="Self.MetaObjects" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MetaStates" EntityType="Self.MetaStates" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MetaToolTips" EntityType="Self.MetaToolTips" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MetaTypeItems" EntityType="Self.MetaTypeItems" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MetaTypes" EntityType="Self.MetaTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Notes" EntityType="Self.Notes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderDetail" EntityType="Self.OrderDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pictures" EntityType="Self.Pictures" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductImages" EntityType="Self.ProductImages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ShoppingCart" EntityType="Self.ShoppingCart" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserFavorites" EntityType="Self.UserFavorites" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserJobTitles" EntityType="Self.UserJobTitles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserLoginLog" EntityType="Self.UserLoginLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserRoleAssociations" EntityType="Self.UserRoleAssociations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserRoleFunctionAccess" EntityType="Self.UserRoleFunctionAccess" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserRoles" EntityType="Self.UserRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserSearchFilters" EntityType="Self.UserSearchFilters" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Address_MetaCountries" Association="Self.FK_Address_MetaCountries">
+      <End Role="MetaCountries" EntitySet="MetaCountries" />
+      <End Role="Address" EntitySet="Address" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Address_MetaStates" Association="Self.FK_Address_MetaStates">
+      <End Role="MetaStates" EntitySet="MetaStates" />
+      <End Role="Address" EntitySet="Address" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AppSetting_Address" Association="Self.FK_AppSetting_Address">
+      <End Role="Address" EntitySet="Address" />
+      <End Role="AppSetting" EntitySet="AppSetting" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Attachments_MetaTypeItems" Association="Self.FK_Attachments_MetaTypeItems">
+      <End Role="MetaTypeItems" EntitySet="MetaTypeItems" />
+      <End Role="Attachments" EntitySet="Attachments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Attachments_Users" Association="Self.FK_Attachments_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Attachments" EntitySet="Attachments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AuditLog_MetaAuditLogAttributes" Association="Self.FK_AuditLog_MetaAuditLogAttributes">
+      <End Role="MetaAuditLogAttributes" EntitySet="MetaAuditLogAttributes" />
+      <End Role="AuditLog" EntitySet="AuditLog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AuditLog_Users" Association="Self.FK_AuditLog_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="AuditLog" EntitySet="AuditLog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CMSCategories_MetaTypeItems" Association="Self.FK_CMSCategories_MetaTypeItems">
+      <End Role="MetaTypeItems" EntitySet="MetaTypeItems" />
+      <End Role="CMSCategories" EntitySet="CMSCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CMSCategories_MetaTypeItems1" Association="Self.FK_CMSCategories_MetaTypeItems1">
+      <End Role="MetaTypeItems" EntitySet="MetaTypeItems" />
+      <End Role="CMSCategories" EntitySet="CMSCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CMSCategoryMergeFields_CMSCategories" Association="Self.FK_CMSCategoryMergeFields_CMSCategories">
+      <End Role="CMSCategories" EntitySet="CMSCategories" />
+      <End Role="CMSCategoryMergeFields" EntitySet="CMSCategoryMergeFields" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CMSCategoryMergeFields_CMSMergeFields" Association="Self.FK_CMSCategoryMergeFields_CMSMergeFields">
+      <End Role="CMSMergeFields" EntitySet="CMSMergeFields" />
+      <End Role="CMSCategoryMergeFields" EntitySet="CMSCategoryMergeFields" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomerContacts_Address" Association="Self.FK_CustomerContacts_Address">
+      <End Role="Address" EntitySet="Address" />
+      <End Role="CustomerContacts" EntitySet="CustomerContacts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomerContacts_Customers" Association="Self.FK_CustomerContacts_Customers">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="CustomerContacts" EntitySet="CustomerContacts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Customers_Address" Association="Self.FK_Customers_Address">
+      <End Role="Address" EntitySet="Address" />
+      <End Role="Customers" EntitySet="Customers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Documents_CreatedBy" Association="Self.FK_Documents_CreatedBy">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Documents" EntitySet="Documents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Documents_Customers" Association="Self.FK_Documents_Customers">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="Documents" EntitySet="Documents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Documents_ModifiedBy" Association="Self.FK_Documents_ModifiedBy">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Documents" EntitySet="Documents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ManagedTypeAssociations_ManagedTypes" Association="Self.FK_ManagedTypeAssociations_ManagedTypes">
+      <End Role="ManagedTypes" EntitySet="ManagedTypes" />
+      <End Role="ManagedTypeAssociations" EntitySet="ManagedTypeAssociations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ManagedTypeAssociations_MetaObjects" Association="Self.FK_ManagedTypeAssociations_MetaObjects">
+      <End Role="MetaObjects" EntitySet="MetaObjects" />
+      <End Role="ManagedTypeAssociations" EntitySet="ManagedTypeAssociations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ManagedTypeItems_ManagedTypes" Association="Self.FK_ManagedTypeItems_ManagedTypes">
+      <End Role="ManagedTypes" EntitySet="ManagedTypes" />
+      <End Role="ManagedTypeItems" EntitySet="ManagedTypeItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MetaForms_MetaModules" Association="Self.FK_MetaForms_MetaModules">
+      <End Role="MetaModules" EntitySet="MetaModules" />
+      <End Role="MetaForms" EntitySet="MetaForms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MetaFunctionForms_MetaForms" Association="Self.FK_MetaFunctionForms_MetaForms">
+      <End Role="MetaForms" EntitySet="MetaForms" />
+      <End Role="MetaFunctionForms" EntitySet="MetaFunctionForms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MetaFunctionForms_MetaFunctions" Association="Self.FK_MetaFunctionForms_MetaFunctions">
+      <End Role="MetaFunctions" EntitySet="MetaFunctions" />
+      <End Role="MetaFunctionForms" EntitySet="MetaFunctionForms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MetaFunctions_MetaModules" Association="Self.FK_MetaFunctions_MetaModules">
+      <End Role="MetaModules" EntitySet="MetaModules" />
+      <End Role="MetaFunctions" EntitySet="MetaFunctions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MetaMenu_MetaForms" Association="Self.FK_MetaMenu_MetaForms">
+      <End Role="MetaForms" EntitySet="MetaForms" />
+      <End Role="MetaMenu" EntitySet="MetaMenu" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MetaMenu_MetaMenu" Association="Self.FK_MetaMenu_MetaMenu">
+      <End Role="MetaMenu" EntitySet="MetaMenu" />
+      <End Role="MetaMenu1" EntitySet="MetaMenu" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MetaTypes_MetaTypeItems" Association="Self.FK_MetaTypes_MetaTypeItems">
+      <End Role="MetaTypes" EntitySet="MetaTypes" />
+      <End Role="MetaTypeItems" EntitySet="MetaTypeItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Notes_Customers" Association="Self.FK_Notes_Customers">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="Notes" EntitySet="Notes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Notes_MetaTypeItems" Association="Self.FK_Notes_MetaTypeItems">
+      <End Role="MetaTypeItems" EntitySet="MetaTypeItems" />
+      <End Role="Notes" EntitySet="Notes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_States_Countries" Association="Self.FK_States_Countries">
+      <End Role="MetaCountries" EntitySet="MetaCountries" />
+      <End Role="MetaStates" EntitySet="MetaStates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserFavorites_MetaForms" Association="Self.FK_UserFavorites_MetaForms">
+      <End Role="MetaForms" EntitySet="MetaForms" />
+      <End Role="UserFavorites" EntitySet="UserFavorites" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserFavorites_Users" Association="Self.FK_UserFavorites_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UserFavorites" EntitySet="UserFavorites" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserLoginLog_Users" Association="Self.FK_UserLoginLog_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UserLoginLog" EntitySet="UserLoginLog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRoleAssociations_UserRoles" Association="Self.FK_UserRoleAssociations_UserRoles">
+      <End Role="UserRoles" EntitySet="UserRoles" />
+      <End Role="UserRoleAssociations" EntitySet="UserRoleAssociations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRoleAssociations_Users" Association="Self.FK_UserRoleAssociations_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UserRoleAssociations" EntitySet="UserRoleAssociations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRoleFunctionAccess_MetaFunctions" Association="Self.FK_UserRoleFunctionAccess_MetaFunctions">
+      <End Role="MetaFunctions" EntitySet="MetaFunctions" />
+      <End Role="UserRoleFunctionAccess" EntitySet="UserRoleFunctionAccess" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRoleFunctionAccess_UserRoles" Association="Self.FK_UserRoleFunctionAccess_UserRoles">
+      <End Role="UserRoles" EntitySet="UserRoles" />
+      <End Role="UserRoleFunctionAccess" EntitySet="UserRoleFunctionAccess" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Address" Association="Self.FK_Users_Address">
+      <End Role="Address" EntitySet="Address" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_JobTitles" Association="Self.FK_Users_JobTitles">
+      <End Role="UserJobTitles" EntitySet="UserJobTitles" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_MetaTypeItems" Association="Self.FK_Users_MetaTypeItems">
+      <End Role="MetaTypeItems" EntitySet="MetaTypeItems" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserSearchFilters_MetaForms" Association="Self.FK_UserSearchFilters_MetaForms">
+      <End Role="MetaForms" EntitySet="MetaForms" />
+      <End Role="UserSearchFilters" EntitySet="UserSearchFilters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserSearchFilters_Users" Association="Self.FK_UserSearchFilters_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UserSearchFilters" EntitySet="UserSearchFilters" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

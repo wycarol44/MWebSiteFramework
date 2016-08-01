@@ -1,0 +1,25 @@
+﻿<%@ Master Language="VB" MasterPageFile="~/Master/Global.master" AutoEventWireup="false" CodeFile="Login.master.vb" Inherits="Master_Login" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="globalhead" runat="Server">
+    <asp:PlaceHolder ID="PlaceHolder2" runat="server">
+        <%: System.Web.Optimization.Styles.Render("~/styles/css/login/css") %>
+    </asp:PlaceHolder>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="globalContent" runat="Server">
+
+    <div id="login">
+        <div class="logo">
+
+            <asp:Image ID="imgLogo" runat="server" ImageUrl="~/Images/Logo.png" ImageAlign="AbsMiddle" />
+
+        </div>
+
+        <asp:ContentPlaceHolder ID="mainContent" runat="server">
+        </asp:ContentPlaceHolder>
+
+    </div>
+
+</asp:Content>
+

@@ -1,0 +1,493 @@
+﻿
+
+.archived {
+    background-color: #ed6f6f;
+}
+
+.archivedAlt {
+    background-color: #d51717;
+}
+
+
+
+
+#headerUser {
+    float: right;
+    background-color: #fff;
+    border-left: 1px solid #9ce1ff;
+    border-bottom: 1px solid #9ce1ff;
+    border-radius: 0px 0px 0px 6px;
+    box-shadow: 0px 0px 20px #9ce1ff;
+    height: 44px;
+    padding-right: 50px;
+    /*position: fixed;
+            top: 0;
+            right:0;*/
+}
+
+.huAppName {
+    background-color: #f2f7fa;
+    padding-left: 20px;
+    padding-right: 20px;
+    /*height: 44px;*/
+    line-height: 43px;
+    font-size: 8pt;
+    font-weight: bold;
+    float: left;
+    border-radius: 0px 0px 0px 6px;
+}
+
+.huEmployee {
+    float: left;
+    border-left: 1px solid #9ce1ff;
+}
+
+    .huEmployee img.miles-picture {
+        height: 43px;
+    }
+
+.huActions {
+    float: left;
+    border-left: 1px solid #9ce1ff;
+    height: 43px;
+    display: -ms-flexbox;
+    -ms-flex-align: center;
+    display: -webkit-box;
+    -webkit-box-align: center;
+    width: 300px;
+}
+
+    .huActions .RadToolBar_Silk.miles-toolbar .rtbOuter,
+    .huActions .RadToolBar_Silk.miles-toolbar .rtbMiddle,
+    .huActions .RadToolBar_Silk.miles-toolbar .rtbItem .rtbWrap {
+        border: none;
+        background: none;
+    }
+
+    .huActions .RadToolBar_Silk.miles-toolbar .rtbItem .rtbWrap {
+        color: #333;
+    }
+
+    .huActions .RadToolBar_Silk.miles-toolbar .rtbItem.rtbItemHovered .rtbWrap {
+        color: #fff;
+    }
+
+    .huActions .RadToolBar_Silk.miles-toolbar .rtbMiddle {
+        background: none;
+    }
+
+    .huActions .RadToolBar_Silk.miles-toolbar span.glyphicon {
+        margin-top: -2px;
+        display: inline-block;
+        vertical-align: text-top;
+    }
+
+
+
+
+#mainHeader .seperator > div.menuBorder {
+    border-bottom: 4px solid #892e65;
+    /*box-shadow: 0px 1px 5px #2e8965;*/
+}
+
+#mainHeader .seperator > div.breadCrumb {
+    float: right;
+    background-color: #892e65;
+    margin-top: 0px;
+    color: white;
+    padding: 4px 15px 8px 20px;
+    font-size: smaller;
+    padding-top: 5px;
+    border-top: none;
+    border-radius: 0px 0px 0px 6px;
+    /*box-shadow: 0px 2px 5px #2e8965;*/
+}
+
+    #mainHeader .seperator > div.breadCrumb a {
+        color: #fff;
+    }
+
+
+#page-header {
+    padding: 5px 5px 5px 15px;
+    border-bottom: 2px solid #86b2cb;
+    margin-bottom: 10px;
+    background-color: #fff;
+}
+
+.navMenu .RadMenu_Silk .rmRootGroup {
+    background: none;
+    border: none;
+    box-shadow:none;
+}
+
+    .navMenu .RadMenu_Silk .rmRootGroup > .rmItem {
+        border-left: 1px solid #86b2cb;
+    }
+
+    .navMenu .RadMenu_Silk .rmRootGroup > .rmLast {
+        border-right: 1px solid #86b2cb;
+    }
+
+.navMenu .RadMenu_Silk .rmRootLink .rmText {
+    color: #1b4e6d;
+    /*font-size: 8pt;*/
+    font-weight: bold;
+}
+
+.navMenu .RadMenu_Silk .rmRootLink {
+    border-top-color: transparent;
+    transition: background-color 0.4s, border-top-color 0.4s, box-shadow 0.4s;
+}
+
+    .navMenu .RadMenu_Silk .rmRootLink:hover,
+    .navMenu .RadMenu_Silk .rmRootLink.rmExpanded {
+        background: none;
+        background-color: #e7f1f7;
+        border-top-color: #acc7da;
+        box-shadow: 0px 0px 10px #1b4e6d;
+    }
+
+.navMenu .RadMenu_Silk .rmGroup .rmLink.rmExpanded,
+.navMenu .RadMenu_Silk .rmGroup .rmLink:hover {
+    background-position: 0% 0%;
+    background-color: #9ce1ff;
+    background-image: linear-gradient(top,#9ce1ff 0,#86b2cb 100%);
+    background-repeat: repeat;
+    background-attachment: scroll;
+}
+
+.navMenu .RadMenu a.rmLink {
+    cursor: pointer;
+}
+
+.favMenu.detached {
+    position: fixed;
+    top: -40px;
+    box-shadow: 0px 1px 10px #333;
+    z-index: 10000;
+}
+
+.favMenu .RadMenu_Silk .rmRootGroup {
+    background: none;
+    border: none;
+}
+
+.favMenu .RadMenu ul.rmRootScrollGroup {
+    min-width: 98%;
+}
+
+.favMenu .RadMenu_Silk .rmItem {
+    border-left: 1px solid #666;
+}
+
+.favMenu .RadMenu_Silk .rmLast {
+    border-right: 1px solid #666;
+}
+
+.favMenu .RadMenu_Silk .rmText {
+    font-family: 'Segoe UI';
+    color: #fff;
+    font-size: 12pt;
+}
+
+
+
+
+.favMenu .RadMenu_Silk .rmFocused .rmText {
+    color: #000;
+}
+
+
+.favMenu .RadMenu_Silk .rmTemplate {
+    cursor: default;
+    border-top: none;
+    padding: 0;
+}
+
+    .favMenu .RadMenu_Silk .rmTemplate .rmText {
+        padding: 0px;
+        /*padding:  4px 15px 4px 15px;*/
+        border-top-color: transparent;
+        transition: background-color 0.4s, border-top-color 0.4s, box-shadow 0.4s;
+    }
+
+        .favMenu .RadMenu_Silk .rmTemplate .rmText:hover {
+            background: none;
+            background-color: #892e65;
+            border-top: 4px solid #b15b98;
+            /*padding-top: 0px;*/
+            /*box-shadow: 0px 0px 10px #fff;*/
+        }
+
+        .favMenu .RadMenu_Silk .rmTemplate .rmText a {
+            display: inline-block;
+            padding: 4px 15px 4px 15px;
+        }
+
+        .favMenu .RadMenu_Silk .rmTemplate .rmText:hover a {
+            padding-top: 0px;
+        }
+
+.huActions .RadToolBar_Silk .rtbDropDown .rtbExpandDown {
+    /*border-color: transparent ;*/
+    border: none;
+    padding: 4px 6px;
+    background: none;
+}
+
+.huActions .RadToolBar_Silk .rtbItemHovered .rtbWrap {
+    border-color: #007d93;
+    color: white;
+    background-color: #327ba7;
+    background-image: -webkit-linear-gradient(top,#327ba7 0,#1b4e6d 100%);
+    background-image: -moz-linear-gradient(top,#327ba7 0,#1b4e6d 100%);
+    background-image: -ms-linear-gradient(top,#327ba7 0,#1b4e6d 100%);
+    background-image: -o-linear-gradient(top,#327ba7 0,#1b4e6d 100%);
+    background-image: linear-gradient(top,#327ba7 0,#1b4e6d 100%);
+}
+
+.huActions .RadToolBarDropDown_Silk .rtbItemHovered .rtbWrap {
+    background-position: 0% 0%;
+    background-color: #9ce1ff;
+    background-image: linear-gradient(top,#9ce1ff 0,#86b2cb 100%);
+    background-repeat: repeat;
+    background-attachment: scroll;
+}
+
+.dashboard {
+}
+
+    .dashboard .widget {
+        position: relative;
+    }
+
+        .dashboard .widget .anchorheader {
+            padding: 0px;
+        }
+
+            .dashboard .widget .anchorheader a {
+                padding: 10px 15px;
+                padding-right: 8px;
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+            }
+
+                .dashboard .widget .anchorheader a .badge {
+                    background-color: rgba(0,0,0,0.08);
+                    color: #2a6496;
+                }
+
+            .dashboard .widget .anchorheader:hover a {
+                text-decoration: none;
+                background-color: rgba(0,0,0,0.08);
+            }
+
+                .dashboard .widget .anchorheader:hover a .badge {
+                    background-color: #ffffff;
+                }
+
+        .dashboard .widget .panel-body {
+            min-height: 125px;
+        }
+
+        .dashboard .widget .contentarea {
+            padding: 0px;
+            word-wrap: break-word;
+        }
+
+        .dashboard .widget .action-right {
+            padding-right: 35px;
+        }
+
+        .dashboard .widget .action-bottom {
+            padding-bottom: 40px;
+        }
+
+        .dashboard .widget .action {
+            position: absolute;
+            background-color: none;
+        }
+
+        .dashboard .widget .action-right .contentarea {
+            padding-right: 15px;
+        }
+
+        .dashboard .widget .action-bottom .contentarea {
+            padding-bottom: 15px;
+        }
+
+        .dashboard .widget .action-right .action {
+            top: 0;
+            right: 0;
+            height: 100%;
+            padding: 5px 5px;
+            padding-top: 45px;
+        }
+
+        .dashboard .widget .action-bottom .action {
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0,0,0,0.08);
+        }
+
+        .dashboard .widget .action-right .action input[type='image'] {
+            display: block;
+            margin: 5px 0;
+        }
+
+        .dashboard .widget .action-bottom .action input[type='image'] {
+            display: inline;
+            margin: 5px 5px;
+        }
+
+        .dashboard .widget .action .rtbOuter {
+            background: none!important;
+        }
+
+        .dashboard .widget .action .rtbItem a {
+            background: none!important;
+            color: #000!important;
+        }
+
+        .dashboard .widget .contentarea .action .rtbItem:hover {
+            background: rgba(0,0,0,0.1);
+        }
+
+        .contentarea .item {
+            display: inline;
+            width: 100%;
+        }
+
+        .contentarea .itemindicator {
+            display: inline;
+            padding-right: 5px;
+        }
+
+        .contentarea .itemlabel {
+            display: inline;
+            font-weight: bold;
+            padding-right: 2px;
+        }
+
+        .contentarea .itemfooter {
+            font-style: italic;
+            font-size: .8em;
+            padding-left: 15px;
+            display: block;
+        }
+
+
+#mobileheader .miles-toolbar {
+    vertical-align: middle;
+}
+
+#mobileheader .navbar-toggle {
+    float: left;
+}
+
+#mobileheader .navbar {
+    z-index: 5990;
+}
+
+.miles-documentsImageIcon {
+    width: 100%;
+    max-width: 64px;
+}
+
+.navbar-header .pull-right .navbar-toggle {
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+    .navbar-header .pull-right .navbar-toggle.mobile-padding {
+        padding-bottom: 6px;
+        padding-top: 6px;
+    }
+
+    .navbar-header .pull-right .navbar-toggle.mobile-profilemenu {
+        padding: 0px;
+    }
+
+.navbar-nav .nav-divider {
+    /*margin-right: 70%;*/
+    width:150px;
+    background-color: #474343;
+}
+
+@media screen and (max-width:992px) {
+    #mobileheader {
+        padding-top: 53px;
+    }
+    
+    #mainHeader .seperator > div.breadCrumb {
+        float: none;
+        border-radius: 0;
+    }
+}
+
+@media screen and (min-width:768px) {
+    #mainHeader {
+        background-image: url('/Images/bkg-body.jpg');
+        background-repeat: repeat-x;
+        width: 100%;
+    }
+
+    #header {
+        height: 75px;
+        background-image: url('/Images/bkg-header.jpg');
+        background-repeat: no-repeat;
+        background-position-x: 220px;
+    }
+
+    #mainHeader .headerImage {
+        text-align: center;
+        border: 1px #9ce1ff solid;
+        border-top: none;
+        border-radius: 0px 0px 6px 6px;
+        box-shadow: 0px 0px 20px #9ce1ff;
+        background-color: #fff;
+        padding: 10px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        min-width: 220px;
+        /*z-index: 10000;*/
+    }
+
+    #mainHeader div.headerImage img {
+        max-height: 75px;
+    }
+
+    #mainHeader .navMenu {
+        padding-left: 260px;
+        background-color: #e7f1f7;
+        background-image: -webkit-linear-gradient(top, #fff 0, #e7f1f7 100%);
+        background-image: -moz-linear-gradient(top, #fff 0, #e7f1f7 100%);
+        background-image: -ms-linear-gradient(top, #fff 0, #e7f1f7 100%);
+        background-image: -o-linear-gradient(top, #fff 0, #e7f1f7 100%);
+        background-image: linear-gradient(top, #fff 0, #e7f1f7 100%);
+        border-top: 1px solid #9ce1ff;
+        box-shadow: 0px 0px 20px #9ce1ff;
+    }
+
+        #mainHeader .navMenu .RadMenu {
+            z-index: 5900 !important;
+        }
+
+    #mainHeader .favMenu {
+        background-color: #444;
+        background-color: rgba(0, 0, 0, 0.75);
+        width: 100%;
+        overflow: hidden;
+    }
+
+        #mainHeader .favMenu .RadMenu {
+            z-index: 5800 !important;
+        }
+
+    
+
+}

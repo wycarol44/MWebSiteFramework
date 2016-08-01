@@ -1,0 +1,24 @@
+﻿<%@ Master Language="VB" MasterPageFile="~/Master/Global.master" AutoEventWireup="false" CodeFile="Dialog.master.vb" Inherits="Master_Dialog" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="globalhead" runat="Server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="globalContent" runat="Server">
+
+    <div class="dialog-content">
+
+        <div class="inner-content ">
+
+            <asp:ContentPlaceHolder ID="mainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            
+            <br class="clear" />
+            <br />
+            <asp:Label ID="lblEntityFooter" runat="server" Text="" CssClass="entity-footer text-muted" />
+        </div>
+    </div>
+
+</asp:Content>
+

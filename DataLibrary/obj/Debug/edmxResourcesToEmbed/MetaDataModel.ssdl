@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MetaModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="MetaModelStoreContainer">
+    <EntitySet Name="MetaForms" EntityType="MetaModel.Store.MetaForms" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MetaFunctionForms" EntityType="MetaModel.Store.MetaFunctionForms" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MetaFunctions" EntityType="MetaModel.Store.MetaFunctions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MetaModules" EntityType="MetaModel.Store.MetaModules" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MetaObjects" EntityType="MetaModel.Store.MetaObjects" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MetaTypeItems" EntityType="MetaModel.Store.MetaTypeItems" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MetaTypes" EntityType="MetaModel.Store.MetaTypes" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_MetaFunctionForms_MetaForms" Association="MetaModel.Store.FK_MetaFunctionForms_MetaForms">
+      <End Role="MetaForms" EntitySet="MetaForms" />
+      <End Role="MetaFunctionForms" EntitySet="MetaFunctionForms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MetaFunctionForms_MetaFunctions" Association="MetaModel.Store.FK_MetaFunctionForms_MetaFunctions">
+      <End Role="MetaFunctions" EntitySet="MetaFunctions" />
+      <End Role="MetaFunctionForms" EntitySet="MetaFunctionForms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MetaFunctions_MetaModules" Association="MetaModel.Store.FK_MetaFunctions_MetaModules">
+      <End Role="MetaModules" EntitySet="MetaModules" />
+      <End Role="MetaFunctions" EntitySet="MetaFunctions" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="MetaForms">
+    <Key>
+      <PropertyRef Name="FormID" />
+    </Key>
+    <Property Name="FormID" Type="int" Nullable="false" />
+    <Property Name="FormName" Type="varchar" MaxLength="200" />
+    <Property Name="FormPath" Type="varchar" MaxLength="500" />
+    <Property Name="ModuleID" Type="int" />
+    <Property Name="DateCreated" Type="datetime" />
+  </EntityType>
+  <EntityType Name="MetaFunctionForms">
+    <Key>
+      <PropertyRef Name="FunctionID" />
+      <PropertyRef Name="FormID" />
+    </Key>
+    <Property Name="FunctionID" Type="int" Nullable="false" />
+    <Property Name="FormID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MetaFunctions">
+    <Key>
+      <PropertyRef Name="FunctionID" />
+    </Key>
+    <Property Name="FunctionID" Type="int" Nullable="false" />
+    <Property Name="FunctionName" Type="varchar" MaxLength="200" />
+    <Property Name="ModuleID" Type="int" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="DateModified" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="MetaModules">
+    <Key>
+      <PropertyRef Name="ModuleID" />
+    </Key>
+    <Property Name="ModuleID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ModuleName" Type="varchar" MaxLength="100" />
+    <Property Name="ParentID" Type="int" />
+  </EntityType>
+  <EntityType Name="MetaObjects">
+    <Key>
+      <PropertyRef Name="ObjectID" />
+    </Key>
+    <Property Name="ObjectID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ObjectName" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="MetaTypeItems">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TypeID" Type="int" />
+    <Property Name="ItemName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MetaTypes">
+    <Key>
+      <PropertyRef Name="TypeID" />
+    </Key>
+    <Property Name="TypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TypeName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_MetaFunctionForms_MetaForms">
+    <End Role="MetaForms" Type="MetaModel.Store.MetaForms" Multiplicity="1" />
+    <End Role="MetaFunctionForms" Type="MetaModel.Store.MetaFunctionForms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MetaForms">
+        <PropertyRef Name="FormID" />
+      </Principal>
+      <Dependent Role="MetaFunctionForms">
+        <PropertyRef Name="FormID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MetaFunctionForms_MetaFunctions">
+    <End Role="MetaFunctions" Type="MetaModel.Store.MetaFunctions" Multiplicity="1" />
+    <End Role="MetaFunctionForms" Type="MetaModel.Store.MetaFunctionForms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MetaFunctions">
+        <PropertyRef Name="FunctionID" />
+      </Principal>
+      <Dependent Role="MetaFunctionForms">
+        <PropertyRef Name="FunctionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MetaFunctions_MetaModules">
+    <End Role="MetaModules" Type="MetaModel.Store.MetaModules" Multiplicity="0..1" />
+    <End Role="MetaFunctions" Type="MetaModel.Store.MetaFunctions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MetaModules">
+        <PropertyRef Name="ModuleID" />
+      </Principal>
+      <Dependent Role="MetaFunctions">
+        <PropertyRef Name="ModuleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

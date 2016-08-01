@@ -1,0 +1,4 @@
+﻿<tabs>
+  <tab text="Order Detail" url="~/Orders/OrderInfo.aspx" />
+  <tab text="Order Pad" url="~/Orders/OrderPad.aspx" />
+</tabs>

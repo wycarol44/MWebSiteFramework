@@ -1,0 +1,279 @@
+﻿.card-list {
+}
+
+    /*command row holder*/
+    .card-list .header-row-holder {
+        margin-bottom: 10px;
+    }
+
+        .card-list .header-row-holder.narrow {
+            margin-bottom: 2px;
+        }
+
+        .card-list .header-row-holder.wide {
+            margin-bottom: 20px;
+        }
+
+        .card-list .header-row-holder.row {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        /*generic command row class*/
+        .card-list .header-row-holder .header-row {
+            padding: 5px;
+        }
+
+        /*command row*/
+        .card-list .header-row-holder .command-row {
+            position: relative;
+            background-color: #ccc;
+        }
+
+            .card-list .header-row-holder .command-row .row > div {
+                line-height: 34px;
+            }
+
+                .card-list .header-row-holder .command-row .row > div * {
+                    vertical-align: middle;
+                }
+
+        /*info row*/
+        .card-list .header-row-holder .info-row {
+            background-color: #ddd;
+        }
+
+
+
+
+
+
+
+    /*.card-list .header-row-holder .header-row-item:first-of-type .header-row {
+        border-radius: 6px 6px 0 0;
+    }
+
+    .card-list .header-row-holder .header-row-item:last-of-type .header-row {
+        border-radius: 0 0 6px 6px;
+    }
+
+    .card-list .header-row-holder .header-row-item:only-of-type .header-row {
+        border-radius: 6px;
+    }*/
+
+
+    .card-list .empty {
+        padding: 15px;
+    }
+
+    .card-list .card {
+        position: relative;
+        margin-bottom: 10px;
+        background-color: #edfaff;
+        /*border: 2px solid #ced7dd;*/
+        border: 1px solid #daeaf1;
+        /*border-radius: 6px;*/
+        transition: background-color 0.2s ease-in-out;
+    }
+
+        .card-list .card.narrow {
+            margin-bottom: 2px;
+        }
+
+        .card-list .card.wide {
+            margin-bottom: 20px;
+        }
+
+
+        .card-list .card.selected {
+            outline: 3px solid #52cbff;
+            /*border-radius: 0px;*/
+        }
+
+        .card-list .card.drag-over-top {
+            border-top: 3px solid #52cbff;
+            margin-top: 13px;
+            /*border-radius: 0px;*/
+        }
+        
+        .card-list .card.drag-over-bottom {
+            border-bottom: 3px solid #52cbff;
+            margin-bottom: 13px;
+            /*border-radius: 0px;*/
+        }
+
+        .card-list .card .rlvDrag {
+            background-image: url('/Images/24x24/drag.png');
+            background-repeat: no-repeat;
+            border: none;
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            background-color: transparent;
+            background-position: 50% 50%;
+        }
+
+.rlvDraggedItem .rlvI {
+    padding: 15px;
+}
+
+    .rlvDraggedItem .rlvI > input {
+        background-image: url('/Images/24x24/drag.png')!important;
+        background-repeat: no-repeat;
+        border: none;
+        width: 24px;
+        height: 24px;
+    }
+
+.card-list .command-row > .select,
+.card-list .card > .select {
+    z-index: 10;
+    position: absolute;
+    top: -15px;
+    left: -4px;
+}
+
+.card-list .card .header {
+    /*border-top-left-radius: 6px;
+            border-top-right-radius: 6px;*/
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.card-list .card .body {
+    position: relative;
+}
+
+    .card-list .card .body.pad-right,
+    .card-list .header-row.pad-right {
+        padding-right: 54px;
+    }
+
+    .card-list .card .body.pad-bottom {
+        padding-bottom: 54px;
+    }
+
+.card-list .card .header,
+.card-list .card .body {
+    padding: 2px 5px;
+}
+
+    .card-list .card .header .header-item {
+        margin: 0 5px;
+        vertical-align: middle;
+    }
+
+
+.card-list .card a.header-action {
+    text-decoration: none;
+}
+
+.card-list .card.archived {
+    border: 1px solid #f2dfea;
+    background-color: #fff0f9;
+}
+
+    .card-list .card.archived:hover {
+        background-color: #ffe0f2;
+    }
+
+.card-list .card:hover {
+    background-color: #ceecf9;
+}
+
+.card-list .card .action {
+    position: absolute;
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.75);
+    cursor: default;
+    transition: background-color 0.2s ease-in-out;
+}
+
+    .card-list .card .action.right {
+        top: 0;
+        right: 0;
+        height: 100%;
+        padding: 5px 10px;
+        /*border-radius: 0 6px 6px 0;*/
+    }
+
+    /*.card-list .card .header-action + .body > .action.right {
+            border-radius: 0 0 6px 0;
+        }*/
+
+    .card-list .card .action.bottom {
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        /*border-radius: 0 0 6px 6px;*/
+        line-height: 32px;
+        padding: 0px 0;
+    }
+
+
+
+    .card-list .card .action.right > * {
+        display: block;
+        margin: 5px 0;
+    }
+
+    .card-list .card .action.bottom > * {
+        display: inline-block;
+        margin: 0 5px;
+        vertical-align: middle;
+    }
+
+    /*for radtoolbar inside action bar*/
+    .card-list .card .action .rtbOuter {
+        background: none!important;
+        padding: 0px;
+    }
+
+    .card-list .card .action .rtbItem a {
+        background: none!important;
+        color: #000!important;
+    }
+
+    .card-list .card .action .rtbItem:hover {
+        background: rgba(0,0,0,0.1);
+    }
+
+.card-list .info-row.header-row.detached {
+    position: fixed;
+    box-shadow: 0px 1px 10px #333;
+    z-index: 10000;
+    /*border-radius: 0 0 6px 6px;*/
+}
+
+.card-list .row,
+.card-list.row {
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+.card-list div[class*=col-] {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.card-list .RadDataPager {
+    margin-top: 5px;
+}
+
+@media screen and (max-width: 992px) {
+    .card-list .info-row.header-row.detached {
+        position: static;
+        box-shadow: none;
+        z-index: 0;
+        margin-top: 5px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .RadDataPager.miles-data-pager .rdpWrap:nth-child(2) {
+        float: none;
+    }
+
+    .RadDataPager .rdpWrap.rdpNumPart {
+        display: none !important;
+    }
+}

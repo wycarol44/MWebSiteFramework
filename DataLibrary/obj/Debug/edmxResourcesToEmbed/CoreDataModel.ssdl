@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CoreModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="CoreModelStoreContainer">
+    <EntitySet Name="Address" EntityType="CoreModel.Store.Address" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CMSCategories" EntityType="CoreModel.Store.CMSCategories" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CMSCategoryMergeFields" EntityType="CoreModel.Store.CMSCategoryMergeFields" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CMSMergeFields" EntityType="CoreModel.Store.CMSMergeFields" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Documents" EntityType="CoreModel.Store.Documents" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ManagedTypeAssociations" EntityType="CoreModel.Store.ManagedTypeAssociations" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ManagedTypeItems" EntityType="CoreModel.Store.ManagedTypeItems" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ManagedTypes" EntityType="CoreModel.Store.ManagedTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Notes" EntityType="CoreModel.Store.Notes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Pictures" EntityType="CoreModel.Store.Pictures" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_CMSCategoryMergeFields_CMSCategories" Association="CoreModel.Store.FK_CMSCategoryMergeFields_CMSCategories">
+      <End Role="CMSCategories" EntitySet="CMSCategories" />
+      <End Role="CMSCategoryMergeFields" EntitySet="CMSCategoryMergeFields" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CMSCategoryMergeFields_CMSMergeFields" Association="CoreModel.Store.FK_CMSCategoryMergeFields_CMSMergeFields">
+      <End Role="CMSMergeFields" EntitySet="CMSMergeFields" />
+      <End Role="CMSCategoryMergeFields" EntitySet="CMSCategoryMergeFields" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ManagedTypeAssociations_ManagedTypes" Association="CoreModel.Store.FK_ManagedTypeAssociations_ManagedTypes">
+      <End Role="ManagedTypes" EntitySet="ManagedTypes" />
+      <End Role="ManagedTypeAssociations" EntitySet="ManagedTypeAssociations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ManagedTypeItems_ManagedTypes" Association="CoreModel.Store.FK_ManagedTypeItems_ManagedTypes">
+      <End Role="ManagedTypes" EntitySet="ManagedTypes" />
+      <End Role="ManagedTypeItems" EntitySet="ManagedTypeItems" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Address">
+    <Key>
+      <PropertyRef Name="AddressID" />
+    </Key>
+    <Property Name="AddressID" Type="int" Nullable="false" />
+    <Property Name="Address1" Type="varchar" MaxLength="100" />
+    <Property Name="Address2" Type="varchar" MaxLength="100" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="State" Type="varchar" MaxLength="50" />
+    <Property Name="PostalCode" Type="varchar" MaxLength="50" />
+    <Property Name="Country" Type="varchar" MaxLength="50" />
+    <Property Name="Archived" Type="bit" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="DateModified" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="CMSCategories">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="varchar" MaxLength="500" />
+    <Property Name="ForEmail" Type="bit" />
+    <Property Name="EmailFromID" Type="int" />
+    <Property Name="EmailFromName" Type="varchar" MaxLength="200" />
+    <Property Name="EmailFrom" Type="varchar" MaxLength="100" />
+    <Property Name="EmailFromLoggedInUser" Type="bit" />
+    <Property Name="ContentSubject" Type="varchar" MaxLength="500" />
+    <Property Name="ContentBody" Type="varchar(max)" />
+    <Property Name="DateCreated" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CMSCategoryMergeFields">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+      <PropertyRef Name="MergeFieldID" />
+    </Key>
+    <Property Name="CategoryID" Type="int" Nullable="false" />
+    <Property Name="MergeFieldID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CMSMergeFields">
+    <Key>
+      <PropertyRef Name="MergeFieldID" />
+    </Key>
+    <Property Name="MergeFieldID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MergeField" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Documents">
+    <Key>
+      <PropertyRef Name="DocumentID" />
+    </Key>
+    <Property Name="DocumentID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ObjectID" Type="int" />
+    <Property Name="KeyID" Type="int" />
+    <Property Name="DocumentName" Type="varchar" MaxLength="100" />
+    <Property Name="ParentID" Type="int" />
+    <Property Name="MimeType" Type="varchar" MaxLength="200" />
+    <Property Name="IsDirectory" Type="bit" />
+    <Property Name="Size" Type="int" />
+    <Property Name="FilePath" Type="varchar" MaxLength="300" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="DateModified" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="ManagedTypeAssociations">
+    <Key>
+      <PropertyRef Name="TypeID" />
+      <PropertyRef Name="ObjectID" />
+      <PropertyRef Name="KeyID" />
+    </Key>
+    <Property Name="TypeID" Type="int" Nullable="false" />
+    <Property Name="ObjectID" Type="int" Nullable="false" />
+    <Property Name="KeyID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ManagedTypeItems">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="int" Nullable="false" />
+    <Property Name="TypeID" Type="int" />
+    <Property Name="ItemName" Type="varchar" MaxLength="500" />
+    <Property Name="ParentID" Type="int" />
+    <Property Name="Archived" Type="bit" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="DateModified" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="ManagedTypes">
+    <Key>
+      <PropertyRef Name="TypeID" />
+    </Key>
+    <Property Name="TypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TypeName" Type="varchar" MaxLength="500" />
+    <Property Name="FriendlyName" Type="varchar" MaxLength="500" />
+    <Property Name="IsHierarchy" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Notes">
+    <Key>
+      <PropertyRef Name="NoteID" />
+    </Key>
+    <Property Name="NoteID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ObjectID" Type="int" Nullable="false" />
+    <Property Name="KeyID" Type="int" Nullable="false" />
+    <Property Name="NoteTypeID" Type="int" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="500" />
+    <Property Name="Notes" Type="varchar(max)" />
+    <Property Name="NotesText" Type="varchar(max)" />
+    <Property Name="LinkURL" Type="varchar" MaxLength="500" />
+    <Property Name="Archived" Type="bit" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="DateModified" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="Pictures">
+    <Key>
+      <PropertyRef Name="PictureID" />
+    </Key>
+    <Property Name="PictureID" Type="int" Nullable="false" />
+    <Property Name="PicturePath" Type="varchar" MaxLength="500" />
+    <Property Name="ThumbnailPath" Type="varchar" MaxLength="500" />
+    <Property Name="Archived" Type="bit" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="DateModified" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+  </EntityType>
+  <Association Name="FK_CMSCategoryMergeFields_CMSCategories">
+    <End Role="CMSCategories" Type="CoreModel.Store.CMSCategories" Multiplicity="1" />
+    <End Role="CMSCategoryMergeFields" Type="CoreModel.Store.CMSCategoryMergeFields" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CMSCategories">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="CMSCategoryMergeFields">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CMSCategoryMergeFields_CMSMergeFields">
+    <End Role="CMSMergeFields" Type="CoreModel.Store.CMSMergeFields" Multiplicity="1" />
+    <End Role="CMSCategoryMergeFields" Type="CoreModel.Store.CMSCategoryMergeFields" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CMSMergeFields">
+        <PropertyRef Name="MergeFieldID" />
+      </Principal>
+      <Dependent Role="CMSCategoryMergeFields">
+        <PropertyRef Name="MergeFieldID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ManagedTypeAssociations_ManagedTypes">
+    <End Role="ManagedTypes" Type="CoreModel.Store.ManagedTypes" Multiplicity="1" />
+    <End Role="ManagedTypeAssociations" Type="CoreModel.Store.ManagedTypeAssociations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ManagedTypes">
+        <PropertyRef Name="TypeID" />
+      </Principal>
+      <Dependent Role="ManagedTypeAssociations">
+        <PropertyRef Name="TypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ManagedTypeItems_ManagedTypes">
+    <End Role="ManagedTypes" Type="CoreModel.Store.ManagedTypes" Multiplicity="0..1" />
+    <End Role="ManagedTypeItems" Type="CoreModel.Store.ManagedTypeItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ManagedTypes">
+        <PropertyRef Name="TypeID" />
+      </Principal>
+      <Dependent Role="ManagedTypeItems">
+        <PropertyRef Name="TypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

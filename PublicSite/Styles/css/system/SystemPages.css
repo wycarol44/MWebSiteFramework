@@ -1,0 +1,23 @@
+﻿body {
+    padding: 0;
+}
+
+#systempages {
+    margin-top: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    overflow: hidden;
+}
+
+    #systempages #systempages-content {
+    }
+
+@media screen and (max-width: 768px) {
+    #systempages {
+        width: auto;
+        margin-top: 15px;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+}

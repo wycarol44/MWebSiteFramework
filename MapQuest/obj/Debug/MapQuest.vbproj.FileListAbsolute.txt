@@ -1,0 +1,9 @@
+C:\Webapps\TrainingLLQ\MapQuest\bin\Debug\MapQuest.exe.config
+C:\Webapps\TrainingLLQ\MapQuest\bin\Debug\MapQuest.exe
+C:\Webapps\TrainingLLQ\MapQuest\bin\Debug\MapQuest.pdb
+C:\Webapps\TrainingLLQ\MapQuest\bin\Debug\MapQuest.xml
+C:\Webapps\TrainingLLQ\MapQuest\obj\Debug\MapQuest.Resources.resources
+C:\Webapps\TrainingLLQ\MapQuest\obj\Debug\MapQuest.vbproj.GenerateResource.Cache
+C:\Webapps\TrainingLLQ\MapQuest\obj\Debug\MapQuest.exe
+C:\Webapps\TrainingLLQ\MapQuest\obj\Debug\MapQuest.xml
+C:\Webapps\TrainingLLQ\MapQuest\obj\Debug\MapQuest.pdb

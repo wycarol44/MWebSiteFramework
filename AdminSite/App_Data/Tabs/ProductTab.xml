@@ -1,0 +1,4 @@
+﻿<tabs>
+  <tab text="Basic Info" url="~/Products/ProductsInfo.aspx" />
+  <tab text="Images" url="~/Products/ProductImage.aspx" />
+</tabs>

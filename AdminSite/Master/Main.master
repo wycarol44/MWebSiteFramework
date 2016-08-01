@@ -1,0 +1,278 @@
+﻿<%@ Master Language="VB" MasterPageFile="~/Master/Global.master" AutoEventWireup="false" CodeFile="Main.master.vb" Inherits="Master_Main" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="globalhead" runat="Server">
+    <asp:PlaceHolder ID="PlaceHolder1" runat="server">
+        <%: System.Web.Optimization.Scripts.Render("~/Scripts/Main/Js") %>
+    </asp:PlaceHolder>
+    <%--  <script src="/Scripts/Main/main.js"></script>--%>
+    <script>
+
+
+
+        var _sessionTimeout = null;
+        var _sessionWarningTimeout = null;
+
+        function openUserInfo() {
+            openWindow("/HR/DialogUserInfo.aspx", "User Info", WINDOW_LARGE, userInfoClosed);
+        }
+
+        function openManageFavorites(MetaFormID) {
+            openWindow("/Admin/DialogManageFavorites.aspx?MetaFormID=" + MetaFormID, "Manage Favorites", WINDOW_MEDIUM, favoriteClosed);
+        }
+
+        function userInfoClosed(sender, args) {
+
+            $find('<%= rdAjaxPanel.ClientID %>').ajaxRequest("UserInfo");
+
+        }
+
+        function favoriteClosed(sender, args) {
+            if (args.get_argument() === null || args.get_argument() == 'True') {
+                $find('<%= rdAjaxPanel.ClientID %>').ajaxRequest("Favorites");
+            }
+        }
+
+
+        //start timeout timer
+        function sessionTimeout(timeout, url) {
+            clearTimeouts();
+            //set a timeout, when this is reached, direct to the session timeout 
+            _sessionTimeout = setTimeout(function () {
+                //go to session timeout page
+                window.location = url;
+            }, timeout);
+
+            //set a warning timeout for 2 minutes prior to session timeout, this will allow us to trigger a postback
+            //and revive the session.
+            _sessionWarningTimeout = setTimeout(function () {
+                //warn user
+                sessionTimeoutWarning();
+            }, timeout - (2 * 60000));
+
+            //_counterInterval = setInterval(function () { console.log(++_count); }, 1000);
+        }
+
+        function sessionTimeoutWarning() {
+            showMsg("Your session may expire in 2 minutes due to inactivity. <a href='javascript:keepAlive();'>Click here</a> to keep your session alive.",
+                true, "Alert", "alertMsg", null, 5000);
+        }
+
+        function clearTimeouts() {
+            //remove the timeout
+            clearTimeout(_sessionTimeout);
+            clearTimeout(_sessionWarningTimeout);
+
+            //clearInterval(_counterInterval);
+        }
+
+        function keepAlive() {
+            //remove the timeout
+            clearTimeouts();
+
+            //close message
+            $('div.jGrowl').find('.jGrowl-close').trigger('jGrowl.close');
+
+            //contact server
+            __doPostBack("<%= hdReset.UniqueID %>");
+        }
+
+
+    </script>
+
+    <style>
+
+    </style>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="globalContent" runat="Server">
+
+    <div id="mainHeader">
+        <div id="fullheader">
+            <telerik:RadAjaxPanel ID="rdAjaxPanel" runat="server">
+                <div>
+                    <div id="header" class="hidden-xs hidden-sm">
+                        <div class="headerImage">
+                            <a href="/Default.aspx">
+                                <img src="/Images/Logo.png" alt="" />
+                            </a>
+                        </div>
+                        <div id="headerUser">
+                            <div class="huAppName">
+                                <asp:Label ID="lblAppName" runat="server" />
+                            </div>
+                            <div class="huEmployee">
+                                <a href="/HR/MyInfo.aspx">
+                                    <miles:MilesPicture ID="milesPic" runat="server" />
+                                </a>
+                            </div>
+                            <div class="huActions">
+                                <div>
+                                    <telerik:RadToolBar ID="rdActions" runat="server" Skin="Silk" >
+                                        
+                                        <Items>
+                                            <telerik:RadToolBarDropDown DropDownWidth="175px">
+                                                <Buttons>
+                                                    <telerik:RadToolBarButton Text="My Info" NavigateUrl="/HR/MyInfo.aspx" ImageUrl="~/Images/16x16/user-info.png"
+                                                        CommandName="UserInfo" CausesValidation="false" />
+                                                    <telerik:RadToolBarButton IsSeparator="true" />
+                                                    <telerik:RadToolBarButton Text="Log Out" CommandName="LogOut" CausesValidation="false" />
+                                                </Buttons>
+                                            </telerik:RadToolBarDropDown>
+
+                                            <%--if you move this to another position, you MUST change the index in the code behind.--%>
+                                            <telerik:RadToolBarDropDown ImageUrl="~/Images/16x16/favorite.png" ToolTip="Favorites"
+                                                DropDownWidth="200" />
+
+                                            <telerik:RadToolBarButton ImageUrl="~/Images/16x16/comment.png" ToolTip="Submit Request"
+                                                NavigateUrl="~/Help/SubmitRequest.aspx"  />
+                                        </Items>
+                                    </telerik:RadToolBar>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="navMenu hidden-xs hidden-sm">
+                        <telerik:RadMenu ID="rdMenu" runat="server" ExpandDelay="500" />
+                        <br class="clear" />
+                    </div>
+                </div>
+
+                <!-- this header will show on small/medium size devices -->
+                <div id="mobileheader" class="hidden-md hidden-lg">
+                    <nav class="navbar navbar-inverse navbar-fixed-top " role="navigation">
+
+
+                        <!-- navbar-fixed-top -->
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mobile-menu">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a href="/Default.aspx">
+                                <img src="/images/mobilelogo.png" />
+                            </a>
+                            <div class="pull-right">
+
+
+                                <button type="button" class="navbar-toggle mobile-padding" data-toggle="collapse" data-target="#mobile-favorites">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="glyphicon glyphicon-star" style="color: white;"></span>
+                                </button>
+                                <a href="/Help/SubmitRequest.aspx" class="navbar-toggle mobile-padding" >
+                                   
+                                    <span class="glyphicon glyphicon-comment" style="color: white;"></span>
+                                </a>
+                                <button type="button" class="navbar-toggle mobile-profilemenu" data-toggle="collapse" data-target="#mobile-mymenu">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <miles:MilesPicture ID="milesMobilePic" Width="34px" runat="server" />
+                                </button>
+                            </div>
+                        </div>
+                        <div class="navbar-collapse collapse" id="mobile-menu">
+                            <ul class="nav navbar-nav">
+                                <!-- Collect the nav links, forms, and other content for toggling -->
+                                <asp:Literal ID="ltMenu" runat="server" />
+                            </ul>
+                        </div>
+                        <div class="navbar-collapse collapse" id="mobile-mymenu">
+                            <ul class="nav navbar-nav">
+                                <!-- Collect the nav links, forms, and other content for toggling -->
+                                <li><a href="/HR/MyInfo.aspx">My Info</a></li>
+                                <li class="nav-divider"></li>
+                                <li>
+                                    <asp:LinkButton ID="lnkLogout" runat="server" Text="Logout"></asp:LinkButton></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="navbar-collapse collapse" id="mobile-favorites">
+                            <ul class="nav navbar-nav">
+                                <!-- Collect the nav links, forms, and other content for toggling -->
+                                <asp:Literal ID="ltMobileFavorites" runat="server" />
+                            </ul>
+                        </div>
+
+                        <!-- /.navbar-collapse -->
+                    </nav>
+
+                </div>
+
+
+                <div class="favMenu hidden-xs">
+                    <telerik:RadMenu ID="rdFavs" runat="server" Width="100%" EnableRootItemScroll="true">
+                        <ItemTemplate>
+                            <asp:HyperLink ID="lnkOuter" runat="server" Font-Underline="false" NavigateUrl='<%# Eval("MenuPath") %>'>
+                                <span class="glyphicon glyphicon-stop" style='<%# "color:" + Eval("IconColor") + ";" %>'></span>
+                                <span style="color:white">
+                                    <%# DataBinder.Eval(Container,"Text") %>
+                                </span>
+                            </asp:HyperLink>
+
+                        </ItemTemplate>
+
+                    </telerik:RadMenu>
+
+                </div>
+
+            </telerik:RadAjaxPanel>
+
+            <div id="divBreadCrumbs" class="seperator">
+                <div class="menuBorder"></div>
+                <div class="breadCrumb  hidden-xs hidden-sm">
+                    <asp:SiteMapPath ID="smpBreadcrumbs" runat="server">
+                        <PathSeparatorTemplate>
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                        </PathSeparatorTemplate>
+                    </asp:SiteMapPath>
+                </div>
+                <div class="breadCrumb  hidden-md hidden-lg">
+                    <asp:SiteMapPath ID="SiteMapPath1" runat="server" ParentLevelsDisplayed="1">
+                        <PathSeparatorTemplate>
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                        </PathSeparatorTemplate>
+                    </asp:SiteMapPath>
+                </div>
+            </div>
+
+            <%--<div id="divBreadCrumbsMobile" class="seperator visible-sm visible-xs">
+                <div class="menuBorder"></div>
+                <div class="breadCrumb">
+                    <asp:SiteMapPath ID="SiteMapPath1" runat="server" ParentLevelsDisplayed="1">
+                        <PathSeparatorTemplate>
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                        </PathSeparatorTemplate>
+                    </asp:SiteMapPath>
+                </div>
+            </div>--%>
+
+            <div id="page-header">
+                <h1>
+                    <asp:Label ID="lblPageTitle" runat="server" /></h1>
+            </div>
+
+            <asp:HiddenField ID="hdReset" runat="server" />
+
+        </div>
+
+
+
+
+        <div class="wrapper">
+            <asp:ContentPlaceHolder ID="mainContent" runat="server">
+            </asp:ContentPlaceHolder>
+
+            <br class="clear" />
+            <br />
+            <asp:Label ID="lblEntityFooter" runat="server" Text="" CssClass="entity-footer text-muted" />
+            <br />
+        </div>
+    </div>
+</asp:Content>
+

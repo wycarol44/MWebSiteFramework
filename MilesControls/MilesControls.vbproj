@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1A6B90C2-3816-4D82-89C8-81DC41123575}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>MilesControls</RootNamespace>
+    <AssemblyName>MilesControls</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>MilesControls.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>MilesControls.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Telerik.Web.Design">
+      <HintPath>..\lib\Telerik.Web.Design.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Web.UI">
+      <HintPath>..\lib\Telerik.Web.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Web.UI.Skins">
+      <HintPath>..\lib\Telerik.Web.UI.Skins.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CardListDataBoundProperty.vb" />
+    <Compile Include="CardListHyperLinkProperty.vb" />
+    <Compile Include="CheckBoxListValidator.vb" />
+    <Compile Include="Classes\ControlBinding.vb" />
+    <Compile Include="Classes\ICardListDataPropery.vb" />
+    <Compile Include="Classes\ISearchPanelBoundListControl.vb" />
+    <Compile Include="ComboBoxValidator.vb" />
+    <Compile Include="MilesButton.vb" />
+    <Compile Include="MilesCardList.vb" />
+    <Compile Include="MilesDateTimePicker.vb" />
+    <Compile Include="MilesDropDownTree.vb" />
+    <Compile Include="MilesEditor.vb" />
+    <Compile Include="MilesEmail.vb" />
+    <Compile Include="MilesGrid.vb" />
+    <Compile Include="MilesImageCrop.vb" />
+    <Compile Include="MilesNoteInGrid.vb" />
+    <Compile Include="MilesPercentageSlider.vb" />
+    <Compile Include="MilesPhone.vb" />
+    <Compile Include="MilesPostalCode.vb" />
+    <Compile Include="MilesTabDropdown.vb" />
+    <Compile Include="MilesTabStrip.vb" />
+    <Compile Include="MilesToggleArchiveImageButton.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Classes\WarningException.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Script\MilesButton.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommonLibrary\CommonLibrary.vbproj">
+      <Project>{39731b4f-0ca8-454f-a144-2c582bdc9655}</Project>
+      <Name>CommonLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CSS\MilesGrid.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Script\MilesPhone.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Script\MilesPostalCode.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Script\MilesEditor.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Script\MilesImageCrop.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CSS\MilesImageCrop.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Script\MilesDropDownTree.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CSS\MilesCardList.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\archive-export.png" />
+    <EmbeddedResource Include="Images\archive-import.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\sort_down.png" />
+    <EmbeddedResource Include="Images\sort_up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Script\MilesCardList.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Script\MilesTabStrip.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CSS\MilesTabDropDown.css" />
+    <EmbeddedResource Include="Script\MilesTabDropDown.js" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

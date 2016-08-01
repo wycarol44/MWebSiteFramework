@@ -1,0 +1,22 @@
+﻿<%@ Master Language="VB" MasterPageFile="~/Master/Global.master" AutoEventWireup="false" CodeFile="System.master.vb" Inherits="Master_System" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="globalhead" runat="Server">
+    <asp:PlaceHolder ID="PlaceHolder2" runat="server">
+        <%: System.Web.Optimization.Styles.Render("~/styles/css/system/css") %>
+    </asp:PlaceHolder>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="globalContent" runat="Server">
+
+    <div id="systempages">
+        
+        <div id="systempages-content">
+            <asp:ContentPlaceHolder ID="mainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </div>
+
+</asp:Content>
+
+

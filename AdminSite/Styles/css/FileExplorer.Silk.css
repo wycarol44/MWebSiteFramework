@@ -1,0 +1,37 @@
+﻿.RadFileExplorer_Silk.miles-file-explorer
+{
+    padding-bottom: 0 !important;
+    height: auto !important;
+}
+
+
+    .RadFileExplorer_Silk.miles-file-explorer .RadGrid_Silk .rgHeaderDiv
+    {
+        border-right-color: #d7d7d7;
+    }
+
+
+
+ /* Large thumbnails */
+.RadFileExplorer_Silk.miles-file-explorer.rfeLargeThumbnails .rfeThumbList
+{
+       width: 200px; /*defines thumbnail wrapper dimension*/
+}
+.RadFileExplorer_Silk.miles-file-explorer.rfeLargeThumbnails .rfeThumbList .rfeFile
+{
+      /*the sum of the height and padding-top values should be equal to the height property defined in the rfeLargeThumbnails class*/
+       width: 128px;
+       height: 88px;
+       padding-top: 40px;
+}
+.RadFileExplorer_Silk.miles-file-explorer.rfeLargeThumbnails .rfeThumbList .rfeImageFile.rfeFile
+{
+       height: 128px;
+       padding-top: 0;
+}
+.RadFileExplorer_Silk.miles-file-explorer.rfeLargeThumbnails .rfeThumbList .rfeFile img
+{
+      /*defines Image Preview Thumbnail dimension*/
+       width: 128px;
+       height: 128px;
+}

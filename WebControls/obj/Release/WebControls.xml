@@ -1,0 +1,298 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+WebControls
+</name>
+</assembly>
+<members>
+<member name="P:WebControls.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:WebControls.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:WebControls.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="P:WebControls.MilesCountryComboBox.CountryDisplayMode">
+	<summary>
+ Gets or sets the country display mode. You must manually re-populate the countries
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:WebControls.MilesCountryComboBox.CountryID">
+	<summary>
+ Gets or sets the selected country id
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:WebControls.Extensions.ToXMLIdentifiers(Telerik.Web.UI.RadComboBox)">
+	<summary>
+ Takes the checked items of a radcombobox and turns them into an xml identifiers object
+ </summary>
+	<param name="source"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:WebControls.Extensions.SelectedValue(System.Web.UI.WebControls.DropDownList,System.Nullable{System.Int32})">
+	<summary>
+ Selects a value from the list if it exists
+ </summary>
+	<param name="source"></param>
+	<param name="value"></param>
+	<remarks></remarks>
+</member><member name="P:WebControls.MilesAuditLogDashboard.Collapsible">
+	<summary>
+ renders the control as collapsible panel if set to true
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:WebControls.MilesAuditLogDashboard.ExpandOnLoad">
+	<summary>
+ expands the collapsible on load if set to true
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:WebControls.MilesAuditLogDashboard.ShowHeader">
+	<summary>
+ Set the option to show/hide the header bar, works if only collapsible is false
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:WebControls.MilesAuditLogDashboard">
+	<summary>
+ Author: Sanjog Sharma
+ AuditLog Control for DashBoard
+ Displays Audit Logs in dashboard ordered by changed date
+ Number of items to display is configurable using property "NumberofDisplayItems", default value is 5
+ ObjectID and KeyID identifies which entity the audit log is for, "Populate" function populates the header and items for the control
+ AuditLog is rendered in collapsible panel but is configurable
+ Counter for AuditLogs is displayed in right, which is shown by default but can be turned off via property "Show Counter"
+ </summary>
+	<remarks></remarks>
+</member><member name="P:WebControls.MilesNotesDashboard.ObjectID">
+	<summary>
+ Author: Sanjog Sharma
+ Notes List Control for DashBoard
+ Displays notes in dashboard ordered by pinned notes and created date
+ Number of items to display is configurable using property "NumberofDisplayItems", default value is 2
+ ObjectID and KeyID identifies which entity the documents is for, "Populate" function populates the header and items for the control
+ There is icon added for notes/link, if it is a link the icon is clickable and it navigates to the link URL
+ Counter for notes is displayed in right, which is shown by default but can be turned off via property "Show Counter"
+ HeaderText and NavigateURL is configurable.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:WebControls.MilesNotesDashboard.InfoPage">
+	<summary>
+ gets or sets the info page for notes
+ Provide the full path to info page
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:WebControls.MilesNotesDashboard.IDField">
+	<summary>
+ gets or sets the id field for notes
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:WebControls.MilesPicture.DefaultImageUrl">
+	<summary>
+ Gets or sets the default image url
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:WebControls.MilesPicture.ImageName">
+	<summary>
+ Gets or sets the thumnail (display) image
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:WebControls.MilesPicture.FullSizeImageName">
+	<summary>
+ Gets or sets the image for the full picture
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:WebControls.MilesDocumentsDashboard.ObjectID">
+	<summary>
+ Author: Sanjog Sharma
+ Documents List Control for DashBoard
+ Displays Documents in dashboard ordered by uploaded date
+ Number of items to display is configurable using property "NumberofDisplayItems", default value is 2
+ ObjectID and KeyID identifies which entity the documents is for, "Populate" function populates the header and items for the control
+ Corresponding document icon is displayed for mostly used documents, and text icon is displayed for others 
+ Counter for documents is displayed in right, which is shown by default but can be turned off via property "Show Counter"
+ HeaderText and HeaderNaviationURL is configurable. Provide the DocumentsList page for the object in the HeaderNavigationURL    ''' </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:WebControls.MilesTypeComboBox.StatusID">
+	<summary>
+ Gets or sets the selected value
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:WebControls.MilesTypeComboBox.StatusType">
+	<summary>
+ Gets or sets the type id for the filter
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:WebControls.MilesTypeComboBox.IncludeDefaultItem">
+	<summary>
+ Gets or sets whether the default item is shown
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:WebControls.MilesSearchPanel.SavedStateSessionName">
+	<summary>
+ Gets the name of the session in which to store the state
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:WebControls.MilesSearchPanel.SavedStateRestoreSearchName">
+	<summary>
+ Gets the name of the session in which to store the RestoreSearch value
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:WebControls.MilesSearchPanel.SavedState">
+	<summary>
+ Gets or sets the state in session
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:WebControls.MilesSearchPanel.RestoreSearch">
+	<summary>
+ Gets or sets a value that indicates the search button was pressed on this panel
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:WebControls.MilesSearchPanel.ListControlID">
+	<summary>
+ Gets or sets control id associated to the panel. This allows the panel to save and restore states of certain external list controls
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:WebControls.MilesSearchPanel.AllowSaveSearch">
+	<summary>
+ Gets or sets whether the search filters can be saved
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:WebControls.MilesSearchPanel.BeginSave">
+	<summary>
+ Recursively saves the search panel
+ </summary>
+	<remarks></remarks>
+</member><member name="M:WebControls.MilesSearchPanel.SaveState(System.Web.UI.ControlCollection,System.Xml.Linq.XElement)">
+	<summary>
+ Recursively saves the state of each control in the content panel
+ </summary>
+	<remarks></remarks>
+</member><member name="M:WebControls.MilesSearchPanel.SaveGridState(System.Xml.Linq.XElement)">
+	<summary>
+ Saves the grid's state
+ </summary>
+	<remarks></remarks>
+</member><member name="M:WebControls.MilesSearchPanel.BeginLoad">
+	<summary>
+ Recursively loads the search panel
+ </summary>
+	<remarks></remarks>
+</member><member name="M:WebControls.MilesSearchPanel.LoadState(System.Web.UI.ControlCollection)">
+	<summary>
+ Loads the data into the panel
+ </summary>
+	<remarks></remarks>
+</member><member name="M:WebControls.MilesSearchPanel.LoadGridState">
+	<summary>
+ Loads the grid state
+ </summary>
+	<remarks></remarks>
+</member><member name="M:WebControls.MilesSearchPanel.OnStateSaving(WebControls.SearchPanelSaveStateEventArgs)">
+	<summary>
+ Handles retrieving the state of a control. The state is returned in the Data member of the event args
+ </summary>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:WebControls.MilesSearchPanel.OnStateLoading(WebControls.SearchPanelSaveStateEventArgs)">
+	<summary>
+ Handles populating the panel from a saved state
+ </summary>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:WebControls.MilesSearchPanel.LoadStateFromDataBase">
+	<summary>
+ Gets the xml from the database and loads it into the session
+ </summary>
+	<remarks></remarks>
+</member><member name="M:WebControls.MilesSearchPanel.GetSavedSearch">
+	<summary>
+ Gets a saved filter from the db based on user id and form id
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:WebControls.MilesSearchPanel.DataIsEmpty(System.Object)">
+	<summary>
+ Determines if the data is empty
+ </summary>
+	<param name="data"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:WebControls.MilesSearchPanel">
+	<summary>
+ Search Panel
+ Created by Eric Butler
+ October 2013
+ </summary>
+	<remarks></remarks>
+</member><member name="P:WebControls.MilesStateComboBox.StateDisplayMode">
+	<summary>
+ Gets or sets the display mode of the state
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:WebControls.MilesStateComboBox.Country">
+	<summary>
+ Gets or sets the country to use when filtering for states
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:WebControls.MilesStateComboBox.StateID">
+	<summary>
+ Gets or sets the selected state
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member>
+</members>
+</doc>

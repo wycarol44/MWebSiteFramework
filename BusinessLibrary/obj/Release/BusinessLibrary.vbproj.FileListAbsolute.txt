@@ -1,0 +1,17 @@
+E:\WebApps\Template\BusinessLibrary\bin\Release\BusinessLibrary.dll
+E:\WebApps\Template\BusinessLibrary\bin\Release\BusinessLibrary.pdb
+E:\WebApps\Template\BusinessLibrary\bin\Release\BusinessLibrary.xml
+E:\WebApps\Template\BusinessLibrary\bin\Release\CommonLibrary.dll
+E:\WebApps\Template\BusinessLibrary\bin\Release\DataLibrary.dll
+E:\WebApps\Template\BusinessLibrary\bin\Release\EntityFramework.dll
+E:\WebApps\Template\BusinessLibrary\bin\Release\CommonLibrary.pdb
+E:\WebApps\Template\BusinessLibrary\bin\Release\CommonLibrary.xml
+E:\WebApps\Template\BusinessLibrary\bin\Release\DataLibrary.pdb
+E:\WebApps\Template\BusinessLibrary\bin\Release\DataLibrary.xml
+E:\WebApps\Template\BusinessLibrary\bin\Release\EntityFramework.xml
+E:\WebApps\Template\BusinessLibrary\obj\Release\BusinessLibrary.vbprojResolveAssemblyReference.cache
+E:\WebApps\Template\BusinessLibrary\obj\Release\BusinessLibrary.Resources.resources
+E:\WebApps\Template\BusinessLibrary\obj\Release\BusinessLibrary.vbproj.GenerateResource.Cache
+E:\WebApps\Template\BusinessLibrary\obj\Release\BusinessLibrary.dll
+E:\WebApps\Template\BusinessLibrary\obj\Release\BusinessLibrary.xml
+E:\WebApps\Template\BusinessLibrary\obj\Release\BusinessLibrary.pdb

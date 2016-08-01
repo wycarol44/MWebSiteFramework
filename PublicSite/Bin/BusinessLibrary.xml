@@ -1,0 +1,1382 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+BusinessLibrary
+</name>
+</assembly>
+<members>
+<member name="M:BusinessLibrary.CustomerManager.GetById(System.Int32)">
+	<summary>
+ Gets a record by its ID. If no record is found, returns a new, blank record
+ </summary>
+	<param name="customerId"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.CustomerManager.GetDetailsById(System.Int32)">
+	<summary>
+ Gets a record by its with details
+ </summary>
+	<param name="customerId"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.CustomerManager.Save(DataLibrary.Customer)">
+	<summary>
+ Inserts or updates the record
+ </summary>
+	<param name="obj"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.CustomerManager.ToggleArchived(System.Int32)">
+	<summary>
+ Archives the specified record
+ </summary>
+	<param name="customerId"></param>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.CustomerManager.IsDuplicate(DataLibrary.Customer)">
+	<summary>
+ Checks to see if the record is a duplicate based on a few criteria
+ </summary>
+	<param name="obj"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.CustomerManager.GetCount">
+	<summary>
+ Gets count of unarchived records
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.CustomerManager.UpdateStatus(System.Int32,BusinessLibrary.MilesMetaTypeItem)">
+	<summary>
+ Updates Customer Status Field
+ </summary>
+	<param name="CustomerID"></param>
+	<param name="StatusID"></param>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.CustomerManager.GetPrimaryContact(System.Int32)">
+	<summary>
+ Returns Primary Contact For the Customer
+ </summary>
+	<param name="CustomerID"></param>
+	<remarks></remarks>
+</member><member name="T:BusinessLibrary.CustomerManager">
+	<summary>
+ Manages CRUD operations on an object
+ </summary>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.ManagedTypeManager.GetByID(System.Int32)">
+	<summary>
+Gets a Record By Id
+Author: Sanjog Sharma
+Create Date: 11/29/2013
+ </summary>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.ManagedTypeManager.GetList(System.String)">
+	<summary>
+Gets a list and returns list of objects
+Author: Sanjog Sharma
+Create Date: 11/29/2013
+ </summary>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.ManagedTypeManager.Save(DataLibrary.ManagedType)">
+	<summary>
+Insert/Save Record
+Author: Sanjog Sharma
+Create Date: 11/29/2013
+ </summary>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.UserLoginLogManager.GetByID(System.Int32)">
+	<summary>
+Gets a Record By Id
+Author: Sanjog Sharma
+Create Date: 12/16/2013
+ </summary>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.UserLoginLogManager.GetList(System.Nullable{System.Int32},System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+	<summary>
+Gets a list and returns list of objects
+Author: Sanjog Sharma
+Create Date: 12/16/2013
+ </summary>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.UserLoginLogManager.Save(DataLibrary.UserLoginLog)">
+	<summary>
+Insert/Save Record
+Author: Sanjog Sharma
+Create Date: 12/16/2013
+ </summary>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.UserManager.GetById(System.Int32)">
+	<summary>
+ Get a record by its id
+ </summary>
+	<param name="userId"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.UserManager.GetDetailsByID(System.Nullable{System.Int32})">
+	<summary>
+ Gets User by ID with details
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.UserManager.ValidateLogin(System.String,System.String)">
+	<summary>
+ Gets a user based on username and password
+ </summary>
+	<param name="username"></param>
+	<param name="password"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.UserManager.ValidateResetKey(System.String)">
+	<summary>
+ Gets a user based on reset key
+ </summary>
+	<param name="resetKey"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.UserManager.ValidateUserId(System.Int32)">
+	<summary>
+ Gets a user based on reset key
+ </summary>
+	<param name="userId"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.UserManager.GetList(System.Nullable{System.Int32},System.String,System.String,System.Nullable{System.Boolean},System.String,System.Xml.Linq.XElement,System.Xml.Linq.XElement,System.String)">
+	<summary>
+ Gets list of users
+ </summary>
+	<returns></returns>
+	<remarks>First user (Internal User) is filtered out</remarks>
+</member><member name="M:BusinessLibrary.UserManager.GetComboBoxList(System.Nullable{System.Int32},System.String,System.Nullable{System.Int32},System.Nullable{System.Int32})">
+	<summary>
+ Gets list of records for combobox
+ </summary>
+	<param name="userId"></param>
+	<param name="fullname"></param>
+	<param name="skip"></param>
+	<param name="take"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.UserManager.Save(DataLibrary.User)">
+	<summary>
+ Saves a record
+ </summary>
+	<param name="obj"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.UserManager.ToggleArchived(System.Int32)">
+	<summary>
+ Archives or unarchives the specified record
+ </summary>
+	<param name="userId"></param>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.UserManager.UpdateStatus(System.Int32,BusinessLibrary.MilesMetaTypeItem)">
+	<summary>
+ Updates User Status Field
+ </summary>
+	<param name="UserID"></param>
+	<param name="StatusID"></param>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.UserManager.UpdatePassword(System.Int32,System.String,System.Int32)">
+	<summary>
+ Updates the user's password
+ </summary>
+	<param name="userId"></param>
+	<param name="password"></param>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.UserManager.IsEmailDuplicate(DataLibrary.User)">
+	<summary>
+ Checks to see if the email address is unique
+ </summary>
+	<param name="obj"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.UserManager.IsUsernameDuplicate(DataLibrary.User)">
+	<summary>
+ Checks to see if the Username is unique
+ </summary>
+	<param name="obj"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.UserManager.GetUserRole(System.Int32)">
+	<summary>
+ Get a record by its id
+ </summary>
+	<param name="userId"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.UserManager.SaveRoles(System.Int32,System.Collections.Generic.List{DataLibrary.UserRole})">
+	<summary>
+ save multiple userroles for a given user at once
+ used to save user role for new user
+ </summary>
+	<param name="userid"></param>
+	<param name="userroles"></param>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.UserManager.HasFunctionAccess(BusinessLibrary.MilesMetaFunctions)">
+	<summary>
+ Pashupati Shrestha
+ </summary>
+	<param name="functionid"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.UserManager.HasPageAccess(System.Int32,System.Int32)">
+	<summary>
+ Author: Pashupati Shrestha
+ Checks if the User has access to the form (UserID - FormID)
+ </summary>
+	<param name="FormID"></param>
+	<param name="UserID"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.UserManager.GetFunctionAccessList(System.Int32)">
+	<summary>
+ Author: Pashupati Shrestha
+ Gets List of FuctionAccess for this UserID from cache. if there is nothing, then it gets from the database and adds to cache
+ </summary>
+	<param name="UserID"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaDataSetColumnsManager.GetByID(System.Int32)">
+	<summary>
+ Gets a record by its ID. If no record is found, returns a new, blank record
+ </summary>
+	<param name="ColumnID"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaDataSetColumnsManager.GetList(System.Int32,System.String,System.Nullable{System.Boolean})">
+	<summary>
+ Gets all the filters for given object
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaDataSetColumnsManager.Save(DataLibrary.MetaDataSetColumn)">
+	<summary>
+ Inserts or updates the record
+ </summary>
+	<param name="obj"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaDataSetColumnsManager.ToggleArchived(System.Int32)">
+	<summary>
+ Archives the specified record
+ </summary>
+	<param name="ColumnID"></param>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.CustomerContactManager.GetById(System.Int32)">
+	<summary>
+ Gets a record by its ID. If no record is found, returns a new, blank record
+ </summary>
+	<param name="contactid"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.CustomerContactManager.GetDetailsById(System.Int32)">
+	<summary>
+ Gets a record by its with details
+ </summary>
+	<param name="contactid"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.CustomerContactManager.Save(DataLibrary.CustomerContact)">
+	<summary>
+ Inserts or updates the record
+ </summary>
+	<param name="obj"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.CustomerContactManager.ToggleArchived(System.Int32)">
+	<summary>
+ Archives the specified record
+ </summary>
+	<param name="contactid"></param>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.CustomerContactManager.IsFirstContact(System.Int32)">
+	<summary>
+ Checks if any unarchived contact exists for the customer
+ </summary>
+	<param name="CustomerID"></param>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.CustomerContactManager.GetCount(System.Int32)">
+	<summary>
+ Gets count of unarchived notes
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:BusinessLibrary.UserAuthentication.User">
+	<summary>
+ Gets the currently logged in user's info
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:BusinessLibrary.UserAuthentication.UserName">
+	<summary>
+ Gets a string representing the logged in user
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.UserAuthentication.IsUserAuthenticated">
+	<summary>
+ check if there is a authentication ticket, if yes login, if not then signout
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.UserAuthentication.GetUserIdentity">
+	<summary>
+ Check if the user is already authenticated in forms authentication. if yes return the user id.
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.UserAuthentication.Login(System.String,System.String)">
+	<summary>
+ Checks the user's credentials
+ </summary>
+	<param name="username"></param>
+	<param name="password"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.UserAuthentication.RedirectFromLogin(System.Boolean)">
+	<summary>
+ Redirect the logged in user from the login page
+ </summary>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.UserAuthentication.CreatePersistentTicket">
+	<summary>
+ Creates a persistent ticket used to determine if a user is still logged in
+ </summary>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.UserAuthentication.SignOut">
+	<summary>
+ Signs a user out of the system and takes them back to the login page
+ </summary>
+	<remarks></remarks>
+</member><member name="P:BusinessLibrary.MemberAuthentication.Member">
+	<summary>
+ Gets the currently logged in user's info
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:BusinessLibrary.MemberAuthentication.UserName">
+	<summary>
+ Gets a string representing the logged in user
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MemberAuthentication.GetUserIdentity">
+	<summary>
+ Check if the user is already authenticated in forms authentication. if yes return the user id.
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MemberAuthentication.CreatePersistentTicket">
+	<summary>
+ Creates a persistent ticket used to determine if a user is still logged in
+ </summary>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MemberAuthentication.SignOut">
+	<summary>
+ Signs a user out of the system and takes them back to the login page
+ </summary>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaObjectManager.GetById(System.Int32)">
+	<summary>
+ Gets a record by its ID. If no record is found, returns a new, blank record
+ </summary>
+	<param name="objectid"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaObjectManager.GetGenericObjectParametersByObjectID(BusinessLibrary.GenericObjectParameters@)">
+	<summary>
+ Pass the Parameters object ByRef to populate the ObjectName, Value, and Text fields
+ from the SuiteObjects table'
+ </summary>
+	<param name="queryParam"></param>)
+ <remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaObjectManager.GenericListDynamicQuery(BusinessLibrary.GenericObjectParameters,System.Boolean)">
+	<summary>
+ Gets a dynamic query for objects
+ </summary>
+	<param name="params"></param>
+	<param name="isLoadOnDemand"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.CustomSearchManager.GetById(System.Int32)">
+	<summary>
+ Gets a record by its ID. If no record is found, returns a new, blank record
+ </summary>
+	<param name="SearchID"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.CustomSearchManager.GetByIdWithParameters(System.Int32)">
+	<summary>
+ Gets a record by its ID. If no record is found, returns a new, blank record
+ </summary>
+	<param name="SearchID"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.CustomSearchManager.GetList(System.Nullable{System.Int32},System.Nullable{System.Boolean})">
+	<summary>
+ Gets all the filters for given object
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.CustomSearchManager.Save(DataLibrary.CustomSearch)">
+	<summary>
+ Inserts or updates the record
+ </summary>
+	<param name="obj"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.CustomSearchManager.ToggleArchived(System.Int32)">
+	<summary>
+ Archives the specified record
+ </summary>
+	<param name="searchId"></param>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaDataAggregateFunctionsManager.GetList">
+	<summary>
+ Gets all the filters for given object
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.AddressManager.GetById(System.Int32)">
+	<summary>
+ Gets a record by its id
+ </summary>
+	<param name="addressId"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.AddressManager.Save(DataLibrary.Address)">
+	<summary>
+ Saves a record
+ </summary>
+	<param name="obj"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:BusinessLibrary.MilesMetaAuditLogAttributes">
+	<summary>
+ Represents items in MetaAuditLogAttributes Table
+ </summary>
+	<remarks></remarks>
+</member><member name="T:BusinessLibrary.MilesMetaObjects">
+	<summary>
+ Represents items in the MetaObject table
+ </summary>
+	<remarks></remarks>
+</member><member name="T:BusinessLibrary.MilesMetaType">
+	<summary>
+ Represents items in the MetaType table
+ </summary>
+	<remarks></remarks>
+</member><member name="T:BusinessLibrary.MilesMetaTypeItem">
+	<summary>
+ Represents items in the MetaTypeItems table
+ </summary>
+	<remarks></remarks>
+</member><member name="T:BusinessLibrary.MilesMetaCountry">
+	<summary>
+ Represents items in the MetaCountries table
+ </summary>
+	<remarks></remarks>
+</member><member name="T:BusinessLibrary.MilesMetaToolTips">
+	<summary>
+ Represents items in the MetaToolTips table
+ </summary>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.PostManager.GetById(System.Int32)">
+	<summary>
+ Gets a record by its ID. If no record is found, returns a new, blank record
+ </summary>
+	<param name="PostID"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.PostManager.GetList">
+	<summary>
+ Gets a simple list of records
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.PostManager.Save(DataLibrary.Post)">
+	<summary>
+ Inserts or updates the record
+ </summary>
+	<param name="obj"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaFunctionManager.GetById(System.Int32)">
+	<summary>
+ Gets a record by its ID. If no record is found, returns a new, blank record
+ </summary>
+	<param name="functionID"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaFunctionManager.Save(DataLibrary.MetaFunction)">
+	<summary>
+ Inserts or updates the record
+ </summary>
+	<param name="obj"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaFunctionManager.ToggleArchived(System.Int32)">
+	<summary>
+ Archives or unarchives the specified record
+ </summary>
+	<param name="functionId"></param>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaFunctionManager.SaveForms(System.Int32,System.Collections.Generic.List{DataLibrary.MetaForm})">
+	<summary>
+ save multiple forms for a given user at once
+ used to save related forms for new function
+ </summary>
+	<param name="functionid"></param>
+	<param name="forms"></param>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaFunctionManager.SaveUserRoles(System.Int32,System.Int32[])">
+	<summary>
+ save multiple Userroles for a given function at once
+ </summary>
+	<param name="functionid"></param>
+	<param name="userroleIds"></param>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaStateManager.GetById(System.Int32)">
+	<summary>
+ Gets a record by its ID
+ </summary>
+	<param name="stateId"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaStateManager.GetList(System.Nullable{System.Int32})">
+	<summary>
+ Gets a list of records
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.CMSCategoryManager.GetByID(System.Int32)">
+	<summary>
+Gets a Record By Id
+Author: Sanjog Sharma
+Create Date: 11/21/2013
+ </summary>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.CMSCategoryManager.GetList(System.String,System.Collections.Generic.List{System.Int32},System.Nullable{System.Boolean})">
+	<summary>
+Gets a list and returns list of objects
+Author: Sanjog Sharma
+Create Date: 11/21/2013
+ </summary>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.CMSCategoryManager.GetListByMergeFields(System.String,System.Xml.Linq.XElement,System.Xml.Linq.XElement,System.Nullable{System.Boolean})">
+	<summary>
+ Gets a list of CMS Categories by Merge Fields
+ </summary>
+	<param name="categoryName"></param>
+	<param name="mergeFieldIds"></param>
+	<param name="archived"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.CMSCategoryManager.Save(DataLibrary.CMSCategory)">
+	<summary>
+Insert/Save Record
+Author: Sanjog Sharma
+Create Date: 11/21/2013
+ </summary>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.CMSCategoryManager.SaveMergeFields(System.Int32,System.Collections.Generic.List{DataLibrary.CMSMergeField})">
+	<summary>
+ save multiple merge fields for a given cms category at once
+ used to save merge field for new category
+ </summary>
+	<param name="categoryId"></param>
+	<param name="mergeFields"></param>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.CMSCategoryManager.ToggleArchived(System.Int32)">
+	<summary>
+Toggles the active status of a record
+Author: Sanjog Sharma
+Create Date: 11/21/2013
+ </summary>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.CMSCategoryManager.GetMergeFields(System.Int32)">
+	<summary>
+ Get a record by its id
+ </summary>
+	<param name="categoryid"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.CMSCategoryManager.GetMergeField(System.Int32)">
+	<summary>
+ Get a record by its id
+ </summary>
+	<param name="categoryId"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:BusinessLibrary.CompanyInfoManager.ApplicationName">
+	<summary>
+ Gets or sets the application name in session.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.CompanyInfoManager.GetInfo">
+	<summary>
+ Get a record by its id
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.CompanyInfoManager.Save(DataLibrary.AppSetting)">
+	<summary>
+ Saves a record
+ </summary>
+	<param name="obj"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaDataSetsManager.GetById(System.Int32)">
+	<summary>
+ Gets a record by its ID. If no record is found, returns a new, blank record
+ </summary>
+	<param name="DataSetID"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaDataSetsManager.GetList(System.String,System.Nullable{System.Boolean})">
+	<summary>
+ Gets all the filters for given object
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaDataSetsManager.Save(DataLibrary.MetaDataSet)">
+	<summary>
+ Inserts or updates the record
+ </summary>
+	<param name="obj"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaDataSetsManager.ToggleArchived(System.Int32)">
+	<summary>
+ Archives the specified record
+ </summary>
+	<param name="DataSetID"></param>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaCountryManager.GetById(System.Int32)">
+	<summary>
+ Gets a record by its ID
+ </summary>
+	<param name="countryId"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaCountryManager.GetList">
+	<summary>
+ Gets a list of records
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaDataFormatTypesManager.GetList">
+	<summary>
+ Gets all the filters for given object
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.AttachmentManager.GetById(System.Int32)">
+	<summary>
+ Gets a record by its ID. If no record is found, returns a new, blank record
+ </summary>
+	<param name="AttachmentID"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.AttachmentManager.Save(DataLibrary.Attachment)">
+	<summary>
+ Inserts or updates the record
+ </summary>
+	<param name="obj"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.AttachmentManager.Delete(System.Int32)">
+	<summary>
+ Archives the specified record
+ </summary>
+	<param name="AttachmentID"></param>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.EmailLogManager.GetByID(System.Int32)">
+	<summary>
+Gets a Record By Id
+Author: Eric Butler
+Create Date: 12/3/2013
+ </summary>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.EmailLogManager.Save(DataLibrary.EmailLog)">
+	<summary>
+Insert/Save Record
+Author: Eric Butler
+Create Date: 12/3/2013
+ </summary>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.EmailLogManager.SendEmail(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Collections.ArrayList)">
+	<summary>
+ Sends an email and logs it in the EmailLog
+ </summary>
+	<param name="emailFrom"></param>
+	<param name="emailTo"></param>
+	<param name="emailSubject"></param>
+	<param name="emailBody"></param>
+	<param name="emailCC"></param>
+	<param name="emailBCC"></param>
+	<param name="emailFromName"></param>
+	<param name="isHtml"></param>
+	<param name="attachments"></param>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.CMSMergeFieldManager.GetByID(System.Int32)">
+	<summary>
+ Get a record by its id
+ </summary>
+	<param name="mergeFieldId"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.CMSMergeFieldManager.GetList">
+	<summary>
+ Get the list of records
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.CMSMergeFieldManager.Save(DataLibrary.CMSMergeField)">
+	<summary>
+Insert/Save Record
+ </summary>
+	<returns>MergeFieldID</returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaMenuManager.GetByID(System.Int32)">
+	<summary>
+Gets a Record By Id
+Author: Eric Butler
+Create Date: 11/25/2013
+ </summary>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaMenuManager.GetList">
+	<summary>
+Gets a list and returns list of objects
+Author: Eric Butler
+Create Date: 11/25/2013
+ </summary>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaMenuManager.GetMenuList">
+	<summary>
+Gets a list and returns list of objects
+Author: Eric Butler
+Create Date: 11/25/2013
+ </summary>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaMenuManager.ClearMenuCache(System.Nullable{System.Int32})">
+	<summary>
+ Clears the menu for a particular user, or all users
+ </summary>
+	<param name="userId"></param>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaMenuManager.DeleteCacheKey(System.Int32)">
+	<summary>
+ Deletes a cache entry by a specific user
+ </summary>
+	<param name="userId"></param>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaMenuManager.Save(DataLibrary.MetaMenu)">
+	<summary>
+Insert/Save Record
+Author: Eric Butler
+Create Date: 11/25/2013
+ </summary>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaMenuManager.Delete(System.Int32)">
+	<summary>
+ Hard deletes a record by its id
+ </summary>
+	<param name="menuId"></param>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaMenuManager.DeleteTree(System.Int32)">
+	<summary>
+ Hard deletes a record and its child 
+ </summary>
+	<param name="menuId"></param>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaMenuManager.GetMobileMenuHTML">
+	<summary>
+ Builds the html menu for the Mobile Menu. This will be a one level menu.
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.NoteManager.GetById(System.Int32)">
+	<summary>
+ Gets a record by its ID. If no record is found, returns a new, blank record
+ </summary>
+	<param name="NoteID"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.NoteManager.Save(DataLibrary.Note)">
+	<summary>
+ Inserts or updates the record
+ </summary>
+	<param name="obj"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.NoteManager.ToggleArchived(System.Int32)">
+	<summary>
+ Archives the specified record
+ </summary>
+	<param name="noteid"></param>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.NoteManager.GetCount(System.Int32,System.Int32)">
+	<summary>
+ Gets count of unarchived notes
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.CustomReportsManager.GetById(System.Int32)">
+	<summary>
+ Gets a record by its ID. If no record is found, returns a new, blank record
+ </summary>
+	<param name="ReportID"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.CustomReportsManager.Save(DataLibrary.CustomReport)">
+	<summary>
+ Inserts or updates the record
+ </summary>
+	<param name="obj"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.CustomReportsManager.ToggleArchived(System.Int32)">
+	<summary>
+ Archives the specified record
+ </summary>
+	<param name="ReportID"></param>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.CustomReportsManager.GetAvailableColumnsToAdd(System.Int32)">
+	<summary>
+ Gets Available Columns from the data set which are not added to the current Report
+ </summary>
+	<param name="ReportID"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.CustomReportsManager.GetAddedColumnsList(System.Int32)">
+	<summary>
+ Gets List of Columns already added to the Report
+ </summary>
+	<param name="ReportID"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:BusinessLibrary.CustomReportsManager">
+	<summary>
+ Author: Pashupati Shrestha
+ Date: 12/23/2014
+ </summary>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.UserRoleManager.GetById(System.Int32)">
+	<summary>
+ Gets a record by its ID. If no record is found, returns a new, blank record
+ </summary>
+	<param name="userroleid"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.UserRoleManager.GetList(System.String,System.Nullable{System.Boolean})">
+	<summary>
+ Gets a simple list of records
+ </summary>
+	<param name="userrole"></param>
+	<param name="archived"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.UserRoleManager.Save(DataLibrary.UserRole)">
+	<summary>
+ Inserts or updates the record
+ </summary>
+	<param name="obj"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.UserRoleManager.ToggleArchived(System.Int32)">
+	<summary>
+ Archives or unarchives the specified record
+ </summary>
+	<param name="userroleid"></param>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.UserRoleManager.IsDuplicate(DataLibrary.UserRole)">
+	<summary>
+ Checks to see if the job title is duplicate based on name
+ </summary>
+	<param name="obj"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.UserRoleManager.SaveFunctions(System.Int32,System.Int32[])">
+	<summary>
+ save multiple functions for a given userrole at once
+ </summary>
+	<param name="userroleid"></param>
+	<param name="functionIds"></param>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.UserRoleManager.GetByFunctionID(System.Int32)">
+	<summary>
+ Gets a Userroles List by functionID
+ </summary>
+	<param name="FunctionId"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaToolTipManager.GetByID(System.Int32)">
+	<summary>
+Gets a Record By Id
+Author: Sanjog Sharma
+Create Date: 12/19/2013
+ </summary>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaToolTipManager.GetList(System.String)">
+	<summary>
+Gets a list and returns list of objects
+Author: Sanjog Sharma
+Create Date: 12/19/2013
+ </summary>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaToolTipManager.Save(DataLibrary.MetaToolTip)">
+	<summary>
+Insert/Save Record
+Author: Sanjog Sharma
+Create Date: 12/19/2013
+ </summary>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.DocumentManager.GetById(System.Int32)">
+	<summary>
+ Gets a record by its ID. If no record is found, returns a new, blank record
+ </summary>
+	<param name="DocumentID"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.DocumentManager.GetByIdDetails(System.Int32)">
+	<summary>
+ Gets a record by its ID. If no record is found, returns a new, blank record
+ </summary>
+	<param name="DocumentID"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.DocumentManager.Save(DataLibrary.Document)">
+	<summary>
+ Inserts or updates the record
+ </summary>
+	<param name="obj"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.DocumentManager.Delete(DataLibrary.Document)">
+	<summary>
+ Archives the specified record
+ </summary>
+	<param name="obj"></param>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.DocumentManager.GetCount(System.Int32,System.Int32)">
+	<summary>
+ Gets count of documents
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.UserSearchFilterManager.GetById(System.Int32)">
+	<summary>
+ Gets a record by its ID. If no record is found, returns a new, blank record
+ </summary>
+	<param name="filterId"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.UserSearchFilterManager.GetById(System.Int32,System.Int32,System.String)">
+	<summary>
+ Gets a record by its ID. If no record is found, returns a new, blank record
+ </summary>
+	<param name="userId"></param>
+	<param name="formId"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.UserSearchFilterManager.Save(DataLibrary.UserSearchFilter)">
+	<summary>
+ Inserts or updates the record
+ </summary>
+	<param name="obj"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.UserSearchFilterManager.Delete(System.Int32,System.Int32,System.String)">
+	<summary>
+ Deletes a record from the database
+ </summary>
+	<param name="userId"></param>
+	<param name="formId"></param>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaModuleManager.GetByID(System.Int32)">
+	<summary>
+Gets a Record By Id
+Author: Sanjog Sharma
+Create Date: 11/19/2013
+ </summary>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaModuleManager.GetList(System.String,System.Int32)">
+	<summary>
+Gets a list and returns list of objects
+Author: Sanjog Sharma
+Create Date: 11/19/2013
+ </summary>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaModuleManager.Save(DataLibrary.MetaModule)">
+	<summary>
+Insert/Save Record
+Author: Sanjog Sharma
+Create Date: 11/19/2013
+ </summary>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaCustomSearchFilterManager.GetByID(System.Int32)">
+	<summary>
+ Gets a record by its ID. If no record is found, returns a new, blank record
+ </summary>
+	<param name="filterID"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaCustomSearchFilterManager.GetList(System.Int32,System.String,System.Nullable{System.Boolean})">
+	<summary>
+ Gets all the filters for given object
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaCustomSearchFilterManager.Save(DataLibrary.MetaCustomSearchFilter)">
+	<summary>
+ Inserts or updates the record
+ </summary>
+	<param name="obj"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaCustomSearchFilterManager.ToggleArchived(System.Int32)">
+	<summary>
+ Archives the specified record
+ </summary>
+	<param name="filterid"></param>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.PictureManager.GetById(System.Int32)">
+	<summary>
+ Gets a record by its ID. If no record is found, returns a new, blank record
+ </summary>
+	<param name="PictureID"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.PictureManager.Save(DataLibrary.Picture)">
+	<summary>
+ Inserts or updates the record
+ </summary>
+	<param name="obj"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.PictureManager.Delete(System.Int32)">
+	<summary>
+ Archives the specified record
+ </summary>
+	<param name="PictureID"></param>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.AuditLogManager.GetByID(System.Int32)">
+	<summary>
+Gets a Record By Id
+Author: Pash Shrestha
+Create Date: 11/19/2013
+ </summary>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.AuditLogManager.Save(DataLibrary.AuditLog)">
+	<summary>
+Insert/Save Record
+Author: Pash Shrestha
+Create Date: 11/19/2013
+ </summary>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.AuditLogManager.GetAuditLogMergeText(BusinessLibrary.AuditLogType,BusinessLibrary.MilesMetaAuditLogAttributes,System.String,System.String)">
+	<summary>
+ Gets AuditLog Text to be saved in Audit Log Table
+ Author: Pashupati Shrestha
+ Date: 11/20/2013
+ </summary>
+	<param name="AuditLogType"></param>
+	<param name="AttributeID"></param>
+	<param name="PreviousValue"></param>
+	<param name="NewValue"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.AuditLogManager.SaveAuditLog(BusinessLibrary.AuditLogType,System.Int32,System.Int32,System.Int32,BusinessLibrary.MilesMetaAuditLogAttributes,System.String,System.String,System.Nullable{System.DateTime},System.String)">
+	<summary>
+ Author: Pashupati Shrestha
+ Saves Audit Logs to  log table
+ </summary>
+	<param name="AuditLogType"></param>
+	<param name="ObjectID"></param>
+	<param name="KeyID"></param>
+	<param name="AttributeKeyID"></param>
+	<param name="AttributeID"></param>
+	<param name="PreviousValue"></param>
+	<param name="NewValue"></param>
+	<param name="EffectiveDate"></param>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaFormManager.GetById(System.Int32)">
+	<summary>
+ Gets a record by its ID. If no record is found, returns a new, blank record
+ </summary>
+	<param name="formId"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaFormManager.GetList">
+	<summary>
+ Gets all the forms
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaFormManager.GetGridList(System.String,System.String,System.String,System.Nullable{System.Boolean})">
+	<summary>
+ Gets all the forms
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaFormManager.Save(DataLibrary.MetaForm)">
+	<summary>
+ Inserts or updates the record
+ </summary>
+	<param name="obj"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaFormManager.CleanDeletedForms">
+	<summary>
+ Removes form records where the physical file no longer exists
+ </summary>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaFormManager.GetByPath(System.String)">
+	<summary>
+ Get form by path
+ </summary>
+	<param name="path"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaFormManager.AddForm(System.String,System.String)">
+	<summary>
+ Adds a form to the database IF it does not already exist (checks path)
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaFormManager.ToggleCanBeFavorite(System.Int32)">
+	<summary>
+ Toggles CanBeFavorite
+ </summary>
+	<param name="formid"></param>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaTypeManager.GetByID(System.Int32)">
+	<summary>
+Gets a Record By Id
+Author: Sanjog Sharma
+Create Date: 12/23/2013
+ </summary>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaTypeManager.GetList(System.String)">
+	<summary>
+Gets a list and returns list of objects
+Author: Sanjog Sharma
+Create Date: 12/23/2013
+ </summary>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaTypeManager.Save(DataLibrary.MetaType)">
+	<summary>
+Insert/Save Record
+Author: Sanjog Sharma
+Create Date: 12/23/2013
+ </summary>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaDatePeriodManager.GetList">
+	<summary>
+ Gets all the filters for given object
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.ManagedTypeItemManager.GetByID(System.Int32)">
+	<summary>
+Gets a Record By Id
+Author: Sanjog Sharma
+Create Date: 11/29/2013
+ </summary>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.ManagedTypeItemManager.GetList(System.Int32,System.String,System.Int32,System.Nullable{System.Boolean})">
+	<summary>
+Gets a list and returns list of objects
+Author: Sanjog Sharma
+Create Date: 11/29/2013
+ </summary>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.ManagedTypeItemManager.Save(DataLibrary.ManagedTypeItem)">
+	<summary>
+Insert/Save Record
+Author: Sanjog Sharma
+Create Date: 11/29/2013
+ </summary>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.ManagedTypeItemManager.ToggleArchived(System.Int32)">
+	<summary>
+Toggles the active status of a record
+Author: Sanjog Sharma
+Create Date: 11/29/2013
+ </summary>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.HRManager.GetResourceList(System.String,System.Int32,System.Int32,System.Boolean,System.Boolean,System.String)">
+gets all users and jobtitles in a single list
+
+</member><member name="M:BusinessLibrary.UserFavoriteManager.GetById(System.Int32)">
+	<summary>
+ Gets a record by its ID. If no record is found, returns a new, blank record
+ </summary>
+	<param name="favoriteid"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.UserFavoriteManager.GetList(System.Int32)">
+	<summary>
+ Gets a list of records
+ </summary>
+	<param name="userId"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.UserFavoriteManager.Save(DataLibrary.UserFavorite)">
+	<summary>
+ Inserts or updates the record
+ </summary>
+	<param name="obj"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.UserFavoriteManager.CheckFavorite(System.Int32,System.Int32)">
+	<summary>
+ Checks if the form is already favorite for the user and returns boolean status
+ </summary>
+	<param name="userID"></param>
+	<param name="FormID"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.UserFavoriteManager.GetLandingPage(System.Int32)">
+	<summary>
+ Gets Landing Page for the User
+ </summary>
+	<param name="userID"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.UserFavoriteManager.ToggleShowInFavouriteMenu(System.Int32)">
+	<summary>
+ Toggles ShowInFavouriteMenu
+ </summary>
+	<param name="favoriteid"></param>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.UserFavoriteManager.ToggleShowInIconBar(System.Int32)">
+	<summary>
+ Toggles ShowInIconBar
+ </summary>
+	<param name="favoriteid"></param>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.UserFavoriteManager.ToggleIsLandingPage(System.Int32)">
+	<summary>
+ Toggles IsLandingPage
+ </summary>
+	<param name="favoriteid"></param>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.UserFavoriteManager.RemoveFavorite(System.Int32)">
+	<summary>
+ Deletes Favorite
+ </summary>
+	<param name="favoriteid"></param>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.UserFavoriteManager.UpdateSortOrder(System.Collections.Generic.List{DataLibrary.UserFavorites_GetMenuList_Result})">
+	<summary>
+ Updates SortOrder
+ </summary>
+	<param name="favorites"></param>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.UserJobTitleManager.GetById(System.Int32)">
+	<summary>
+ Gets a record by its ID. If no record is found, returns a new, blank record
+ </summary>
+	<param name="jobTitleId"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.UserJobTitleManager.GetList(System.String,System.Nullable{System.Boolean})">
+	<summary>
+ Gets a simple list of records
+ </summary>
+	<param name="jobTitle"></param>
+	<param name="archived"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.UserJobTitleManager.Save(DataLibrary.UserJobTitle)">
+	<summary>
+ Inserts or updates the record
+ </summary>
+	<param name="obj"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.UserJobTitleManager.ToggleArchived(System.Int32)">
+	<summary>
+ Archives or unarchives the specified record
+ </summary>
+	<param name="jobTitleId"></param>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.UserJobTitleManager.IsDuplicate(DataLibrary.UserJobTitle)">
+	<summary>
+ Checks to see if the job title is duplicate based on name
+ </summary>
+	<param name="obj"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.UserJobTitleManager.GetIdFilteredList(System.Nullable{System.Int32})">
+	<summary>
+ Gets a list of records filtered by an id (including all unarchived records)
+ </summary>
+	<param name="jobTitleId"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaAuditLogAttributeManager.GetByID(System.Int32)">
+	<summary>
+Gets a Record By Id
+Author: Pash Shrestha
+Create Date: 11/19/2013
+ </summary>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaTypeItemManager.GetById(System.Int32)">
+	<summary>
+ Gets a record by its ID. If no record is found, returns a new, blank record
+ </summary>
+	<param name="itemId"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaTypeItemManager.GetList(BusinessLibrary.MilesMetaType)">
+	<summary>
+ Gets a list of records
+ </summary>
+	<param name="typeId"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaTypeItemManager.Save(DataLibrary.MetaTypeItem)">
+	<summary>
+Insert/Save Record
+Author: Sanjog Sharma
+Create Date: 12/23/2013
+ </summary>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaTypeItemManager.Delete(System.Int32)">
+	<summary>
+ Archives the specified record
+ </summary>
+	<param name="itemid"></param>
+	<remarks></remarks>
+</member><member name="M:BusinessLibrary.MetaCustomSearchFilterTypeManager.GetList">
+	<summary>
+ Gets all the filters types
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:BusinessLibrary.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:BusinessLibrary.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:BusinessLibrary.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+</members>
+</doc>

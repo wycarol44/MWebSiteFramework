@@ -1,0 +1,15 @@
+﻿body {
+    padding-top: 100px;
+}
+
+/*custom navbar*/
+
+
+/*ids*/
+#sub-nav {
+    background-color: #444;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}

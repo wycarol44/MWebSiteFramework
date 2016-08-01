@@ -1,0 +1,12 @@
+﻿.RadTreeList.miles-tree-list td a
+{
+    color: #428bca;
+}
+
+.RadTreeList.miles-tree-list .rtlHeader
+{
+    background-color: #d7e4ee;
+    font-size: 1em;
+    text-transform: none;
+    color: #4e606d;
+}

@@ -1,0 +1,39 @@
+﻿.crop-container
+{
+    overflow: hidden;
+}
+
+.preview-pane
+{
+    /*display: block;
+    position: absolute;*/
+    /*z-index: 2000;*/
+    /*top: 10px;*/
+    /*left: 425px;*/
+    /*right: 0;*/
+    float: right;
+    
+    padding: 6px;
+    border: 1px rgba(0,0,0,.4) solid;
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
+}
+
+.preview-pane .preview-container
+{
+    /*width: 200px;
+    height: 200px;*/
+    overflow: hidden;
+}
+
+.image-pane
+{
+    float: left;
+    /*min-height: 250px;*/
+}
+.image-pane > img
+{
+    /*width: 400px !important;*/
+    /*width: 350px;*/
+}

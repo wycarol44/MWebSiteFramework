@@ -1,0 +1,125 @@
+﻿.RadGrid_Silk.miles-grid
+{
+    border-color: #9ce1ff;
+}
+
+    .RadGrid_Silk.miles-grid .rgCommandRow
+    {
+        height: auto;
+        background-image: none;
+        background-color: #f2f7fa;
+    }
+
+        .RadGrid_Silk.miles-grid .rgCommandRow .rgCommandTable tbody > tr > td
+        {
+            padding: 4px;
+        }
+
+            .RadGrid_Silk.miles-grid .rgCommandRow .rgCommandTable tbody > tr > td input
+            {
+                margin-top: 3px;
+            }
+
+            .RadGrid_Silk.miles-grid .rgCommandRow .rgCommandTable tbody > tr > td a:hover
+            {
+                text-decoration: underline;
+            }
+
+    .RadGrid_Silk.miles-grid .rgHeader,
+    .RadGrid_Silk.miles-grid th.rgResizeCol,
+    .RadGrid_Silk.miles-grid .rgHeaderWrapper,
+    .RadGrid_Silk.miles-grid .rgFilterRow
+    {
+        background-color: #d7e4ee;
+    }
+
+    .RadGrid_Silk.miles-grid .rgHeader
+    {
+        font-size: 1em;
+        text-transform: none;
+        color: #4e606d;
+    }
+
+        .RadGrid_Silk.miles-grid .rgHeader a
+        {
+            font-weight: bold;
+            color: #4e606d;
+        }
+
+    .RadGrid_Silk.miles-grid .rgMasterTable td a
+    {
+        color: #428bca;
+    }
+
+
+
+    .RadGrid_Silk.miles-grid .rgPager
+    {
+        background-color: #f2f7fa;
+    }
+
+    .RadGrid_Silk.miles-grid .rgFilter,
+    .RadGrid_Silk.miles-grid .rgPageFirst,
+    .RadGrid_Silk.miles-grid .rgPagePrev,
+    .RadGrid_Silk.miles-grid .rgPageNext,
+    .RadGrid_Silk.miles-grid .rgPageLast
+    {
+        /*background-image: url('Images/GridPagerSprites.png');*/
+    }
+
+
+    /*RAD GRID PAGER COMBO BOX*/
+
+    .RadGrid_Silk.miles-grid .rgPager .RadComboBox_Silk.form-control
+    {
+        width: auto;
+        height: 27px;
+        background-color: #ffffff;
+        border: none;
+        box-shadow: none;
+    }
+
+
+        .RadGrid_Silk.miles-grid .rgPager .RadComboBox_Silk.form-control .rcbReadOnly .rcbInputCell,
+        .RadGrid_Silk.miles-grid .rgPager .RadComboBox_Silk.form-control .rcbHovered .rcbReadOnly .rcbInputCell,
+        .RadGrid_Silk.miles-grid .rgPager .RadComboBox_Silk.form-control .rcbFocused .rcbReadOnly .rcbInputCell,
+        .RadGrid_Silk.miles-grid .rgPager .RadComboBox_Silk.form-control .rcbReadOnly .rcbArrowCell,
+        .RadGrid_Silk.miles-grid .rgPager .RadComboBox_Silk.form-control .rcbHovered .rcbReadOnly .rcbArrowCell,
+        .RadGrid_Silk.miles-grid .rgPager .RadComboBox_Silk.form-control .rcbFocused .rcbReadOnly .rcbArrowCell,
+        .RadGrid_Silk.miles-grid .rgPager .RadComboBox_Silk.form-control .rcbInputCell,
+        .RadGrid_Silk.miles-grid .rgPager .RadComboBox_Silk.form-control .rcbArrowCell,
+        .RadGrid_Silk.miles-grid .rgPager .RadComboBox_Silk.form-control .rcbHovered .rcbArrowCell,
+        .RadGrid_Silk.miles-grid .rgPager .RadComboBox_Silk.form-control .rcbFocused .rcbArrowCell,
+        .RadGrid_Silk.miles-grid .rgPager .RadComboBox_Silk.form-control .rcbHovered .rcbInputCell,
+        .RadGrid_Silk.miles-grid .rgPager .RadComboBox_Silk.form-control .rcbFocused .rcbInputCell
+        {
+            border: none;
+            background-color: transparent;
+            background-image: none;
+            height: 27px;
+        }
+
+            .RadGrid_Silk.miles-grid .rgPager .RadComboBox_Silk.form-control .rcbReadOnly .rcbInputCell .rcbInput,
+            .RadGrid_Silk.miles-grid .rgPager .RadComboBox_Silk.form-control .rcbHovered .rcbReadOnly .rcbInputCell .rcbInput,
+            .RadGrid_Silk.miles-grid .rgPager .RadComboBox_Silk.form-control .rcbFocused .rcbReadOnly .rcbInputCell .rcbInput,
+            .RadGrid_Silk.miles-grid .rgPager .RadComboBox_Silk.form-control .rcbInputCell .rcbInput
+            {
+                line-height: 1;
+                padding-left: 5px;
+            }
+
+
+
+
+.RadGrid_Silk.miles-grid .rgMasterTable,
+ .RadGrid_Silk.miles-grid .rgDetailTable,
+ .RadGrid_Silk.miles-grid .rgGroupPanel table,
+ .RadGrid_Silk.miles-grid .rgCommandRow table,
+ .RadGrid_Silk.miles-grid .rgEditForm table,
+ .RadGrid_Silk.miles-grid .rgPager table
+{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size:14px;
+    color:#555555;
+}
+  

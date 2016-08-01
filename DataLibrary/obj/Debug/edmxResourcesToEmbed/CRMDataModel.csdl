@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CRMModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="CRMEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="CustomerContacts" EntityType="CRMModel.CustomerContact" />
+    <EntitySet Name="Customers" EntityType="CRMModel.Customer" />
+    <AssociationSet Name="FK_CustomerContacts_Customers" Association="CRMModel.FK_CustomerContacts_Customers">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="CustomerContacts" EntitySet="CustomerContacts" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="CustomerContact">
+    <Key>
+      <PropertyRef Name="ContactID" />
+    </Key>
+    <Property Name="ContactID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerID" Type="Int32" />
+    <Property Name="Firstname" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Lastname" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Title" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="AddressID" Type="Int32" />
+    <Property Name="Email" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="WorkPhone" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="WorkPhoneExt" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MobilePhone" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="HomePhone" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Notes" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="NotesText" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="PictureID" Type="Int32" />
+    <Property Name="StatusID" Type="Int32" />
+    <Property Name="Archived" Type="Boolean" Nullable="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="DateModified" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <NavigationProperty Name="Customer" Relationship="CRMModel.FK_CustomerContacts_Customers" FromRole="CustomerContacts" ToRole="Customers" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerName" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="Notes" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="NotesText" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="AddressID" Type="Int32" />
+    <Property Name="Phone" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Fax" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Website" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="StatusID" Type="Int32" />
+    <Property Name="Archived" Type="Boolean" Nullable="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="DateModified" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <NavigationProperty Name="CustomerContacts" Relationship="CRMModel.FK_CustomerContacts_Customers" FromRole="Customers" ToRole="CustomerContacts" />
+  </EntityType>
+  <Association Name="FK_CustomerContacts_Customers">
+    <End Role="Customers" Type="CRMModel.Customer" Multiplicity="0..1" />
+    <End Role="CustomerContacts" Type="CRMModel.CustomerContact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="CustomerContacts">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

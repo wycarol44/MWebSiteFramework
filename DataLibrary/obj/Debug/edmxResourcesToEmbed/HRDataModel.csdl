@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HRModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="HREntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="UserFavorites" EntityType="HRModel.UserFavorite" />
+    <EntitySet Name="UserJobTitles" EntityType="HRModel.UserJobTitle" />
+    <EntitySet Name="UserLoginLogs" EntityType="HRModel.UserLoginLog" />
+    <EntitySet Name="UserRoles" EntityType="HRModel.UserRole" />
+    <EntitySet Name="Users" EntityType="HRModel.User" />
+    <EntitySet Name="UserSearchFilters" EntityType="HRModel.UserSearchFilter" />
+    <AssociationSet Name="FK_Favorites_Users" Association="HRModel.FK_Favorites_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UserFavorites" EntitySet="UserFavorites" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_JobTitles" Association="HRModel.FK_Users_JobTitles">
+      <End Role="UserJobTitles" EntitySet="UserJobTitles" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserLoginLog_Users" Association="HRModel.FK_UserLoginLog_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UserLoginLog" EntitySet="UserLoginLogs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserSearchFilters_Users" Association="HRModel.FK_UserSearchFilters_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UserSearchFilters" EntitySet="UserSearchFilters" />
+    </AssociationSet>
+    <AssociationSet Name="UserRoleAssociations" Association="HRModel.UserRoleAssociations">
+      <End Role="UserRoles" EntitySet="UserRoles" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="UserFavorite">
+    <Key>
+      <PropertyRef Name="FavoriteID" />
+    </Key>
+    <Property Name="FavoriteID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="FormID" Type="Int32" />
+    <Property Name="DisplayName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="IconColor" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ShowInFavoritesMenu" Type="Boolean" />
+    <Property Name="SortOrder" Type="Int32" />
+    <Property Name="Archived" Type="Boolean" Nullable="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="DateModified" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <NavigationProperty Name="User" Relationship="HRModel.FK_Favorites_Users" FromRole="UserFavorites" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="UserJobTitle">
+    <Key>
+      <PropertyRef Name="JobTitleID" />
+    </Key>
+    <Property Name="JobTitleID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="JobTitle" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="JobDescription" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Archived" Type="Boolean" Nullable="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="DateModified" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <NavigationProperty Name="Users" Relationship="HRModel.FK_Users_JobTitles" FromRole="UserJobTitles" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="UserLoginLog">
+    <Key>
+      <PropertyRef Name="LogID" />
+    </Key>
+    <Property Name="LogID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="User" Relationship="HRModel.FK_UserLoginLog_Users" FromRole="UserLoginLog" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="UserRole">
+    <Key>
+      <PropertyRef Name="UserRoleID" />
+    </Key>
+    <Property Name="UserRoleID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="UserRole1" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="UserRoleDesc" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Archived" Type="Boolean" Nullable="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="DateModified" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <NavigationProperty Name="Users" Relationship="HRModel.UserRoleAssociations" FromRole="UserRoles" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Firstname" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Lastname" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Username" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="PasswordSaltedHash" Type="Binary" MaxLength="16" FixedLength="true" />
+    <Property Name="JobTitleID" Type="Int32" />
+    <Property Name="AddressID" Type="Int32" />
+    <Property Name="Email" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="WorkPhone" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="WorkPhoneExt" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MobilePhone" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="HomePhone" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="PictureID" Type="Int32" />
+    <Property Name="Notes" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="NotesText" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="StatusID" Type="Int32" />
+    <Property Name="Archived" Type="Boolean" Nullable="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="DateModified" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <NavigationProperty Name="UserFavorites" Relationship="HRModel.FK_Favorites_Users" FromRole="Users" ToRole="UserFavorites" />
+    <NavigationProperty Name="UserJobTitle" Relationship="HRModel.FK_Users_JobTitles" FromRole="Users" ToRole="UserJobTitles" />
+    <NavigationProperty Name="UserLoginLogs" Relationship="HRModel.FK_UserLoginLog_Users" FromRole="Users" ToRole="UserLoginLog" />
+    <NavigationProperty Name="UserSearchFilters" Relationship="HRModel.FK_UserSearchFilters_Users" FromRole="Users" ToRole="UserSearchFilters" />
+    <NavigationProperty Name="UserRoles" Relationship="HRModel.UserRoleAssociations" FromRole="Users" ToRole="UserRoles" />
+  </EntityType>
+  <EntityType Name="UserSearchFilter">
+    <Key>
+      <PropertyRef Name="FilterID" />
+    </Key>
+    <Property Name="FilterID" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="FormID" Type="Int32" />
+    <Property Name="SearchName" Type="String" MaxLength="300" Unicode="false" FixedLength="false" />
+    <Property Name="SearchType" Type="String" MaxLength="300" Unicode="false" FixedLength="false" />
+    <Property Name="SearchValue" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="User" Relationship="HRModel.FK_UserSearchFilters_Users" FromRole="UserSearchFilters" ToRole="Users" />
+  </EntityType>
+  <Association Name="FK_Favorites_Users">
+    <End Role="Users" Type="HRModel.User" Multiplicity="0..1" />
+    <End Role="UserFavorites" Type="HRModel.UserFavorite" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="UserFavorites">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_JobTitles">
+    <End Role="UserJobTitles" Type="HRModel.UserJobTitle" Multiplicity="0..1" />
+    <End Role="Users" Type="HRModel.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserJobTitles">
+        <PropertyRef Name="JobTitleID" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="JobTitleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserLoginLog_Users">
+    <End Role="Users" Type="HRModel.User" Multiplicity="0..1" />
+    <End Role="UserLoginLog" Type="HRModel.UserLoginLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="UserLoginLog">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserSearchFilters_Users">
+    <End Role="Users" Type="HRModel.User" Multiplicity="0..1" />
+    <End Role="UserSearchFilters" Type="HRModel.UserSearchFilter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="UserSearchFilters">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserRoleAssociations">
+    <End Role="UserRoles" Type="HRModel.UserRole" Multiplicity="*" />
+    <End Role="Users" Type="HRModel.User" Multiplicity="*" />
+  </Association>
+</Schema>

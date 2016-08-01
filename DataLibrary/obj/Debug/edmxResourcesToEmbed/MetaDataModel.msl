@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MetaModelStoreContainer" CdmEntityContainer="MetaEntities">
+    <EntitySetMapping Name="MetaForms">
+      <EntityTypeMapping TypeName="MetaModel.MetaForm">
+        <MappingFragment StoreEntitySet="MetaForms">
+          <ScalarProperty Name="FormID" ColumnName="FormID" />
+          <ScalarProperty Name="FormName" ColumnName="FormName" />
+          <ScalarProperty Name="FormPath" ColumnName="FormPath" />
+          <ScalarProperty Name="ModuleID" ColumnName="ModuleID" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MetaFunctions">
+      <EntityTypeMapping TypeName="MetaModel.MetaFunction">
+        <MappingFragment StoreEntitySet="MetaFunctions">
+          <ScalarProperty Name="FunctionID" ColumnName="FunctionID" />
+          <ScalarProperty Name="FunctionName" ColumnName="FunctionName" />
+          <ScalarProperty Name="ModuleID" ColumnName="ModuleID" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MetaModules">
+      <EntityTypeMapping TypeName="MetaModel.MetaModule">
+        <MappingFragment StoreEntitySet="MetaModules">
+          <ScalarProperty Name="ModuleID" ColumnName="ModuleID" />
+          <ScalarProperty Name="ModuleName" ColumnName="ModuleName" />
+          <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MetaObjects">
+      <EntityTypeMapping TypeName="MetaModel.MetaObject">
+        <MappingFragment StoreEntitySet="MetaObjects">
+          <ScalarProperty Name="ObjectID" ColumnName="ObjectID" />
+          <ScalarProperty Name="ObjectName" ColumnName="ObjectName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MetaTypeItems">
+      <EntityTypeMapping TypeName="MetaModel.MetaTypeItem">
+        <MappingFragment StoreEntitySet="MetaTypeItems">
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+          <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+          <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MetaTypes">
+      <EntityTypeMapping TypeName="MetaModel.MetaType">
+        <MappingFragment StoreEntitySet="MetaTypes">
+          <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="MetaFunctionForms" TypeName="MetaModel.MetaFunctionForms" StoreEntitySet="MetaFunctionForms">
+      <EndProperty Name="MetaForms">
+        <ScalarProperty Name="FormID" ColumnName="FormID" />
+      </EndProperty>
+      <EndProperty Name="MetaFunctions">
+        <ScalarProperty Name="FunctionID" ColumnName="FunctionID" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

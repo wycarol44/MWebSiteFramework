@@ -1,0 +1,138 @@
+﻿<%@ Master Language="VB" CodeFile="Global.master.vb" Inherits="Master_Global" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+      <asp:PlaceHolder ID="PlaceHolder2" runat="server">    
+             <%: System.Web.Optimization.Styles.Render("~/styles/css/css") %>
+             <%: System.Web.Optimization.Scripts.Render("~/Scripts/Global/js") %>
+      </asp:PlaceHolder>
+
+  <%--  <script src="/Scripts/Global/jquery-1.10.2.min.js"></script>
+    <script src="/Scripts/Global/jquery.easing.1.3.js"></script>
+    <script src="/Scripts/Global/jquery.jgrowl.min.js"></script>
+    <script src="/Scripts/Global/jquery.Jcrop.min.js"></script>
+    <script src="/Scripts/Global/highlighter.js"></script>
+    <script src="/Scripts/Global/bootstrap.min.js"></script>
+    <script src="/Scripts/Global/enquire.min.js"></script>
+    <script src="/Scripts/Global/spin.min.js"></script>
+    <script src="/Scripts/Global/global.js"></script>--%>
+
+   
+    <asp:ContentPlaceHolder ID="globalhead" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+
+    <%--<div id="java-script-msg" class="panel panel-danger">
+        <div class="panel-heading">Error</div>
+        <div class="panel-body">
+            <p>This site requires JavaScript, but your browser either does not support JavaScript, or it is turned off. Please use a JavaScript enabled browser.</p>
+        </div>
+    </div>--%>
+
+    <form id="form1" runat="server">
+       <asp:ScriptManager ID="ScriptMan" runat="server" EnableHistory="true" EnableSecureHistoryState="false" />
+<%--       <telerik:RadStyleSheetManager ID="StyleSheetManager" runat="server"></telerik:RadStyleSheetManager>--%>
+        <asp:ContentPlaceHolder ID="globalContent" runat="server">
+        </asp:ContentPlaceHolder>
+
+        <asp:ValidationSummary ID="summary1" runat="server" ShowMessageBox="false" DisplayMode="BulletList"
+            HeaderText="" />
+
+
+        <telerik:RadWindowManager ID="rdWindowManager" runat="server" RenderMode="Lightweight" ReloadOnShow="true" ShowContentDuringLoad="false">
+            <Windows>
+                <telerik:RadWindow ID="rdWindow" runat="server" Behaviors="Move,Close" VisibleStatusbar="false"
+                    EnableShadow="true" RenderMode="Lightweight" KeepInScreenBounds="true" />
+            </Windows>
+        </telerik:RadWindowManager>
+
+
+    </form>
+
+
+    
+
+    <script>
+
+        //open a radwindow using the window manager on the master page.
+        function openWindow(url, title, size, callback, modal, w, h) {
+            //if (mobileMode == false) {
+                if (typeof modal === 'undefined') modal = true;
+
+                //get window manager
+                var wndMan = $find("<%=rdWindowManager.ClientID%>");
+                //this window is defined in global.master
+                var wnd = wndMan.getWindowByName("rdWindow");
+
+                //Success. Setting a size and a Url to the window using its client API before showing    
+                if (wnd == null) {
+                    //if the window is not created yet, open it
+                    wnd = radopen(url, null);
+                }
+                else {
+                    wnd.setUrl(url);
+                }
+
+
+                //get window size
+                switch (size) {
+                    case WINDOW_SMALL:
+                        w = MIN_WINDOW_WIDTH;
+                        h = MIN_WINDOW_HEIGHT;
+                        break;
+                    case WINDOW_MEDIUM:
+                        w = MED_WINDOW_WIDTH;
+                        h = MED_WINDOW_HEIGHT;
+                        break;
+                    case WINDOW_LARGE:
+                        w = MAX_WINDOW_WIDTH;
+                        h = MAX_WINDOW_HEIGHT;
+                        break;
+                }
+
+
+                //set properties
+                wnd.setSize(w, h);
+                wnd.set_title(title);
+                wnd.set_modal(modal);
+                wnd.add_close(windowClosed);
+
+                //custom property
+                wnd.closeCallback = callback;
+
+                //open the window
+                wnd.show();
+
+                return wnd;
+            //}
+            //else {
+            //    var arr = url.split("?");
+            //    if (arr.length > 1) {
+            //        url += "&Fullmode=1"
+            //    }
+            //    else {
+            //        url += "?Fullmode=1"
+            //    }
+            //    window.location.href = url;
+            //}
+        };
+
+        //required to make the default fire when focus is in a password field
+        //telerik 2013 Q3 bug. Will remove when bug is fixed.
+        if (typeof Telerik != 'undefined' && typeof Telerik.Web.UI.RadButton != 'undefined') {
+            Telerik.Web.UI.RadButton.prototype._isInputTypeText = function (element) {
+                var nodeName = element.nodeName,
+                  type = element.type;
+                if (nodeName != "INPUT" || !type) return false;
+                return type == "text" || type == "password" || type == "email" || type == "number" || type == "url" || type == "search" || type == "tel";
+            }
+        }
+    </script>
+
+</body>
+</html>

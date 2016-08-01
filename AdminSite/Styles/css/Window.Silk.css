@@ -1,0 +1,123 @@
+﻿.RadWindow
+{
+    z-index: 1000000000 !important;
+    padding: 0 0 !important;
+}
+
+    .RadWindow.miles-window
+    {
+        border: none;
+        padding: 0px;
+    }
+
+.RadWindow_Silk.miles-window span.rwIcon
+{
+    background-image: url('../../Images/16x16/window_text.png');
+    background-position: 0;
+    top: 8px;
+}
+
+.RadWindow_Silk.miles-window .rwTable .rwTitlebarControls .rwIcon
+{
+    background-image: url('../../Images/16x16/window_text.png');
+}
+
+.RadWindow_Silk.miles-window .rwCommands
+{
+    top: 1px;
+}
+
+.RadWindow_Silk.RadWindow.miles-window.rwRoundedCorner,
+.RadWindow_Silk.RadWindow.miles-window.rwRoundedCorner .rwTitleBar,
+.RadWindow_Silk.RadWindow.miles-window.rwTransparentWindow,
+.RadWindow_Silk.RadWindow.miles-window .rwTitleRow .rwTopRight,
+.RadWindow_Silk.RadWindow.miles-window .rwTitleRow .rwTopLeft
+{
+    border-radius: 0;
+}
+
+
+
+.RadWindow_Silk.miles-window.rwShadow,
+.RadWindow_Silk.miles-window
+{
+    box-shadow: 0 0 30px #222;
+}
+
+    .RadWindow_Silk.miles-window .rwTitleBar,
+    .RadWindow_Silk.miles-window .rwTitleRow .rwTopLeft,
+    .RadWindow_Silk.miles-window .rwTitleRow .rwTitlebar,
+    .RadWindow_Silk.miles-window .rwTitleRow .rwTopRight
+    {
+        background-image: none;
+        background-color: #333;
+        height: 32px;
+        margin: 0;
+    }
+
+        .RadWindow_Silk.miles-window .rwTitleBar .rwTitle,
+        .RadWindow_Silk.miles-window .rwTable .rwTitlebarControls em
+        {
+            color: #fff;
+        }
+
+    .RadWindow_Silk.miles-window .rwTable .rwTitlebarControls em
+    {
+        margin-left: 5px;
+    }
+
+.RadWindow_Silk.miles-window.reToolbarWindow .rwTitleRow .rwTopLeft,
+.RadWindow_Silk.miles-window.reToolbarWindow .rwTitleRow .rwTitlebar,
+.RadWindow_Silk.miles-window.reToolbarWindow .rwTitleRow .rwTopRight 
+{
+    
+    height: 5px;
+}
+
+@media screen and (max-width:768px) and (orientation:portrait)
+{
+    .RadWindow_Silk.miles-window
+    {
+        width: 100% !important;
+        height: 100% !important;
+        left: 0 !important;
+        top: 0 !important;
+    }
+
+        .RadWindow_Silk.miles-window .rwContent.rwExternalContent
+        {
+            height: 100% !important;
+        }
+
+    .TelerikModalOverlay
+    {
+        width: 100% !important;
+    }
+
+    .RadWindow_Silk.miles-window .rwTitleBar
+    {
+        display: none;
+    }
+}
+
+@media screen and (max-width:768px) 
+{
+    .RadWindow_Silk.miles-window
+    {
+        position: fixed !important;
+        width: 100% !important;
+        height: 100% !important;
+        left: 0 !important;
+        top: 0 !important;
+    }
+
+        .RadWindow_Silk.miles-window .rwContent.rwExternalContent
+        {
+            height: 100% !important;
+        }
+
+    .RadWindow_Silk.miles-window .rwTitleBar
+    {
+        display: none;
+    }
+}

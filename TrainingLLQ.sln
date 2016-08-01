@@ -1,0 +1,152 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "BusinessLibrary", "BusinessLibrary\BusinessLibrary.vbproj", "{6909F6BE-3402-496E-A131-08B8B58431C6}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "AdminSite", "AdminSite", "{E8F42563-7026-4CB0-97CF-22BEFF4B36EB}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = "SAK"
+		SccAuxPath = "SAK"
+		SccLocalPath = "SAK"
+		SccProvider = "SAK"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		ProjectReferences = "{6909f6be-3402-496e-a131-08b8b58431c6}|BusinessLibrary.dll;{39731b4f-0ca8-454f-a144-2c582bdc9655}|CommonLibrary.dll;{1a6b90c2-3816-4d82-89c8-81dc41123575}|MilesControls.dll;{e9adf1cb-6481-43ee-844d-9f2c8aca9aec}|WebControls.dll;{009cdbf3-1a3a-4716-8047-acca22c1807e}|DataLibrary.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/AdminSite"
+		Debug.AspNetCompiler.PhysicalPath = "AdminSite\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\AdminSite\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/AdminSite"
+		Release.AspNetCompiler.PhysicalPath = "AdminSite\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\AdminSite\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "55005"
+		SlnRelativePath = "AdminSite\"
+	EndProjectSection
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "WebControls", "WebControls\WebControls.vbproj", "{E9ADF1CB-6481-43EE-844D-9F2C8ACA9AEC}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "MilesControls", "MilesControls\MilesControls.vbproj", "{1A6B90C2-3816-4D82-89C8-81DC41123575}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5BC44512-B10F-4F4B-9837-794B833AEF36}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{4E48A0E8-629C-4BD8-8350-182CC37CCE53}"
+	ProjectSection(SolutionItems) = preProject
+		lib\Telerik.Reporting.dll = lib\Telerik.Reporting.dll
+		lib\Telerik.ReportViewer.WebForms.dll = lib\Telerik.ReportViewer.WebForms.dll
+		lib\Telerik.Web.Design.dll = lib\Telerik.Web.Design.dll
+		lib\Telerik.Web.UI.dll = lib\Telerik.Web.UI.dll
+		lib\Telerik.Web.UI.Skins.dll = lib\Telerik.Web.UI.Skins.dll
+		lib\Telerik.Web.UI.xml = lib\Telerik.Web.UI.xml
+	EndProjectSection
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CommonLibrary", "CommonLibrary\CommonLibrary.vbproj", "{39731B4F-0CA8-454F-A144-2C582BDC9655}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{4A6370B7-415B-4E01-99D1-1BAF0FD264B8}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DataLibrary", "DataLibrary\DataLibrary.vbproj", "{009CDBF3-1A3A-4716-8047-ACCA22C1807E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "packages", "packages", "{44C2CE37-88A1-4AC8-B0EE-E20FEBA78276}"
+	ProjectSection(SolutionItems) = preProject
+		packages\repositories.config = packages\repositories.config
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "PublicSite", "http://localhost:58175", "{5AC318C0-AAD1-47E5-83E5-E583A21AD812}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = "SAK"
+		SccAuxPath = "SAK"
+		SccLocalPath = "SAK"
+		SccProvider = "SAK"
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		ProjectReferences = "{e9adf1cb-6481-43ee-844d-9f2c8aca9aec}|WebControls.dll;{6909F6BE-3402-496E-A131-08B8B58431C6}|BusinessLibrary.dll;{39731B4F-0CA8-454F-A144-2C582BDC9655}|CommonLibrary.dll;{009CDBF3-1A3A-4716-8047-ACCA22C1807E}|DataLibrary.dll;{1A6B90C2-3816-4D82-89C8-81DC41123575}|MilesControls.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_58175"
+		Debug.AspNetCompiler.PhysicalPath = "PublicSite\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_58175\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_58175"
+		Release.AspNetCompiler.PhysicalPath = "PublicSite\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_58175\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "PublicSite\"
+	EndProjectSection
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Test", "Test\Test.vbproj", "{0266E8BE-CD86-4572-9E82-ACBCFFF7C504}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoCoding", "GeoCoding\GeoCoding.csproj", "{5D5F862D-4408-4734-B722-0C1778A90CE1}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "MapQuest", "MapQuest\MapQuest.vbproj", "{D647F768-1062-42FD-827E-116A5E54EC59}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6909F6BE-3402-496E-A131-08B8B58431C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6909F6BE-3402-496E-A131-08B8B58431C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6909F6BE-3402-496E-A131-08B8B58431C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6909F6BE-3402-496E-A131-08B8B58431C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8F42563-7026-4CB0-97CF-22BEFF4B36EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8F42563-7026-4CB0-97CF-22BEFF4B36EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8F42563-7026-4CB0-97CF-22BEFF4B36EB}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8F42563-7026-4CB0-97CF-22BEFF4B36EB}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{E9ADF1CB-6481-43EE-844D-9F2C8ACA9AEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9ADF1CB-6481-43EE-844D-9F2C8ACA9AEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9ADF1CB-6481-43EE-844D-9F2C8ACA9AEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9ADF1CB-6481-43EE-844D-9F2C8ACA9AEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A6B90C2-3816-4D82-89C8-81DC41123575}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A6B90C2-3816-4D82-89C8-81DC41123575}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A6B90C2-3816-4D82-89C8-81DC41123575}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A6B90C2-3816-4D82-89C8-81DC41123575}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39731B4F-0CA8-454F-A144-2C582BDC9655}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39731B4F-0CA8-454F-A144-2C582BDC9655}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39731B4F-0CA8-454F-A144-2C582BDC9655}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39731B4F-0CA8-454F-A144-2C582BDC9655}.Release|Any CPU.Build.0 = Release|Any CPU
+		{009CDBF3-1A3A-4716-8047-ACCA22C1807E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{009CDBF3-1A3A-4716-8047-ACCA22C1807E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{009CDBF3-1A3A-4716-8047-ACCA22C1807E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{009CDBF3-1A3A-4716-8047-ACCA22C1807E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AC318C0-AAD1-47E5-83E5-E583A21AD812}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AC318C0-AAD1-47E5-83E5-E583A21AD812}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AC318C0-AAD1-47E5-83E5-E583A21AD812}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AC318C0-AAD1-47E5-83E5-E583A21AD812}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{0266E8BE-CD86-4572-9E82-ACBCFFF7C504}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0266E8BE-CD86-4572-9E82-ACBCFFF7C504}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0266E8BE-CD86-4572-9E82-ACBCFFF7C504}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0266E8BE-CD86-4572-9E82-ACBCFFF7C504}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D5F862D-4408-4734-B722-0C1778A90CE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D5F862D-4408-4734-B722-0C1778A90CE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D5F862D-4408-4734-B722-0C1778A90CE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D5F862D-4408-4734-B722-0C1778A90CE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D647F768-1062-42FD-827E-116A5E54EC59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D647F768-1062-42FD-827E-116A5E54EC59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D647F768-1062-42FD-827E-116A5E54EC59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D647F768-1062-42FD-827E-116A5E54EC59}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4E48A0E8-629C-4BD8-8350-182CC37CCE53} = {5BC44512-B10F-4F4B-9837-794B833AEF36}
+		{44C2CE37-88A1-4AC8-B0EE-E20FEBA78276} = {5BC44512-B10F-4F4B-9837-794B833AEF36}
+	EndGlobalSection
+EndGlobal

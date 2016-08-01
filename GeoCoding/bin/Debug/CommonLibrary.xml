@@ -1,0 +1,388 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+CommonLibrary
+</name>
+</assembly>
+<members>
+<member name="P:CommonLibrary.TempFileInfo.OriginalFileName">
+	<summary>
+ Gets the name of the file and extension (without the path)
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:CommonLibrary.TempFileInfo.FileName">
+	<summary>
+ Gets the name of the file and extension (without the path)
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:CommonLibrary.TempFileInfo.PathName">
+	<summary>
+ Gets the path without the filename
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:CommonLibrary.TempFileInfo.FilePath">
+	<summary>
+ Gets the full path and filename
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonLibrary.Extensions.ToInteger(System.String)">
+	<summary>
+ Converts a string to an integer, no matter what the string contains
+ </summary>
+	<param name="s"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonLibrary.Extensions.ToDecimal(System.String)">
+	<summary>
+ Converts a string to a decimal, no matter what the string contains
+ </summary>
+	<param name="s"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonLibrary.Extensions.StartOfWeek(System.DateTime,System.DayOfWeek)">
+	<summary>
+ Extension Method for DateTime.Now 
+ This will return the date of the supplied day based on the current date
+ Usage: Date/DateTime .Now.StartOfWeek(DayOfWeek Enum)
+ Return Value: Date of particular day within the current date's timeframe'
+ </summary>
+	<param name="currentDate"></param>
+	<param name="defineStartOfWeek"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonLibrary.Extensions.ToFormattedShortDateString(System.DateTime)">
+	<summary>
+ Converts a datetime object to a string. If date is null, returns an empty string
+ </summary>
+	<param name="d"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonLibrary.Extensions.ToXMLIdentifiers(System.Int32)">
+	<summary>
+ Converts an Integer to an Identifiers xml
+ </summary>
+	<param name="source"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonLibrary.Extensions.ToXMLIdentifiers(System.Collections.IEnumerable)">
+	<summary>
+ Converts an IEnumerable to an Identifiers xml
+ </summary>
+	<param name="source"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonLibrary.Extensions.ToXMLIdentifiers``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Object})">
+	<summary>
+ Converts an IEnumerable to an Identifiers xml
+ </summary>
+	<param name="source"></param>
+	<param name="selector"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonLibrary.Extensions.ToXMLIdentifiers``1(System.Collections.IEnumerable,System.Func{``0,System.Object})">
+	<summary>
+ Converts an IEnumerable to an Identifiers xml
+ </summary>
+	<param name="source"></param>
+	<param name="selector"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonLibrary.Extensions.ToXMLKeyPairs``1(System.Collections.Generic.IEnumerable{``0})">
+	<summary>
+ Converts an IEnumerable to a KeyPairs xml
+ </summary>
+	<param name="source"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonLibrary.Extensions.FindControls``1(System.Web.UI.Control,System.String)">
+	<summary>
+ Recursively looks for controls in a collection of a specific type
+ </summary>
+	<typeparam name="T"></typeparam>
+	<param name="c"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:CommonLibrary.AppSettings.RememberMeEnabled">
+	<summary>
+ Gets whether the remember me functionality is enabled
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:CommonLibrary.AppSettings.UsernameValidationExpression">
+	<summary>
+ Gets the validation expression for username fields
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:CommonLibrary.AppSettings.UsernameValidationErrorMessage">
+	<summary>
+ Gets the validation error message for username fields
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:CommonLibrary.AppSettings.PasswordValidationExpression">
+	<summary>
+ Gets the validation expression for password fields
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:CommonLibrary.AppSettings.PasswordValidationMessage">
+	<summary>
+ Gets the validation error message for password fields
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:CommonLibrary.AppSettings.URLValidationExpression">
+	<summary>
+ Gets the validation expression for URL fields
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:CommonLibrary.AppSettings.URLValidationMessage">
+	<summary>
+ Gets the validation error message for URL fields
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:CommonLibrary.AppSettings.DocumentsPath">
+	<summary>
+ Gets the virtual path of the documents folder
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:CommonLibrary.AppSettings.DocumentsFolder">
+	<summary>
+ Gets the physical path of the documents folder
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:CommonLibrary.AppSettings.TempDocumentPath">
+	<summary>
+ Gets the virtual path of the temp documents folder. Only store files in here that are safe to delete
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:CommonLibrary.AppSettings.TempDocumentFolder">
+	<summary>
+ Gets the physical path of the temp documents folder. Only store files in here that are safe to delete
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:CommonLibrary.AppSettings.PicturesPath">
+	<summary>
+ Gets the virtual path of the pictures folder. Only store files in here that are safe to delete
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:CommonLibrary.AppSettings.PicturesFolder">
+	<summary>
+ Gets the physical path of the pictures folder. Only store files in here that are safe to delete
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:CommonLibrary.JGrowl.DelayedMessages">
+	<summary>
+ Gets a list of delayed messages to show on the next postback
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonLibrary.JGrowl.ShowMessage(CommonLibrary.JGrowlMessage)">
+	<summary>
+ Shows a notification to the user
+ </summary>
+	<param name="msg"></param>
+	<remarks></remarks>
+</member><member name="M:CommonLibrary.JGrowl.DispatchMessages">
+	<summary>
+ Dispatches delayed messages
+ </summary>
+	<remarks></remarks>
+</member><member name="M:CommonLibrary.JGrowl.ShowMessage(CommonLibrary.JGrowlMessageType,System.String,System.Boolean,System.String,System.String,System.String,System.Int32,System.Boolean,System.Boolean)">
+	<summary>
+ Immediately shows a notification to the user
+ </summary>
+	<param name="type"></param>
+	<param name="message"></param>
+	<param name="header"></param>
+	<param name="theme"></param>
+	<remarks></remarks>
+</member><member name="M:CommonLibrary.CachingFunctions.IsInCache(System.String)">
+	<summary>
+ Determines if an item is in the cache
+ </summary>
+	<param name="Key"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonLibrary.CachingFunctions.LoadFromCache(System.String)">
+	<summary>
+ Gets an item from the cache
+ </summary>
+	<param name="Key"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonLibrary.CachingFunctions.AddToCache(System.String,System.Object,System.Int32)">
+	<summary>
+ Adds an item to the cache
+ </summary>
+	<param name="Key"></param>
+	<param name="Value"></param>
+	<param name="expiresIn">Time (in minutes) when the cache should expire</param>
+	<remarks></remarks>
+</member><member name="M:CommonLibrary.CachingFunctions.RemoveFromCache(System.String)">
+	<summary>
+ Removes an item from the cache
+ </summary>
+	<param name="Key"></param>
+	<remarks></remarks>
+</member><member name="P:CommonLibrary.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:CommonLibrary.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:CommonLibrary.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="M:CommonLibrary.Functions.ResizeImage(System.IO.Stream,System.Int32,System.Int32)">
+	<summary>
+ Resizes an image
+ </summary>
+	<param name="imageStream"></param>
+	<param name="maxWidth"></param>
+	<param name="maxHeight"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonLibrary.Functions.ToNull(System.Object)">
+	<summary>
+ Checks if object is empty and return nothing or the object
+ </summary>
+	<param name="s"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonLibrary.Functions.ToNullableInteger(System.String)">
+	<summary>
+ Converts a string to an integer?, no matter what the string contains
+ </summary>
+	<param name="s"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonLibrary.Functions.PositiveOrNull(System.Int32)">
+	<summary>
+ Converts a negative or zero value to null
+ </summary>
+	<param name="value"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonLibrary.Functions.ToNegBool(System.Boolean)">
+	<summary>
+ Converts a true value to Nothing, indicating all inclusive. A false value will return false
+ </summary>
+	<param name="value"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonLibrary.Functions.ToPosBool(System.Boolean)">
+	<summary>
+ Converts a false value to nothing, indicating all inclusive. A true value will return true
+ </summary>
+	<param name="value"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonLibrary.Functions.HexToByteArray(System.String)">
+	<summary>
+ Converts a hex string to an array of bytes
+ </summary>
+	<param name="hex"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonLibrary.Functions.DecodeJS(System.Xml.Linq.XElement)">
+	<summary>
+ HTML decodes a javascript xml literal
+ </summary>
+	<param name="js"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonLibrary.Functions.FormatPhoneLink(System.String)">
+	<summary>
+ format the navigate url of the phone to have a tel link
+ </summary>
+	<param name="phone"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonLibrary.Functions.FormatPhone(CommonLibrary.Functions.PhoneNumberType,System.String,System.String)">
+	<summary>
+ Formats a phone number
+ </summary>
+	<param name="phone"></param>
+	<param name="ext"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonLibrary.Functions.SendEmail(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Collections.ArrayList)">
+	<summary>
+ Sends an email
+ </summary>
+	<param name="emailFrom"></param>
+	<param name="emailTo"></param>
+	<param name="emailSubject"></param>
+	<param name="emailBody"></param>
+	<param name="emailCC"></param>
+	<param name="emailBCC"></param>
+	<param name="emailFromName"></param>
+	<param name="isHtml"></param>
+	<param name="attachments"></param>
+	<remarks></remarks>
+</member><member name="M:CommonLibrary.Functions.ExportToExcel``1(System.Collections.Generic.List{``0},System.String[],System.String[],System.String)">
+	<summary>
+ Exports a list of objects to excel
+ </summary>
+	<typeparam name="T"></typeparam>
+	<param name="objList"></param>
+	<param name="colsToInclude"></param>
+	<param name="colHeaderNames"></param>
+	<param name="filename"></param>
+	<remarks></remarks>
+</member><member name="M:CommonLibrary.Encryption.Encrypt(System.String,System.String)">
+	<summary>
+ Encrypts the data using AES with a password
+ </summary>
+	<param name="data"></param>
+	<param name="password"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CommonLibrary.Encryption.Decrypt(System.String,System.String)">
+	<summary>
+ Decrypts data
+ </summary>
+	<param name="cypherData"></param>
+	<param name="password"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member>
+</members>
+</doc>

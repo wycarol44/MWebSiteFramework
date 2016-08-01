@@ -1,0 +1,410 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+MilesControls
+</name>
+</assembly>
+<members>
+<member name="P:MilesControls.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:MilesControls.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:MilesControls.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="P:MilesControls.MilesNoteInGrid.MaxSize">
+	<summary>
+ Lenght of the Note need to be displayed on grid
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:MilesControls.MilesNoteInGrid">
+	<summary>
+ Author: Pashupati Shrestha
+ </summary>
+	<remarks></remarks>
+</member><member name="M:MilesControls.ControlBinding.BindListControl(System.Web.UI.WebControls.ListControl,System.Object,System.String,System.String,System.Boolean,System.String,System.String)">
+	<summary>
+ Binds a list control to a data source and optionally adds a default item
+ </summary>
+	<param name="list"></param>
+	<param name="source"></param>
+	<param name="dataTextField"></param>
+	<param name="dataValueField"></param>
+	<param name="defaultItem"></param>
+	<param name="defaultText"></param>
+	<param name="defaultValue"></param>
+	<remarks></remarks>
+</member><member name="M:MilesControls.CardListHyperLinkProperty.GetUrlFieldData">
+	<summary>
+ Gets a list of objects from the url data fields
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:MilesControls.MilesButton.RelatedButtons">
+	<summary>
+ Gets or sets buttons of similar action. All buttons will be disabled when this button is clicked
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:MilesControls.MilesButton.ActionType">
+	<summary>
+ Gets or sets the action type of the button. Skin will be automatically set if EnableAutoSkins is true
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:MilesControls.MilesButton.AutoDisableSameButtonType">
+	<summary>
+ Gets or sets whether other buttons of the same action are disabled
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:MilesControls.MilesTabStrip.LoadTabs">
+	<summary>
+ Loads an xml file and creates tabs
+ </summary>
+	<remarks></remarks>
+</member><member name="M:MilesControls.MilesTabStrip.AddQueryParameter(System.String,System.String)">
+	<summary>
+ Adds a custom query parameter to the tabs' NavigateUrl property
+ </summary>
+	<param name="key"></param>
+	<param name="value"></param>
+	<remarks></remarks>
+</member><member name="T:MilesControls.WarningException">
+	<summary>
+ Indicates an exception to be used as a warning
+ </summary>
+	<remarks></remarks>
+</member><member name="P:MilesControls.MilesImageCrop.ImageUrl">
+	<summary>
+ Gets or sets the image url of the image to crop
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:MilesControls.MilesImageCrop.AspectRatio">
+	<summary>
+ Get's or sets the locked aspect ratio of the selection
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:MilesControls.MilesImageCrop.ShowPreview">
+	<summary>
+ Gets or sets whether the preview pane is visible
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:MilesControls.MilesImageCrop.ImagePath">
+	<summary>
+ Gets the server mapped image path
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:MilesControls.MilesImageCrop.Crop">
+	<summary>
+ Takes an image and crops it
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:MilesControls.MilesEditor.SetEditorPaths">
+	<summary>
+ Set the editor paths for the RAD Editor
+ </summary>
+	<remarks></remarks>
+</member><member name="P:MilesControls.MilesGrid.AddNewOnClientClick">
+	<summary>
+ Gets or sets the script executed when the add new button is clicked
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:MilesControls.MilesGrid.RadAjaxManagerID">
+	<summary>
+ Gets or sets the grid's associated ajax manager proxy. If set, history points will be enabled
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:MilesControls.MilesGrid.EnableHistory">
+	<summary>
+ Gets or sets whether history points will be added to the script manager
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:MilesControls.MilesGrid.GetSortExpression">
+	<summary>
+ Gets the current sort expression
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:MilesControls.MilesGrid.OnItemCommand(Telerik.Web.UI.GridCommandEventArgs)">
+	<summary>
+ Overrides the item command and raises appropriate events
+ </summary>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:MilesControls.MilesGrid.OnItemDataBound(Telerik.Web.UI.GridItemEventArgs)">
+	<summary>
+ Overrides the item data bound event to perform custom actions
+ </summary>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:MilesControls.MilesGrid.OnNeedDataSource(Telerik.Web.UI.GridNeedDataSourceEventArgs)">
+	<summary>
+ overrides the onNeedDataSource event
+ </summary>
+	<param name="e"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="F:MilesControls.MilesCardList._selectedCardValues">
+	<summary>
+ Gets the selected card values
+ </summary>
+	<remarks></remarks>
+</member><member name="P:MilesControls.MilesCardList.SortExpressionList">
+	<summary>
+ Collection of sort expressions to display in the sort dropdown
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:MilesControls.MilesCardList.CardMinHeight">
+	<summary>
+ Gets or sets the minimum height of the card
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:MilesControls.MilesCardList.ShowCommandRow">
+	<summary>
+ Gets or sets whether the command row is visible
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:MilesControls.MilesCardList.ShowAddNewRecordButton">
+	<summary>
+ Gets or sets whether the add new record button is visible
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:MilesControls.MilesCardList.AddNewRecordText">
+	<summary>
+ Gets or sets the add new record button text
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:MilesControls.MilesCardList.OnAddNewRecordClientClick">
+	<summary>
+ Gets or sets the client event for the add new record button
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:MilesControls.MilesCardList.CardTemplate">
+	<summary>
+ Template used when grid is in "detail" mode
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:MilesControls.MilesCardList.CardListTemplate">
+	<summary>
+ Template used when grid is in "list" mode
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:MilesControls.MilesCardList.NumberOfColumns">
+	<summary>
+ Gets or sets the number of columns
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:MilesControls.MilesCardList.AutoBind">
+	<summary>
+ Gets or sets whether the OnNeedsDataSource event is fired
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:MilesControls.MilesCardList.AllowItemSelection">
+	<summary>
+ Gets or sets whether the items can be selected
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:MilesControls.MilesCardList.AllowMultiItemSelection">
+	<summary>
+ Gets or sets whether multiple item selection is allowed
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:MilesControls.MilesCardList.ShowNoRecordText">
+	<summary>
+ Gets or sets whether the no records text is displayed
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:MilesControls.MilesCardList.ColumnBreakingPoint">
+	<summary>
+ Gets or sets when the columns break. Default is MD
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:MilesControls.MilesCardList.InfoBarDetachable">
+	<summary>
+ Gets or sets whether the InfoBar is detachable when out of view
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:MilesControls.MilesCardList.OnClientItemSelectionChanged">
+	<summary>
+ Gets or sets the event handler for item selecting
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:MilesControls.MilesCardList.AllowItemsDragDrop">
+	<summary>
+ Gets or sets whether drag and drop is allowed
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:MilesControls.MilesCardList.CardListPanelCssClass">
+	<summary>
+ Gets or sets the Css Class to apply to the card list panel
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:MilesControls.MilesCardList.UpdateSortExpression">
+	<summary>
+ Updates the current expression from the viewstate
+ </summary>
+	<remarks></remarks>
+</member><member name="P:MilesControls.MilesCardList.MilesCardListCardTemplate.CardMinHeight">
+	<summary>
+ Gets or sets the minimum height of the card
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:MilesControls.MilesCardList.MilesCardListCardTemplate">
+	<summary>
+ Layout class for CardList
+ </summary>
+	<remarks></remarks>
+</member><member name="M:MilesControls.MilesCardList.MilesCardListItemTemplate.GetActionPosCssClass">
+	<summary>
+ Gets the positioning css class
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:MilesControls.MilesCardList.MilesCardListItemTemplate">
+	<summary>
+ Default ItemTemplate
+ </summary>
+	<remarks></remarks>
+</member><member name="T:MilesControls.MilesCardList.MilesCardListLayoutTemplate.MilesCardListPagerTemplate">
+	<summary>
+ Pager item template
+ </summary>
+	<remarks></remarks>
+</member><member name="T:MilesControls.MilesCardList.MilesCardListLayoutTemplate">
+	<summary>
+ Default LayoutTemplate
+ </summary>
+	<remarks></remarks>
+</member><member name="P:MilesControls.MilesCardList.ScrollToTargetID">
+	<summary>
+ This section is for the ISearchPanelBoundListControl implementation
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:MilesControls.MilesToggleArchiveImageButton.Archived">
+	<summary>
+ Gets or sets the archived value. If true, button switched to unarchive mode
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:MilesControls.MilesTabDropdown.TabTextMaxLength">
+	<summary>
+ Gets/Sets maximum length of title displayed on tab. If length of title is larger than specified length, the title is truncated with ellipses(...)
+ Tooltip will display the full tab title.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:MilesControls.MilesTabDropdown.TabCssClass">
+	<summary>
+ Gets/Sets Css class for the tab
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:MilesControls.MilesTabDropdown.SelectedTab">
+	<summary>
+ Gets the selected tab. To select a tab, use SelectTab Method
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:MilesControls.MilesTabDropdown.OnClientTabSelectionChanged">
+	<summary>
+ Gets or sets the client side event handler for tab selection
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="E:MilesControls.MilesTabDropdown.OnTabSelectionChanged">
+	<summary>
+ This event is fired user clicks a tab to change the selection
+ </summary>
+	<remarks></remarks>
+</member><member name="M:MilesControls.MilesTabDropdown.BindTabs">
+	<summary>
+ Binds the control using provided datasource, selectes first tab by default if no tab was selected earlier
+ </summary>
+	<remarks></remarks>
+</member><member name="M:MilesControls.MilesTabDropdown.SelectTab(System.String)">
+	<summary>
+ selects the tab matching the tabvalue and raises TabSelected event. If no tab is found with the provided value, exception is thrown
+ </summary>
+	<param name="tabvalue"></param>
+	<remarks></remarks>
+</member><member name="M:MilesControls.MilesTabDropdown.ResetSelection">
+	<summary>
+ Resets the currently selected tab. First tab will be selected when the control rebinds next time.
+ </summary>
+	<remarks></remarks>
+</member>
+</members>
+</doc>

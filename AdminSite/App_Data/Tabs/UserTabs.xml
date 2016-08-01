@@ -1,0 +1,5 @@
+﻿<tabs>
+  <tab text="Basic Info" url="~/HR/UserInfo.aspx" />
+  <tab text="Notes" url="~/HR/UserNotes.aspx" />
+  <tab text="Documents" url="~/HR/UserDocuments.aspx" />
+</tabs>

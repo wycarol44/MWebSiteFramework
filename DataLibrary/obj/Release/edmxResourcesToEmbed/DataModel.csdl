@@ -1,0 +1,1590 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ModelEntities" annotation:LazyLoadingEnabled="true" a:TypeAccess="Public" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration">
+    <FunctionImport Name="MetaMenu_GetList" ReturnType="Collection(DataModel.MetaMenu_GetList_Result)">
+      <Parameter Name="UserID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Users_UpdatePassword">
+      <Parameter Name="UserID" Mode="In" Type="Int32" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Users_ValidateLogin" ReturnType="Collection(DataModel.Users_ValidateLogin_Result)">
+      <Parameter Name="Username" Mode="In" Type="String" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+      <Parameter Name="ResetKey" Mode="In" Type="Binary" />
+      <Parameter Name="UserID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Users_GetList" ReturnType="Collection(DataModel.Users_GetList_Result)">
+      <Parameter Name="UserID" Mode="In" Type="Int32" />
+      <Parameter Name="Archived" Mode="In" Type="Boolean" />
+      <Parameter Name="Fullname" Mode="In" Type="String" />
+      <Parameter Name="Phone" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="JobTitleIDs" Mode="In" Type="String" />
+      <Parameter Name="StatusIDs" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Users_GetComboBoxList" ReturnType="Collection(DataModel.Users_GetComboBoxList_Result)">
+      <Parameter Name="UserID" Mode="In" Type="Int32" />
+      <Parameter Name="Fullname" Mode="In" Type="String" />
+      <Parameter Name="Skip" Mode="In" Type="Int32" />
+      <Parameter Name="Take" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="UserFavorites_GetMenuList" ReturnType="Collection(DataModel.UserFavorites_GetMenuList_Result)">
+      <Parameter Name="UserID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="CustomerContacts_GetList" ReturnType="Collection(DataModel.CustomerContacts_GetList_Result)">
+      <Parameter Name="CustomerID" Mode="In" Type="Int32" />
+      <Parameter Name="ContactName" Mode="In" Type="String" />
+      <Parameter Name="ContactEmail" Mode="In" Type="String" />
+      <Parameter Name="Phone" Mode="In" Type="String" />
+      <Parameter Name="Archived" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="Notes_GetList" ReturnType="Collection(DataModel.Notes_GetList_Result)">
+      <Parameter Name="ObjectID" Mode="In" Type="Int32" />
+      <Parameter Name="KeyID" Mode="In" Type="Int32" />
+      <Parameter Name="NoteTypeID" Mode="In" Type="String" />
+      <Parameter Name="Title" Mode="In" Type="String" />
+      <Parameter Name="CreatedBy" Mode="In" Type="Int32" />
+      <Parameter Name="DateFrom" Mode="In" Type="DateTime" />
+      <Parameter Name="DateTo" Mode="In" Type="DateTime" />
+      <Parameter Name="Archived" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="MetaFunctions_GetAllFunctionsWithModules" ReturnType="Collection(DataModel.MetaFunctions_GetAllFunctionsWithModules_Result)">
+      <Parameter Name="UserRoleID" Mode="In" Type="Int32" />
+      <Parameter Name="FunctionName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UserRoles_GetByFunctionID" ReturnType="Collection(DataModel.UserRoles_GetByFunctionID_Result)">
+      <Parameter Name="FunctionID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="UserRoleHasPageAccess">
+      <Parameter Name="FormID" Mode="In" Type="Int32" />
+      <Parameter Name="UserID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Users_GetFunctionAccess" ReturnType="Collection(DataModel.Users_GetFunctionAccess_Result)">
+      <Parameter Name="UserID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="MetaMenu_GetTreeList" ReturnType="Collection(DataModel.MetaMenu_GetTreeList_Result)" />
+    <FunctionImport Name="CMSCategories_GetListByMergeFields" ReturnType="Collection(DataModel.CMSCategories_GetListByMergeFields_Result)">
+      <Parameter Name="CategoryName" Mode="In" Type="String" />
+      <Parameter Name="ContentTypeIDs" Mode="In" Type="String" />
+      <Parameter Name="MergeFieldIDs" Mode="In" Type="String" />
+      <Parameter Name="Archieved" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="Customers_GetList" ReturnType="Collection(DataModel.Customers_GetList_Result)">
+      <Parameter Name="PageIndex" Mode="In" Type="Int32" />
+      <Parameter Name="PageSize" Mode="In" Type="Int32" />
+      <Parameter Name="CustomerName" Mode="In" Type="String" />
+      <Parameter Name="Phone" Mode="In" Type="String" />
+      <Parameter Name="StatusIDs" Mode="In" Type="String" />
+      <Parameter Name="ContactName" Mode="In" Type="String" />
+      <Parameter Name="ContactEmail" Mode="In" Type="String" />
+      <Parameter Name="Archived" Mode="In" Type="Boolean" />
+      <Parameter Name="SortExpression" Mode="In" Type="String" />
+      <Parameter Name="SortOrder" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="Addresses" EntityType="DataModel.Address" />
+    <EntitySet Name="AppSettings" EntityType="DataModel.AppSetting" />
+    <EntitySet Name="Attachments" EntityType="DataModel.Attachment" />
+    <EntitySet Name="AuditLogs" EntityType="DataModel.AuditLog" />
+    <EntitySet Name="CMSCategories" EntityType="DataModel.CMSCategory" />
+    <EntitySet Name="CMSMergeFields" EntityType="DataModel.CMSMergeField" />
+    <EntitySet Name="Customers" EntityType="DataModel.Customer" />
+    <EntitySet Name="ManagedTypeAssociations" EntityType="DataModel.ManagedTypeAssociation" />
+    <EntitySet Name="ManagedTypeItems" EntityType="DataModel.ManagedTypeItem" />
+    <EntitySet Name="ManagedTypes" EntityType="DataModel.ManagedType" />
+    <EntitySet Name="MetaAuditLogAttributes" EntityType="DataModel.MetaAuditLogAttribute" />
+    <EntitySet Name="MetaCountries" EntityType="DataModel.MetaCountry" />
+    <EntitySet Name="MetaForms" EntityType="DataModel.MetaForm" />
+    <EntitySet Name="MetaFunctions" EntityType="DataModel.MetaFunction" />
+    <EntitySet Name="MetaMenus" EntityType="DataModel.MetaMenu" />
+    <EntitySet Name="MetaModules" EntityType="DataModel.MetaModule" />
+    <EntitySet Name="MetaObjects" EntityType="DataModel.MetaObject" />
+    <EntitySet Name="MetaStates" EntityType="DataModel.MetaState" />
+    <EntitySet Name="MetaTypeItems" EntityType="DataModel.MetaTypeItem" />
+    <EntitySet Name="MetaTypes" EntityType="DataModel.MetaType" />
+    <EntitySet Name="Notes" EntityType="DataModel.Note" />
+    <EntitySet Name="UserFavorites" EntityType="DataModel.UserFavorite" />
+    <EntitySet Name="UserJobTitles" EntityType="DataModel.UserJobTitle" />
+    <EntitySet Name="UserLoginLogs" EntityType="DataModel.UserLoginLog" />
+    <EntitySet Name="UserRoles" EntityType="DataModel.UserRole" />
+    <EntitySet Name="UserSearchFilters" EntityType="DataModel.UserSearchFilter" />
+    <AssociationSet Name="FK_Address_MetaCountries" Association="DataModel.FK_Address_MetaCountries">
+      <End Role="MetaCountry" EntitySet="MetaCountries" />
+      <End Role="Address" EntitySet="Addresses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Address_MetaStates" Association="DataModel.FK_Address_MetaStates">
+      <End Role="MetaState" EntitySet="MetaStates" />
+      <End Role="Address" EntitySet="Addresses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AppSetting_Address" Association="DataModel.FK_AppSetting_Address">
+      <End Role="Address" EntitySet="Addresses" />
+      <End Role="AppSetting" EntitySet="AppSettings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Customers_Address" Association="DataModel.FK_Customers_Address">
+      <End Role="Address" EntitySet="Addresses" />
+      <End Role="Customer" EntitySet="Customers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Attachments_MetaTypeItems" Association="DataModel.FK_Attachments_MetaTypeItems">
+      <End Role="MetaTypeItem" EntitySet="MetaTypeItems" />
+      <End Role="Attachment" EntitySet="Attachments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AuditLog_MetaAuditLogAttributes" Association="DataModel.FK_AuditLog_MetaAuditLogAttributes">
+      <End Role="MetaAuditLogAttribute" EntitySet="MetaAuditLogAttributes" />
+      <End Role="AuditLog" EntitySet="AuditLogs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CMSCategories_MetaTypeItems" Association="DataModel.FK_CMSCategories_MetaTypeItems">
+      <End Role="MetaTypeItem" EntitySet="MetaTypeItems" />
+      <End Role="CMSCategory" EntitySet="CMSCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CMSCategories_MetaTypeItems1" Association="DataModel.FK_CMSCategories_MetaTypeItems1">
+      <End Role="MetaTypeItem" EntitySet="MetaTypeItems" />
+      <End Role="CMSCategory" EntitySet="CMSCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Notes_Customers" Association="DataModel.FK_Notes_Customers">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Note" EntitySet="Notes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ManagedTypeAssociations_ManagedTypes" Association="DataModel.FK_ManagedTypeAssociations_ManagedTypes">
+      <End Role="ManagedType" EntitySet="ManagedTypes" />
+      <End Role="ManagedTypeAssociation" EntitySet="ManagedTypeAssociations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ManagedTypeAssociations_MetaObjects" Association="DataModel.FK_ManagedTypeAssociations_MetaObjects">
+      <End Role="MetaObject" EntitySet="MetaObjects" />
+      <End Role="ManagedTypeAssociation" EntitySet="ManagedTypeAssociations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ManagedTypeItems_ManagedTypes" Association="DataModel.FK_ManagedTypeItems_ManagedTypes">
+      <End Role="ManagedType" EntitySet="ManagedTypes" />
+      <End Role="ManagedTypeItem" EntitySet="ManagedTypeItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_States_Countries" Association="DataModel.FK_States_Countries">
+      <End Role="MetaCountry" EntitySet="MetaCountries" />
+      <End Role="MetaState" EntitySet="MetaStates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MetaForms_MetaModules" Association="DataModel.FK_MetaForms_MetaModules">
+      <End Role="MetaModule" EntitySet="MetaModules" />
+      <End Role="MetaForm" EntitySet="MetaForms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MetaMenu_MetaForms" Association="DataModel.FK_MetaMenu_MetaForms">
+      <End Role="MetaForm" EntitySet="MetaForms" />
+      <End Role="MetaMenu" EntitySet="MetaMenus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserSearchFilters_MetaForms" Association="DataModel.FK_UserSearchFilters_MetaForms">
+      <End Role="MetaForm" EntitySet="MetaForms" />
+      <End Role="UserSearchFilter" EntitySet="UserSearchFilters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MetaFunctions_MetaModules" Association="DataModel.FK_MetaFunctions_MetaModules">
+      <End Role="MetaModule" EntitySet="MetaModules" />
+      <End Role="MetaFunction" EntitySet="MetaFunctions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MetaMenu_MetaMenu" Association="DataModel.FK_MetaMenu_MetaMenu">
+      <End Role="MetaMenu" EntitySet="MetaMenus" />
+      <End Role="MetaMenu1" EntitySet="MetaMenus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MetaTypes_MetaTypeItems" Association="DataModel.FK_MetaTypes_MetaTypeItems">
+      <End Role="MetaType" EntitySet="MetaTypes" />
+      <End Role="MetaTypeItem" EntitySet="MetaTypeItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Notes_MetaTypeItems" Association="DataModel.FK_Notes_MetaTypeItems">
+      <End Role="MetaTypeItem" EntitySet="MetaTypeItems" />
+      <End Role="Note" EntitySet="Notes" />
+    </AssociationSet>
+    <AssociationSet Name="CMSCategoryMergeFields" Association="DataModel.CMSCategoryMergeFields">
+      <End Role="CMSCategory" EntitySet="CMSCategories" />
+      <End Role="CMSMergeField" EntitySet="CMSMergeFields" />
+    </AssociationSet>
+    <AssociationSet Name="MetaFunctionForms" Association="DataModel.MetaFunctionForms">
+      <End Role="MetaForm" EntitySet="MetaForms" />
+      <End Role="MetaFunction" EntitySet="MetaFunctions" />
+    </AssociationSet>
+    <AssociationSet Name="UserRoleFunctionAccess" Association="DataModel.UserRoleFunctionAccess">
+      <End Role="MetaFunction" EntitySet="MetaFunctions" />
+      <End Role="UserRole" EntitySet="UserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserFavorites_MetaForms" Association="DataModel.FK_UserFavorites_MetaForms">
+      <End Role="MetaForm" EntitySet="MetaForms" />
+      <End Role="UserFavorite" EntitySet="UserFavorites" />
+    </AssociationSet>
+    <FunctionImport Name="Documents_GetByID" ReturnType="Collection(DataModel.Documents_GetByID_Result)">
+      <Parameter Name="DocumentID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Documents_GetList" ReturnType="Collection(DataModel.Documents_GetList_Result)">
+      <Parameter Name="ObjectID" Mode="In" Type="Int32" />
+      <Parameter Name="KeyID" Mode="In" Type="Int32" />
+      <Parameter Name="DocumentName" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="EmailLogs" EntityType="DataModel.EmailLog" />
+    <FunctionImport Name="Notes_GetListForDashBoard" ReturnType="Collection(DataModel.Notes_GetListForDashBoard_Result)">
+      <Parameter Name="ObjectID" Mode="In" Type="Int32" />
+      <Parameter Name="KeyID" Mode="In" Type="Int32" />
+      <Parameter Name="NumberOfItems" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Documents_GetListForDashBoard" ReturnType="Collection(DataModel.Documents_GetListForDashBoard_Result)">
+      <Parameter Name="ObjectID" Mode="In" Type="Int32" />
+      <Parameter Name="KeyID" Mode="In" Type="Int32" />
+      <Parameter Name="NumberOfItems" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="AuditLog_GetListForDashBoard" ReturnType="Collection(DataModel.AuditLog_GetListForDashBoard_Result)">
+      <Parameter Name="ObjectID" Mode="In" Type="Int32" />
+      <Parameter Name="KeyID" Mode="In" Type="Int32" />
+      <Parameter Name="NumberOfItems" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Users_GetDetailsByID" ReturnType="Collection(DataModel.Users_GetDetailsByID_Result)">
+      <Parameter Name="UserID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="CustomerContacts_GetDetailsByID" ReturnType="Collection(DataModel.CustomerContacts_GetDetailsByID_Result)">
+      <Parameter Name="ContactID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Customers_GetDetailsByID" ReturnType="Collection(DataModel.Customers_GetDetailsByID_Result)">
+      <Parameter Name="CustomerID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Users_HasFunctionAccess" ReturnType="Collection(Boolean)">
+      <Parameter Name="UserID" Mode="In" Type="Int32" />
+      <Parameter Name="FunctionID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="MetaToolTips" EntityType="DataModel.MetaToolTip" />
+    <EntitySet Name="Pictures" EntityType="DataModel.Picture" />
+    <EntitySet Name="Users" EntityType="DataModel.User" />
+    <AssociationSet Name="FK_Users_Address" Association="DataModel.FK_Users_Address">
+      <End Role="Address" EntitySet="Addresses" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Attachments_Users" Association="DataModel.FK_Attachments_Users">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Attachment" EntitySet="Attachments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AuditLog_Users" Association="DataModel.FK_AuditLog_Users">
+      <End Role="User" EntitySet="Users" />
+      <End Role="AuditLog" EntitySet="AuditLogs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_MetaTypeItems" Association="DataModel.FK_Users_MetaTypeItems">
+      <End Role="MetaTypeItem" EntitySet="MetaTypeItems" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserFavorites_Users" Association="DataModel.FK_UserFavorites_Users">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UserFavorite" EntitySet="UserFavorites" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_JobTitles" Association="DataModel.FK_Users_JobTitles">
+      <End Role="UserJobTitle" EntitySet="UserJobTitles" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserLoginLog_Users" Association="DataModel.FK_UserLoginLog_Users">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UserLoginLog" EntitySet="UserLoginLogs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserSearchFilters_Users" Association="DataModel.FK_UserSearchFilters_Users">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UserSearchFilter" EntitySet="UserSearchFilters" />
+    </AssociationSet>
+    <AssociationSet Name="UserRoleAssociations" Association="DataModel.UserRoleAssociations">
+      <End Role="UserRole" EntitySet="UserRoles" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <FunctionImport Name="Users_UpdateResetKey" ReturnType="Collection(DataModel.Users_UpdateResetKey_Result)">
+      <Parameter Name="UserName" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="Documents" EntityType="DataModel.Document" />
+    <AssociationSet Name="FK_Documents_Customers" Association="DataModel.FK_Documents_Customers">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Document" EntitySet="Documents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Documents_CreatedBy" Association="DataModel.FK_Documents_CreatedBy">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Document" EntitySet="Documents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Documents_ModifiedBy" Association="DataModel.FK_Documents_ModifiedBy">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Document" EntitySet="Documents" />
+    </AssociationSet>
+    <EntitySet Name="CustomerContacts" EntityType="DataModel.CustomerContact" />
+    <AssociationSet Name="FK_CustomerContacts_Address" Association="DataModel.FK_CustomerContacts_Address">
+      <End Role="Address" EntitySet="Addresses" />
+      <End Role="CustomerContact" EntitySet="CustomerContacts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomerContacts_Customers" Association="DataModel.FK_CustomerContacts_Customers">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="CustomerContact" EntitySet="CustomerContacts" />
+    </AssociationSet>
+  </EntityContainer>
+  <ComplexType Name="MetaMenu_GetList_Result">
+    <Property Type="Int32" Name="MenuID" Nullable="false" />
+    <Property Type="Int32" Name="ParentID" Nullable="true" />
+    <Property Type="String" Name="Title" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="NavigateUrl" Nullable="true" MaxLength="200" />
+    <Property Type="Int32" Name="FormID" Nullable="true" />
+    <Property Type="String" Name="MenuPath" Nullable="true" MaxLength="500" />
+    <Property Type="Boolean" Name="IsInternalOnly" Nullable="false" />
+    <Property Type="Int32" Name="SortOrder" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Users_ValidateLogin_Result">
+    <Property Type="Int32" Name="UserID" Nullable="false" />
+    <Property Type="String" Name="Fullname" Nullable="false" MaxLength="101" />
+    <Property Type="String" Name="Username" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="JobTitle" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="Users_GetList_Result">
+    <Property Type="Int32" Name="TotalCount" Nullable="true" />
+    <Property Type="Int32" Name="UserID" Nullable="false" />
+    <Property Type="String" Name="Firstname" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Lastname" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Fullname" Nullable="false" MaxLength="101" />
+    <Property Type="String" Name="Username" Nullable="false" MaxLength="50" />
+    <Property Type="Binary" Name="UserKey" Nullable="true" MaxLength="64" />
+    <Property Type="Binary" Name="Password" Nullable="true" MaxLength="64" />
+    <Property Type="Int32" Name="JobTitleID" Nullable="true" />
+    <Property Type="Int32" Name="AddressID" Nullable="true" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="WorkPhone" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="WorkPhoneExt" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MobilePhone" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="HomePhone" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Notes" Nullable="true" />
+    <Property Type="String" Name="NotesText" Nullable="true" />
+    <Property Type="Int32" Name="StatusID" Nullable="false" />
+    <Property Type="Binary" Name="ResetKey" Nullable="true" MaxLength="64" />
+    <Property Type="DateTime" Name="DateResetKeyIssued" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="Archived" Nullable="false" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="false" />
+    <Property Type="DateTime" Name="DateModified" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="ModifiedBy" Nullable="true" />
+    <Property Type="String" Name="Status" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="JobTitle" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="PicturePath" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="ThumbnailPath" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="Users_GetComboBoxList_Result">
+    <Property Type="Int32" Name="TotalCount" Nullable="true" />
+    <Property Type="Int32" Name="UserID" Nullable="false" />
+    <Property Type="String" Name="Firstname" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Lastname" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Fullname" Nullable="false" MaxLength="101" />
+    <Property Type="String" Name="Username" Nullable="false" MaxLength="50" />
+    <Property Type="Binary" Name="UserKey" Nullable="true" MaxLength="64" />
+    <Property Type="Binary" Name="Password" Nullable="true" MaxLength="64" />
+    <Property Type="Int32" Name="JobTitleID" Nullable="true" />
+    <Property Type="Int32" Name="AddressID" Nullable="true" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="WorkPhone" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="WorkPhoneExt" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MobilePhone" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="HomePhone" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Notes" Nullable="true" />
+    <Property Type="String" Name="NotesText" Nullable="true" />
+    <Property Type="Int32" Name="StatusID" Nullable="false" />
+    <Property Type="Binary" Name="ResetKey" Nullable="true" MaxLength="64" />
+    <Property Type="DateTime" Name="DateResetKeyIssued" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="Archived" Nullable="false" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="false" />
+    <Property Type="DateTime" Name="DateModified" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="ModifiedBy" Nullable="true" />
+    <Property Type="String" Name="PicturePath" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="ThumbnailPath" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="UserFavorites_GetMenuList_Result">
+    <Property Type="Int32" Name="FavoriteID" Nullable="false" />
+    <Property Type="Int32" Name="FormID" Nullable="true" />
+    <Property Type="String" Name="DisplayName" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="UserID" Nullable="true" />
+    <Property Type="String" Name="IconColor" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="ShowInFavoritesMenu" Nullable="true" />
+    <Property Type="Int32" Name="SortOrder" Nullable="true" />
+    <Property Type="Boolean" Name="Archived" Nullable="false" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="true" />
+    <Property Type="DateTime" Name="DateModified" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="ModifiedBy" Nullable="true" />
+    <Property Type="String" Name="MenuPath" Nullable="true" MaxLength="500" />
+    <Property Type="Boolean" Name="ShowInIconBar" Nullable="true" />
+    <Property Type="Boolean" Name="IsLandingPage" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="CustomerContacts_GetList_Result">
+    <Property Type="Int32" Name="ContactID" Nullable="false" />
+    <Property Type="Int32" Name="CustomerID" Nullable="true" />
+    <Property Type="String" Name="Firstname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Lastname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="AddressID" Nullable="true" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="WorkPhone" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="WorkPhoneExt" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MobilePhone" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="HomePhone" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Notes" Nullable="true" />
+    <Property Type="String" Name="NotesText" Nullable="true" />
+    <Property Type="Boolean" Name="IsPrimary" Nullable="false" />
+    <Property Type="Boolean" Name="Archived" Nullable="false" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="true" />
+    <Property Type="DateTime" Name="DateModified" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="ModifiedBy" Nullable="true" />
+    <Property Type="String" Name="FullName" Nullable="true" MaxLength="101" />
+  </ComplexType>
+  <ComplexType Name="Notes_GetList_Result">
+    <Property Type="Int32" Name="NoteID" Nullable="false" />
+    <Property Type="Int32" Name="ObjectID" Nullable="false" />
+    <Property Type="Int32" Name="KeyID" Nullable="false" />
+    <Property Type="Int32" Name="NoteTypeID" Nullable="false" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Notes" Nullable="true" />
+    <Property Type="String" Name="NotesText" Nullable="true" />
+    <Property Type="String" Name="LinkURL" Nullable="true" MaxLength="500" />
+    <Property Type="Boolean" Name="Pinned" Nullable="false" />
+    <Property Type="Boolean" Name="Archived" Nullable="false" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="true" />
+    <Property Type="DateTime" Name="DateModified" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="ModifiedBy" Nullable="true" />
+    <Property Type="String" Name="CreatedByName" Nullable="false" MaxLength="101" />
+    <Property Type="String" Name="ModifiedByName" Nullable="true" MaxLength="101" />
+    <Property Type="String" Name="TypeName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="MetaFunctions_GetAllFunctionsWithModules_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="200" />
+    <Property Type="Int32" Name="ParentID" Nullable="false" />
+    <Property Type="Boolean" Name="HasAccess" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="UserRoles_GetByFunctionID_Result">
+    <Property Type="Int32" Name="UserRoleID" Nullable="false" />
+    <Property Type="String" Name="UserRoleName" Nullable="true" MaxLength="100" />
+    <Property Type="Boolean" Name="HasAccess" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="UserRoleHasPageAccess_Result">
+    <Property Type="Int32" Name="FunctionID" Nullable="false" />
+    <Property Type="String" Name="FunctionName" Nullable="true" MaxLength="200" />
+    <Property Type="Int32" Name="ModuleID" Nullable="true" />
+    <Property Type="Boolean" Name="ViewOnly" Nullable="false" />
+    <Property Type="Boolean" Name="Archived" Nullable="false" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="true" />
+    <Property Type="DateTime" Name="DateModified" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="ModifiedBy" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Users_GetFunctionAccess_Result">
+    <Property Type="Int32" Name="UserRoleID" Nullable="false" />
+    <Property Type="Int32" Name="FunctionID" Nullable="false" />
+    <Property Type="Boolean" Name="ViewOnly" Nullable="false" />
+    <Property Type="Int32" Name="FormID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="MetaMenu_GetTreeList_Result">
+    <Property Type="Int32" Name="MenuID" Nullable="false" />
+    <Property Type="Int32" Name="ParentID" Nullable="true" />
+    <Property Type="String" Name="Title" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="NavigateUrl" Nullable="true" MaxLength="200" />
+    <Property Type="Int32" Name="FormID" Nullable="true" />
+    <Property Type="Boolean" Name="IsInternalOnly" Nullable="false" />
+    <Property Type="Int32" Name="SortOrder" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="CMSCategories_GetListByMergeFields_Result">
+    <Property Type="Int32" Name="CategoryID" Nullable="false" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="500" />
+    <Property Type="Int32" Name="ContentTypeID" Nullable="true" />
+    <Property Type="Int32" Name="EmailFromTypeID" Nullable="true" />
+    <Property Type="Int32" Name="EmailFromID" Nullable="true" />
+    <Property Type="String" Name="EmailFromName" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="EmailFromEmail" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="ContentSubject" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="ContentBody" Nullable="true" />
+    <Property Type="Boolean" Name="Archived" Nullable="false" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="String" Name="ContentType" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="Customers_GetList_Result">
+    <Property Type="Int32" Name="TotalCount" Nullable="true" />
+    <Property Type="Int32" Name="CustomerID" Nullable="false" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Notes" Nullable="true" />
+    <Property Type="String" Name="NotesText" Nullable="true" />
+    <Property Type="Int32" Name="AddressID" Nullable="true" />
+    <Property Type="String" Name="Phone" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Fax" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Website" Nullable="true" MaxLength="200" />
+    <Property Type="Int32" Name="StatusID" Nullable="true" />
+    <Property Type="Boolean" Name="Archived" Nullable="false" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="true" />
+    <Property Type="DateTime" Name="DateModified" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="ModifiedBy" Nullable="true" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="StateName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PrimaryContact" Nullable="true" MaxLength="101" />
+    <Property Type="String" Name="Status" Nullable="true" MaxLength="50" />
+    <Property Type="Int64" Name="Row" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="Address">
+    <Key>
+      <PropertyRef Name="AddressID" />
+    </Key>
+    <Property Name="AddressID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Address1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Address2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StateID" Type="Int32" />
+    <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PostalCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CountryID" Type="Int32" />
+    <Property Name="Archived" Type="Boolean" Nullable="false" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="DateModified" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <NavigationProperty Name="MetaCountry" Relationship="DataModel.FK_Address_MetaCountries" FromRole="Address" ToRole="MetaCountry" />
+    <NavigationProperty Name="MetaState" Relationship="DataModel.FK_Address_MetaStates" FromRole="Address" ToRole="MetaState" />
+    <NavigationProperty Name="AppSettings" Relationship="DataModel.FK_AppSetting_Address" FromRole="Address" ToRole="AppSetting" />
+    <NavigationProperty Name="Customers" Relationship="DataModel.FK_Customers_Address" FromRole="Address" ToRole="Customer" />
+    <Property Name="FullAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Users" Relationship="DataModel.FK_Users_Address" FromRole="Address" ToRole="User" />
+    <NavigationProperty Name="CustomerContacts" Relationship="DataModel.FK_CustomerContacts_Address" FromRole="Address" ToRole="CustomerContact" />
+  </EntityType>
+  <EntityType Name="AppSetting">
+    <Key>
+      <PropertyRef Name="AppSettingID" />
+    </Key>
+    <Property Name="AppSettingID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ApplicationName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="AddressID" Type="Int32" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="DateModified" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <NavigationProperty Name="Address" Relationship="DataModel.FK_AppSetting_Address" FromRole="AppSetting" ToRole="Address" />
+  </EntityType>
+  <EntityType Name="Attachment">
+    <Key>
+      <PropertyRef Name="AttachmentID" />
+    </Key>
+    <Property Name="AttachmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ObjectID" Type="Int32" />
+    <Property Name="KeyID" Type="Int32" />
+    <Property Name="AttachmentTypeID" Type="Int32" />
+    <Property Name="FileName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="OriginalFileName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="FilePath" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <NavigationProperty Name="MetaTypeItem" Relationship="DataModel.FK_Attachments_MetaTypeItems" FromRole="Attachment" ToRole="MetaTypeItem" />
+    <NavigationProperty Name="User" Relationship="DataModel.FK_Attachments_Users" FromRole="Attachment" ToRole="User" />
+  </EntityType>
+  <EntityType Name="AuditLog">
+    <Key>
+      <PropertyRef Name="LogID" />
+    </Key>
+    <Property Name="LogID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ObjectID" Type="Int32" />
+    <Property Name="KeyID" Type="Int32" />
+    <Property Name="AttributeID" Type="Int32" />
+    <Property Name="AttributeKeyID" Type="Int32" />
+    <Property Name="AuditLogText" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="EffectiveDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="MetaAuditLogAttribute" Relationship="DataModel.FK_AuditLog_MetaAuditLogAttributes" FromRole="AuditLog" ToRole="MetaAuditLogAttribute" />
+    <NavigationProperty Name="User" Relationship="DataModel.FK_AuditLog_Users" FromRole="AuditLog" ToRole="User" />
+  </EntityType>
+  <EntityType Name="CMSCategory">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ContentTypeID" Type="Int32" />
+    <Property Name="EmailFromTypeID" Type="Int32" />
+    <Property Name="EmailFromID" Type="Int32" />
+    <Property Name="EmailFromName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="EmailFromEmail" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ContentSubject" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ContentBody" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Archived" Type="Boolean" Nullable="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="MetaTypeItem" Relationship="DataModel.FK_CMSCategories_MetaTypeItems" FromRole="CMSCategory" ToRole="MetaTypeItem" />
+    <NavigationProperty Name="MetaTypeItem1" Relationship="DataModel.FK_CMSCategories_MetaTypeItems1" FromRole="CMSCategory" ToRole="MetaTypeItem" />
+    <NavigationProperty Name="CMSMergeFields" Relationship="DataModel.CMSCategoryMergeFields" FromRole="CMSCategory" ToRole="CMSMergeField" />
+  </EntityType>
+  <EntityType Name="CMSMergeField">
+    <Key>
+      <PropertyRef Name="MergeFieldID" />
+    </Key>
+    <Property Name="MergeFieldID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MergeField" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CMSCategories" Relationship="DataModel.CMSCategoryMergeFields" FromRole="CMSMergeField" ToRole="CMSCategory" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NotesText" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="AddressID" Type="Int32" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Website" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="StatusID" Type="Int32" />
+    <Property Name="Archived" Type="Boolean" Nullable="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="DateModified" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <NavigationProperty Name="Address" Relationship="DataModel.FK_Customers_Address" FromRole="Customer" ToRole="Address" />
+    <NavigationProperty Name="Notes1" Relationship="DataModel.FK_Notes_Customers" FromRole="Customer" ToRole="Note" />
+    <NavigationProperty Name="Documents" Relationship="DataModel.FK_Documents_Customers" FromRole="Customer" ToRole="Document" />
+    <NavigationProperty Name="CustomerContacts" Relationship="DataModel.FK_CustomerContacts_Customers" FromRole="Customer" ToRole="CustomerContact" />
+  </EntityType>
+  <EntityType Name="ManagedTypeAssociation">
+    <Key>
+      <PropertyRef Name="TypeID" />
+      <PropertyRef Name="ObjectID" />
+      <PropertyRef Name="KeyID" />
+    </Key>
+    <Property Name="TypeID" Type="Int32" Nullable="false" />
+    <Property Name="ObjectID" Type="Int32" Nullable="false" />
+    <Property Name="KeyID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ManagedType" Relationship="DataModel.FK_ManagedTypeAssociations_ManagedTypes" FromRole="ManagedTypeAssociation" ToRole="ManagedType" />
+    <NavigationProperty Name="MetaObject" Relationship="DataModel.FK_ManagedTypeAssociations_MetaObjects" FromRole="ManagedTypeAssociation" ToRole="MetaObject" />
+  </EntityType>
+  <EntityType Name="ManagedTypeItem">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TypeID" Type="Int32" />
+    <Property Name="ItemName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ParentID" Type="Int32" Nullable="false" />
+    <Property Name="Archived" Type="Boolean" Nullable="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="DateModified" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <NavigationProperty Name="ManagedType" Relationship="DataModel.FK_ManagedTypeItems_ManagedTypes" FromRole="ManagedTypeItem" ToRole="ManagedType" />
+  </EntityType>
+  <EntityType Name="ManagedType">
+    <Key>
+      <PropertyRef Name="TypeID" />
+    </Key>
+    <Property Name="TypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TypeName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="FriendlyName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="IsHierarchy" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="ManagedTypeAssociations" Relationship="DataModel.FK_ManagedTypeAssociations_ManagedTypes" FromRole="ManagedType" ToRole="ManagedTypeAssociation" />
+    <NavigationProperty Name="ManagedTypeItems" Relationship="DataModel.FK_ManagedTypeItems_ManagedTypes" FromRole="ManagedType" ToRole="ManagedTypeItem" />
+  </EntityType>
+  <EntityType Name="MetaAuditLogAttribute">
+    <Key>
+      <PropertyRef Name="AttributeID" />
+    </Key>
+    <Property Name="AttributeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AttributeName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="InsertLogText" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="UpdateLogText" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="AuditLogs" Relationship="DataModel.FK_AuditLog_MetaAuditLogAttributes" FromRole="MetaAuditLogAttribute" ToRole="AuditLog" />
+  </EntityType>
+  <EntityType Name="MetaCountry">
+    <Key>
+      <PropertyRef Name="CountryID" />
+    </Key>
+    <Property Name="CountryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CountryName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CountryCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Include" Type="Boolean" Nullable="false" />
+    <Property Name="SortOrder" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Addresses" Relationship="DataModel.FK_Address_MetaCountries" FromRole="MetaCountry" ToRole="Address" />
+    <NavigationProperty Name="MetaStates" Relationship="DataModel.FK_States_Countries" FromRole="MetaCountry" ToRole="MetaState" />
+  </EntityType>
+  <EntityType Name="MetaForm">
+    <Key>
+      <PropertyRef Name="FormID" />
+    </Key>
+    <Property Name="FormID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FormName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="FormPath" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="CanBeFavorite" Type="Boolean" Nullable="false" />
+    <Property Name="ModuleID" Type="Int32" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="MetaModule" Relationship="DataModel.FK_MetaForms_MetaModules" FromRole="MetaForm" ToRole="MetaModule" />
+    <NavigationProperty Name="MetaMenus" Relationship="DataModel.FK_MetaMenu_MetaForms" FromRole="MetaForm" ToRole="MetaMenu" />
+    <NavigationProperty Name="UserSearchFilters" Relationship="DataModel.FK_UserSearchFilters_MetaForms" FromRole="MetaForm" ToRole="UserSearchFilter" />
+    <NavigationProperty Name="MetaFunctions" Relationship="DataModel.MetaFunctionForms" FromRole="MetaForm" ToRole="MetaFunction" />
+    <NavigationProperty Name="UserFavorites" Relationship="DataModel.FK_UserFavorites_MetaForms" FromRole="MetaForm" ToRole="UserFavorite" />
+  </EntityType>
+  <EntityType Name="MetaFunction">
+    <Key>
+      <PropertyRef Name="FunctionID" />
+    </Key>
+    <Property Name="FunctionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FunctionName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ModuleID" Type="Int32" />
+    <Property Name="ViewOnly" Type="Boolean" Nullable="false" />
+    <Property Name="Archived" Type="Boolean" Nullable="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="DateModified" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <NavigationProperty Name="MetaModule" Relationship="DataModel.FK_MetaFunctions_MetaModules" FromRole="MetaFunction" ToRole="MetaModule" />
+    <NavigationProperty Name="MetaForms" Relationship="DataModel.MetaFunctionForms" FromRole="MetaFunction" ToRole="MetaForm" />
+    <NavigationProperty Name="UserRoles" Relationship="DataModel.UserRoleFunctionAccess" FromRole="MetaFunction" ToRole="UserRole" />
+  </EntityType>
+  <EntityType Name="MetaMenu">
+    <Key>
+      <PropertyRef Name="MenuID" />
+    </Key>
+    <Property Name="MenuID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ParentID" Type="Int32" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NavigateUrl" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="FormID" Type="Int32" />
+    <Property Name="IsInternalOnly" Type="Boolean" Nullable="false" />
+    <Property Name="SortOrder" Type="Int32" />
+    <NavigationProperty Name="MetaForm" Relationship="DataModel.FK_MetaMenu_MetaForms" FromRole="MetaMenu" ToRole="MetaForm" />
+    <NavigationProperty Name="MetaMenu1" Relationship="DataModel.FK_MetaMenu_MetaMenu" FromRole="MetaMenu" ToRole="MetaMenu1" />
+    <NavigationProperty Name="MetaMenu2" Relationship="DataModel.FK_MetaMenu_MetaMenu" FromRole="MetaMenu1" ToRole="MetaMenu" />
+  </EntityType>
+  <EntityType Name="MetaModule">
+    <Key>
+      <PropertyRef Name="ModuleID" />
+    </Key>
+    <Property Name="ModuleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ModuleName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ParentID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="MetaForms" Relationship="DataModel.FK_MetaForms_MetaModules" FromRole="MetaModule" ToRole="MetaForm" />
+    <NavigationProperty Name="MetaFunctions" Relationship="DataModel.FK_MetaFunctions_MetaModules" FromRole="MetaModule" ToRole="MetaFunction" />
+  </EntityType>
+  <EntityType Name="MetaObject">
+    <Key>
+      <PropertyRef Name="ObjectID" />
+    </Key>
+    <Property Name="ObjectID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ObjectName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ManagedTypeAssociations" Relationship="DataModel.FK_ManagedTypeAssociations_MetaObjects" FromRole="MetaObject" ToRole="ManagedTypeAssociation" />
+  </EntityType>
+  <EntityType Name="MetaState">
+    <Key>
+      <PropertyRef Name="StateID" />
+    </Key>
+    <Property Name="StateID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CountryID" Type="Int32" />
+    <Property Name="StateName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StateCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsTerritory" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Addresses" Relationship="DataModel.FK_Address_MetaStates" FromRole="MetaState" ToRole="Address" />
+    <NavigationProperty Name="MetaCountry" Relationship="DataModel.FK_States_Countries" FromRole="MetaState" ToRole="MetaCountry" />
+  </EntityType>
+  <EntityType Name="MetaTypeItem">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TypeID" Type="Int32" />
+    <Property Name="ItemName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Attachments" Relationship="DataModel.FK_Attachments_MetaTypeItems" FromRole="MetaTypeItem" ToRole="Attachment" />
+    <NavigationProperty Name="CMSCategories" Relationship="DataModel.FK_CMSCategories_MetaTypeItems" FromRole="MetaTypeItem" ToRole="CMSCategory" />
+    <NavigationProperty Name="CMSCategories1" Relationship="DataModel.FK_CMSCategories_MetaTypeItems1" FromRole="MetaTypeItem" ToRole="CMSCategory" />
+    <NavigationProperty Name="MetaType" Relationship="DataModel.FK_MetaTypes_MetaTypeItems" FromRole="MetaTypeItem" ToRole="MetaType" />
+    <NavigationProperty Name="Notes" Relationship="DataModel.FK_Notes_MetaTypeItems" FromRole="MetaTypeItem" ToRole="Note" />
+    <NavigationProperty Name="Users" Relationship="DataModel.FK_Users_MetaTypeItems" FromRole="MetaTypeItem" ToRole="User" />
+  </EntityType>
+  <EntityType Name="MetaType">
+    <Key>
+      <PropertyRef Name="TypeID" />
+    </Key>
+    <Property Name="TypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="MetaTypeItems" Relationship="DataModel.FK_MetaTypes_MetaTypeItems" FromRole="MetaType" ToRole="MetaTypeItem" />
+  </EntityType>
+  <EntityType Name="Note">
+    <Key>
+      <PropertyRef Name="NoteID" />
+    </Key>
+    <Property Name="NoteID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ObjectID" Type="Int32" Nullable="false" />
+    <Property Name="KeyID" Type="Int32" Nullable="false" />
+    <Property Name="NoteTypeID" Type="Int32" Nullable="false" />
+    <Property Name="Title" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NotesText" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="LinkURL" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Pinned" Type="Boolean" Nullable="false" />
+    <Property Name="Archived" Type="Boolean" Nullable="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="DateModified" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <NavigationProperty Name="Customer" Relationship="DataModel.FK_Notes_Customers" FromRole="Note" ToRole="Customer" />
+    <NavigationProperty Name="MetaTypeItem" Relationship="DataModel.FK_Notes_MetaTypeItems" FromRole="Note" ToRole="MetaTypeItem" />
+  </EntityType>
+  <EntityType Name="UserFavorite">
+    <Key>
+      <PropertyRef Name="FavoriteID" />
+    </Key>
+    <Property Name="FavoriteID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FormID" Type="Int32" Nullable="false" />
+    <Property Name="DisplayName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="IconColor" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ShowInFavoritesMenu" Type="Boolean" Nullable="false" />
+    <Property Name="ShowInIconBar" Type="Boolean" Nullable="false" />
+    <Property Name="IsLandingPage" Type="Boolean" Nullable="false" />
+    <Property Name="SortOrder" Type="Int32" Nullable="false" />
+    <Property Name="Archived" Type="Boolean" Nullable="false" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="DateModified" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <NavigationProperty Name="MetaForm" Relationship="DataModel.FK_UserFavorites_MetaForms" FromRole="UserFavorite" ToRole="MetaForm" />
+    <NavigationProperty Name="User" Relationship="DataModel.FK_UserFavorites_Users" FromRole="UserFavorite" ToRole="User" />
+  </EntityType>
+  <EntityType Name="UserJobTitle">
+    <Key>
+      <PropertyRef Name="JobTitleID" />
+    </Key>
+    <Property Name="JobTitleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="JobTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="JobDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Archived" Type="Boolean" Nullable="false" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="DateModified" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <NavigationProperty Name="Users" Relationship="DataModel.FK_Users_JobTitles" FromRole="UserJobTitle" ToRole="User" />
+  </EntityType>
+  <EntityType Name="UserLoginLog">
+    <Key>
+      <PropertyRef Name="LogID" />
+    </Key>
+    <Property Name="LogID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="User" Relationship="DataModel.FK_UserLoginLog_Users" FromRole="UserLoginLog" ToRole="User" />
+  </EntityType>
+  <EntityType Name="UserRole">
+    <Key>
+      <PropertyRef Name="UserRoleID" />
+    </Key>
+    <Property Name="UserRoleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserRoleName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="UserRoleDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Archived" Type="Boolean" Nullable="false" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="DateModified" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <NavigationProperty Name="MetaFunctions" Relationship="DataModel.UserRoleFunctionAccess" FromRole="UserRole" ToRole="MetaFunction" />
+    <NavigationProperty Name="Users" Relationship="DataModel.UserRoleAssociations" FromRole="UserRole" ToRole="User" />
+  </EntityType>
+  <EntityType Name="UserSearchFilter">
+    <Key>
+      <PropertyRef Name="FilterID" />
+    </Key>
+    <Property Name="FilterID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="FormID" Type="Int32" Nullable="false" />
+    <Property Name="SearchName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SearchValue" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="MetaForm" Relationship="DataModel.FK_UserSearchFilters_MetaForms" FromRole="UserSearchFilter" ToRole="MetaForm" />
+    <NavigationProperty Name="User" Relationship="DataModel.FK_UserSearchFilters_Users" FromRole="UserSearchFilter" ToRole="User" />
+  </EntityType>
+  <Association Name="FK_Address_MetaCountries">
+    <End Type="DataModel.MetaCountry" Role="MetaCountry" Multiplicity="0..1" />
+    <End Type="DataModel.Address" Role="Address" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MetaCountry">
+        <PropertyRef Name="CountryID" />
+      </Principal>
+      <Dependent Role="Address">
+        <PropertyRef Name="CountryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Address_MetaStates">
+    <End Type="DataModel.MetaState" Role="MetaState" Multiplicity="0..1" />
+    <End Type="DataModel.Address" Role="Address" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MetaState">
+        <PropertyRef Name="StateID" />
+      </Principal>
+      <Dependent Role="Address">
+        <PropertyRef Name="StateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AppSetting_Address">
+    <End Type="DataModel.Address" Role="Address" Multiplicity="0..1" />
+    <End Type="DataModel.AppSetting" Role="AppSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Address">
+        <PropertyRef Name="AddressID" />
+      </Principal>
+      <Dependent Role="AppSetting">
+        <PropertyRef Name="AddressID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Customers_Address">
+    <End Type="DataModel.Address" Role="Address" Multiplicity="0..1" />
+    <End Type="DataModel.Customer" Role="Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Address">
+        <PropertyRef Name="AddressID" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="AddressID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Attachments_MetaTypeItems">
+    <End Type="DataModel.MetaTypeItem" Role="MetaTypeItem" Multiplicity="0..1" />
+    <End Type="DataModel.Attachment" Role="Attachment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MetaTypeItem">
+        <PropertyRef Name="ItemID" />
+      </Principal>
+      <Dependent Role="Attachment">
+        <PropertyRef Name="AttachmentTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AuditLog_MetaAuditLogAttributes">
+    <End Type="DataModel.MetaAuditLogAttribute" Role="MetaAuditLogAttribute" Multiplicity="0..1" />
+    <End Type="DataModel.AuditLog" Role="AuditLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MetaAuditLogAttribute">
+        <PropertyRef Name="AttributeID" />
+      </Principal>
+      <Dependent Role="AuditLog">
+        <PropertyRef Name="AttributeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CMSCategories_MetaTypeItems">
+    <End Type="DataModel.MetaTypeItem" Role="MetaTypeItem" Multiplicity="0..1" />
+    <End Type="DataModel.CMSCategory" Role="CMSCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MetaTypeItem">
+        <PropertyRef Name="ItemID" />
+      </Principal>
+      <Dependent Role="CMSCategory">
+        <PropertyRef Name="EmailFromTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CMSCategories_MetaTypeItems1">
+    <End Type="DataModel.MetaTypeItem" Role="MetaTypeItem" Multiplicity="0..1" />
+    <End Type="DataModel.CMSCategory" Role="CMSCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MetaTypeItem">
+        <PropertyRef Name="ItemID" />
+      </Principal>
+      <Dependent Role="CMSCategory">
+        <PropertyRef Name="ContentTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Notes_Customers">
+    <End Type="DataModel.Customer" Role="Customer" Multiplicity="1" />
+    <End Type="DataModel.Note" Role="Note" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Note">
+        <PropertyRef Name="KeyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ManagedTypeAssociations_ManagedTypes">
+    <End Type="DataModel.ManagedType" Role="ManagedType" Multiplicity="1" />
+    <End Type="DataModel.ManagedTypeAssociation" Role="ManagedTypeAssociation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ManagedType">
+        <PropertyRef Name="TypeID" />
+      </Principal>
+      <Dependent Role="ManagedTypeAssociation">
+        <PropertyRef Name="TypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ManagedTypeAssociations_MetaObjects">
+    <End Type="DataModel.MetaObject" Role="MetaObject" Multiplicity="1" />
+    <End Type="DataModel.ManagedTypeAssociation" Role="ManagedTypeAssociation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MetaObject">
+        <PropertyRef Name="ObjectID" />
+      </Principal>
+      <Dependent Role="ManagedTypeAssociation">
+        <PropertyRef Name="ObjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ManagedTypeItems_ManagedTypes">
+    <End Type="DataModel.ManagedType" Role="ManagedType" Multiplicity="0..1" />
+    <End Type="DataModel.ManagedTypeItem" Role="ManagedTypeItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ManagedType">
+        <PropertyRef Name="TypeID" />
+      </Principal>
+      <Dependent Role="ManagedTypeItem">
+        <PropertyRef Name="TypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_States_Countries">
+    <End Type="DataModel.MetaCountry" Role="MetaCountry" Multiplicity="0..1" />
+    <End Type="DataModel.MetaState" Role="MetaState" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MetaCountry">
+        <PropertyRef Name="CountryID" />
+      </Principal>
+      <Dependent Role="MetaState">
+        <PropertyRef Name="CountryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MetaForms_MetaModules">
+    <End Type="DataModel.MetaModule" Role="MetaModule" Multiplicity="0..1" />
+    <End Type="DataModel.MetaForm" Role="MetaForm" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MetaModule">
+        <PropertyRef Name="ModuleID" />
+      </Principal>
+      <Dependent Role="MetaForm">
+        <PropertyRef Name="ModuleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MetaMenu_MetaForms">
+    <End Type="DataModel.MetaForm" Role="MetaForm" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="DataModel.MetaMenu" Role="MetaMenu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MetaForm">
+        <PropertyRef Name="FormID" />
+      </Principal>
+      <Dependent Role="MetaMenu">
+        <PropertyRef Name="FormID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserSearchFilters_MetaForms">
+    <End Type="DataModel.MetaForm" Role="MetaForm" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="DataModel.UserSearchFilter" Role="UserSearchFilter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MetaForm">
+        <PropertyRef Name="FormID" />
+      </Principal>
+      <Dependent Role="UserSearchFilter">
+        <PropertyRef Name="FormID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MetaFunctions_MetaModules">
+    <End Type="DataModel.MetaModule" Role="MetaModule" Multiplicity="0..1" />
+    <End Type="DataModel.MetaFunction" Role="MetaFunction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MetaModule">
+        <PropertyRef Name="ModuleID" />
+      </Principal>
+      <Dependent Role="MetaFunction">
+        <PropertyRef Name="ModuleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MetaMenu_MetaMenu">
+    <End Type="DataModel.MetaMenu" Role="MetaMenu" Multiplicity="0..1" />
+    <End Type="DataModel.MetaMenu" Role="MetaMenu1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MetaMenu">
+        <PropertyRef Name="MenuID" />
+      </Principal>
+      <Dependent Role="MetaMenu1">
+        <PropertyRef Name="ParentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MetaTypes_MetaTypeItems">
+    <End Type="DataModel.MetaType" Role="MetaType" Multiplicity="0..1" />
+    <End Type="DataModel.MetaTypeItem" Role="MetaTypeItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MetaType">
+        <PropertyRef Name="TypeID" />
+      </Principal>
+      <Dependent Role="MetaTypeItem">
+        <PropertyRef Name="TypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Notes_MetaTypeItems">
+    <End Type="DataModel.MetaTypeItem" Role="MetaTypeItem" Multiplicity="1" />
+    <End Type="DataModel.Note" Role="Note" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MetaTypeItem">
+        <PropertyRef Name="ItemID" />
+      </Principal>
+      <Dependent Role="Note">
+        <PropertyRef Name="NoteTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CMSCategoryMergeFields">
+    <End Type="DataModel.CMSCategory" Role="CMSCategory" Multiplicity="*" />
+    <End Type="DataModel.CMSMergeField" Role="CMSMergeField" Multiplicity="*" />
+  </Association>
+  <Association Name="MetaFunctionForms">
+    <End Type="DataModel.MetaForm" Role="MetaForm" Multiplicity="*" />
+    <End Type="DataModel.MetaFunction" Role="MetaFunction" Multiplicity="*" />
+  </Association>
+  <Association Name="UserRoleFunctionAccess">
+    <End Type="DataModel.MetaFunction" Role="MetaFunction" Multiplicity="*" />
+    <End Type="DataModel.UserRole" Role="UserRole" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_UserFavorites_MetaForms">
+    <End Type="DataModel.MetaForm" Role="MetaForm" Multiplicity="1" />
+    <End Type="DataModel.UserFavorite" Role="UserFavorite" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MetaForm">
+        <PropertyRef Name="FormID" />
+      </Principal>
+      <Dependent Role="UserFavorite">
+        <PropertyRef Name="FormID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="Documents_GetByID_Result">
+    <Property Type="Int32" Name="DocumentID" Nullable="false" />
+    <Property Type="Int32" Name="ObjectID" Nullable="true" />
+    <Property Type="Int32" Name="KeyID" Nullable="true" />
+    <Property Type="String" Name="DocumentName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="MimeType" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="FilePath" Nullable="true" MaxLength="300" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="true" />
+    <Property Type="DateTime" Name="DateModified" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="ModifiedBy" Nullable="true" />
+    <Property Type="String" Name="UserFullName" Nullable="true" MaxLength="101" />
+  </ComplexType>
+  <ComplexType Name="Documents_GetList_Result">
+    <Property Type="Int32" Name="DocumentID" Nullable="false" />
+    <Property Type="Int32" Name="ObjectID" Nullable="true" />
+    <Property Type="Int32" Name="KeyID" Nullable="true" />
+    <Property Type="String" Name="DocumentName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="MimeType" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="FilePath" Nullable="true" MaxLength="300" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="true" />
+    <Property Type="DateTime" Name="DateModified" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="ModifiedBy" Nullable="true" />
+    <Property Type="String" Name="UserFullName" Nullable="true" MaxLength="101" />
+  </ComplexType>
+  <EntityType Name="EmailLog">
+    <Key>
+      <PropertyRef Name="EmailID" />
+    </Key>
+    <Property Name="EmailID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ToAddress" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FromAddress" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Subject" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Body" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Sent" Type="Boolean" Nullable="false" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" />
+  </EntityType>
+  <ComplexType Name="Notes_GetListForDashBoard_Result">
+    <Property Type="Int32" Name="NoteID" Nullable="false" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="CreatedByName" Nullable="false" MaxLength="101" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="NoteTypeID" Nullable="false" />
+    <Property Type="String" Name="LinkURL" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="Documents_GetListForDashBoard_Result">
+    <Property Type="Int32" Name="DocumentID" Nullable="false" />
+    <Property Type="String" Name="DocumentName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="FilePath" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="CreatedByName" Nullable="true" MaxLength="101" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="AuditLog_GetListForDashBoard_Result">
+    <Property Type="Int32" Name="LogID" Nullable="false" />
+    <Property Type="String" Name="AuditLogText" Nullable="true" />
+    <Property Type="String" Name="CreatedByName" Nullable="false" MaxLength="101" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="Users_GetDetailsByID_Result">
+    <Property Type="Int32" Name="UserID" Nullable="false" />
+    <Property Type="String" Name="Firstname" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Lastname" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Fullname" Nullable="false" MaxLength="101" />
+    <Property Type="String" Name="Username" Nullable="false" MaxLength="50" />
+    <Property Type="Binary" Name="UserKey" Nullable="true" MaxLength="64" />
+    <Property Type="Binary" Name="Password" Nullable="true" MaxLength="64" />
+    <Property Type="Int32" Name="JobTitleID" Nullable="true" />
+    <Property Type="Int32" Name="AddressID" Nullable="true" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="WorkPhone" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="WorkPhoneExt" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MobilePhone" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="HomePhone" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Notes" Nullable="true" />
+    <Property Type="String" Name="NotesText" Nullable="true" />
+    <Property Type="Int32" Name="StatusID" Nullable="false" />
+    <Property Type="Binary" Name="ResetKey" Nullable="true" MaxLength="64" />
+    <Property Type="DateTime" Name="DateResetKeyIssued" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="Archived" Nullable="false" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="false" />
+    <Property Type="DateTime" Name="DateModified" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="ModifiedBy" Nullable="true" />
+    <Property Type="String" Name="Status" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="JobTitle" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="UserRoles" Nullable="true" />
+    <Property Type="String" Name="FullAddress" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="CustomerContacts_GetDetailsByID_Result">
+    <Property Type="Int32" Name="ContactID" Nullable="false" />
+    <Property Type="Int32" Name="CustomerID" Nullable="true" />
+    <Property Type="String" Name="Firstname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Lastname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="AddressID" Nullable="true" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="WorkPhone" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="WorkPhoneExt" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MobilePhone" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="HomePhone" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Notes" Nullable="true" />
+    <Property Type="String" Name="NotesText" Nullable="true" />
+    <Property Type="Boolean" Name="IsPrimary" Nullable="false" />
+    <Property Type="Boolean" Name="Archived" Nullable="false" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="true" />
+    <Property Type="DateTime" Name="DateModified" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="ModifiedBy" Nullable="true" />
+    <Property Type="String" Name="FullName" Nullable="true" MaxLength="101" />
+    <Property Type="String" Name="FullAddress" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Customers_GetDetailsByID_Result">
+    <Property Type="Int32" Name="CustomerID" Nullable="false" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Notes" Nullable="true" />
+    <Property Type="String" Name="NotesText" Nullable="true" />
+    <Property Type="Int32" Name="AddressID" Nullable="true" />
+    <Property Type="String" Name="Phone" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Fax" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Website" Nullable="true" MaxLength="200" />
+    <Property Type="Int32" Name="StatusID" Nullable="true" />
+    <Property Type="Boolean" Name="Archived" Nullable="false" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="true" />
+    <Property Type="DateTime" Name="DateModified" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="ModifiedBy" Nullable="true" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="StateName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PrimaryContact" Nullable="true" MaxLength="101" />
+    <Property Type="String" Name="Status" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="FullAddress" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="MetaToolTip">
+    <Key>
+      <PropertyRef Name="ToolTipID" />
+    </Key>
+    <Property Name="ToolTipID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ToolTipName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ToolTipDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Picture">
+    <Key>
+      <PropertyRef Name="PictureID" />
+    </Key>
+    <Property Name="PictureID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ObjectID" Type="Int32" Nullable="false" />
+    <Property Name="KeyID" Type="Int32" Nullable="false" />
+    <Property Name="PicturePath" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ThumbnailPath" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="DateModified" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int32" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Firstname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Lastname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Fullname" Type="String" Nullable="false" MaxLength="101" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserKey" Type="Binary" MaxLength="64" FixedLength="true" />
+    <Property Name="Password" Type="Binary" MaxLength="64" FixedLength="true" />
+    <Property Name="JobTitleID" Type="Int32" />
+    <Property Name="AddressID" Type="Int32" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="WorkPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="WorkPhoneExt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MobilePhone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HomePhone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NotesText" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="StatusID" Type="Int32" Nullable="false" />
+    <Property Name="ResetKey" Type="Binary" MaxLength="64" FixedLength="true" />
+    <Property Name="DateResetKeyIssued" Type="DateTime" Precision="3" />
+    <Property Name="Archived" Type="Boolean" Nullable="false" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="DateModified" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <NavigationProperty Name="Address" Relationship="DataModel.FK_Users_Address" FromRole="User" ToRole="Address" />
+    <NavigationProperty Name="Attachments" Relationship="DataModel.FK_Attachments_Users" FromRole="User" ToRole="Attachment" />
+    <NavigationProperty Name="AuditLogs" Relationship="DataModel.FK_AuditLog_Users" FromRole="User" ToRole="AuditLog" />
+    <NavigationProperty Name="MetaTypeItem" Relationship="DataModel.FK_Users_MetaTypeItems" FromRole="User" ToRole="MetaTypeItem" />
+    <NavigationProperty Name="UserFavorites" Relationship="DataModel.FK_UserFavorites_Users" FromRole="User" ToRole="UserFavorite" />
+    <NavigationProperty Name="UserJobTitle" Relationship="DataModel.FK_Users_JobTitles" FromRole="User" ToRole="UserJobTitle" />
+    <NavigationProperty Name="UserLoginLogs" Relationship="DataModel.FK_UserLoginLog_Users" FromRole="User" ToRole="UserLoginLog" />
+    <NavigationProperty Name="UserSearchFilters" Relationship="DataModel.FK_UserSearchFilters_Users" FromRole="User" ToRole="UserSearchFilter" />
+    <NavigationProperty Name="UserRoles" Relationship="DataModel.UserRoleAssociations" FromRole="User" ToRole="UserRole" />
+    <NavigationProperty Name="Documents" Relationship="DataModel.FK_Documents_CreatedBy" FromRole="User" ToRole="Document" />
+    <NavigationProperty Name="Documents1" Relationship="DataModel.FK_Documents_ModifiedBy" FromRole="User" ToRole="Document" />
+  </EntityType>
+  <Association Name="FK_Users_Address">
+    <End Type="DataModel.Address" Role="Address" Multiplicity="0..1" />
+    <End Type="DataModel.User" Role="User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Address">
+        <PropertyRef Name="AddressID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="AddressID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Attachments_Users">
+    <End Type="DataModel.User" Role="User" Multiplicity="0..1" />
+    <End Type="DataModel.Attachment" Role="Attachment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Attachment">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AuditLog_Users">
+    <End Type="DataModel.User" Role="User" Multiplicity="0..1" />
+    <End Type="DataModel.AuditLog" Role="AuditLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="AuditLog">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_MetaTypeItems">
+    <End Type="DataModel.MetaTypeItem" Role="MetaTypeItem" Multiplicity="1" />
+    <End Type="DataModel.User" Role="User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MetaTypeItem">
+        <PropertyRef Name="ItemID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="StatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserFavorites_Users">
+    <End Type="DataModel.User" Role="User" Multiplicity="1" />
+    <End Type="DataModel.UserFavorite" Role="UserFavorite" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="UserFavorite">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_JobTitles">
+    <End Type="DataModel.UserJobTitle" Role="UserJobTitle" Multiplicity="0..1" />
+    <End Type="DataModel.User" Role="User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserJobTitle">
+        <PropertyRef Name="JobTitleID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="JobTitleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserLoginLog_Users">
+    <End Type="DataModel.User" Role="User" Multiplicity="0..1" />
+    <End Type="DataModel.UserLoginLog" Role="UserLoginLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="UserLoginLog">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserSearchFilters_Users">
+    <End Type="DataModel.User" Role="User" Multiplicity="1" />
+    <End Type="DataModel.UserSearchFilter" Role="UserSearchFilter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="UserSearchFilter">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserRoleAssociations">
+    <End Type="DataModel.UserRole" Role="UserRole" Multiplicity="*" />
+    <End Type="DataModel.User" Role="User" Multiplicity="*" />
+  </Association>
+  <ComplexType Name="Users_UpdateResetKey_Result">
+    <Property Type="Int32" Name="UserID" Nullable="false" />
+    <Property Type="String" Name="Firstname" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Lastname" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Fullname" Nullable="false" MaxLength="101" />
+    <Property Type="String" Name="Username" Nullable="false" MaxLength="50" />
+    <Property Type="Binary" Name="UserKey" Nullable="true" MaxLength="64" />
+    <Property Type="Binary" Name="Password" Nullable="true" MaxLength="64" />
+    <Property Type="Int32" Name="JobTitleID" Nullable="true" />
+    <Property Type="Int32" Name="AddressID" Nullable="true" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="WorkPhone" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="WorkPhoneExt" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MobilePhone" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="HomePhone" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Notes" Nullable="true" />
+    <Property Type="String" Name="NotesText" Nullable="true" />
+    <Property Type="Int32" Name="StatusID" Nullable="false" />
+    <Property Type="Binary" Name="ResetKey" Nullable="true" MaxLength="64" />
+    <Property Type="DateTime" Name="DateResetKeyIssued" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="Archived" Nullable="false" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="false" />
+    <Property Type="DateTime" Name="DateModified" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="ModifiedBy" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="Document">
+    <Key>
+      <PropertyRef Name="DocumentID" />
+    </Key>
+    <Property Name="DocumentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ObjectID" Type="Int32" />
+    <Property Name="KeyID" Type="Int32" />
+    <Property Name="DocumentName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MimeType" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="FilePath" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="DateModified" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <NavigationProperty Name="Customer" Relationship="DataModel.FK_Documents_Customers" FromRole="Document" ToRole="Customer" />
+    <NavigationProperty Name="User" Relationship="DataModel.FK_Documents_CreatedBy" FromRole="Document" ToRole="User" />
+    <NavigationProperty Name="User1" Relationship="DataModel.FK_Documents_ModifiedBy" FromRole="Document" ToRole="User" />
+  </EntityType>
+  <Association Name="FK_Documents_Customers">
+    <End Type="DataModel.Customer" Role="Customer" Multiplicity="0..1" />
+    <End Type="DataModel.Document" Role="Document" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Document">
+        <PropertyRef Name="KeyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Documents_CreatedBy">
+    <End Type="DataModel.User" Role="User" Multiplicity="0..1" />
+    <End Type="DataModel.Document" Role="Document" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Document">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Documents_ModifiedBy">
+    <End Type="DataModel.User" Role="User" Multiplicity="0..1" />
+    <End Type="DataModel.Document" Role="Document" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Document">
+        <PropertyRef Name="ModifiedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="CustomerContact">
+    <Key>
+      <PropertyRef Name="ContactID" />
+    </Key>
+    <Property Name="ContactID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerID" Type="Int32" />
+    <Property Name="Firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FullName" Type="String" MaxLength="101" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AddressID" Type="Int32" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="WorkPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="WorkPhoneExt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MobilePhone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HomePhone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NotesText" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IsPrimary" Type="Boolean" Nullable="false" />
+    <Property Name="Archived" Type="Boolean" Nullable="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="DateModified" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <NavigationProperty Name="Address" Relationship="DataModel.FK_CustomerContacts_Address" FromRole="CustomerContact" ToRole="Address" />
+    <NavigationProperty Name="Customer" Relationship="DataModel.FK_CustomerContacts_Customers" FromRole="CustomerContact" ToRole="Customer" />
+  </EntityType>
+  <Association Name="FK_CustomerContacts_Address">
+    <End Type="DataModel.Address" Role="Address" Multiplicity="0..1" />
+    <End Type="DataModel.CustomerContact" Role="CustomerContact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Address">
+        <PropertyRef Name="AddressID" />
+      </Principal>
+      <Dependent Role="CustomerContact">
+        <PropertyRef Name="AddressID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomerContacts_Customers">
+    <End Type="DataModel.Customer" Role="Customer" Multiplicity="0..1" />
+    <End Type="DataModel.CustomerContact" Role="CustomerContact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="CustomerContact">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

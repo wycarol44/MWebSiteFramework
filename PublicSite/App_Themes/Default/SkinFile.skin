@@ -1,0 +1,75 @@
+﻿<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+
+<%--miles controls--%>
+<miles:MilesSearchPanel runat="server" SearchButton-CssClass="btn btn-secondary" ResetButton-CssClass="btn btn-default"
+    SaveFilterLink-CssClass="btn btn-default" ResetFilterLink-CssClass="btn btn-warning" />
+<miles:MilesButton runat="server" Skin="Silk" CssClass="btn btn-primary" />
+<miles:MilesTabStrip runat="server" Skin="Silk" />
+<miles:MilesGrid runat="server" Skin="Silk" CssClass="miles-grid" />
+<miles:MilesPhone runat="server" Skin="Silk" PhoneTextBox-CssClass="form-control"
+    ExtTextBox-CssClass="form-control"  ExtLabel-Text="&times;&nbsp;" ExtLabel-Font-Bold="true" ExtLabel-Font-Size="xlarge" />
+<miles:MilesEmail runat="server" EmailTextBox-CssClass="form-control"  />
+<miles:MilesPostalCode runat="server" Skin="Silk" CssClass="form-control" Width="100%" />
+<miles:MilesCountryComboBox runat="server" Skin="Silk" CssClass="form-control" Width="100%" />
+<miles:MilesStateComboBox runat="server" Skin="Silk" CssClass="form-control" Width="100%" />
+<miles:MilesTypeComboBox runat="server" Skin="Silk" CssClass="form-control" Width="100%" />
+<miles:MilesPicture runat="server" DefaultImageUrl="~/Images/NoImage.png" CssClass="miles-picture" />
+<miles:MilesUserComboBox runat="server" Skin="Silk" CssClass="form-control" Width="100%"  />
+<miles:MilesEditor runat="server" Skin="Silk" CssClass="miles-editor" Width="100%" />
+<miles:MilesDateTimePicker runat="server" Skin="Silk" DateInput-CssClass="form-control" Width="100%" />
+<miles:MilesDropDownTree runat="server" Skin="Silk"  Width="100%" CssClass="form-control" />
+<miles:MilesCardList runat="server" Skin="Silk" />
+<%-- <miles:MilesDocuments runat="server" Skin="Silk" CssClass="miles-file-explorer rfeLargeThumbnails" /> --%>
+
+
+<%--telerik controls--%>
+<telerik:RadAjaxLoadingPanel runat="server" Skin="Silk" />
+<telerik:RadTextBox runat="server" Skin="Silk" CssClass="form-control" Width="100%" />
+<telerik:RadNumericTextBox runat="server" Skin="Silk" CssClass="form-control" Width="100%" />
+<telerik:RadDateInput runat="server" Skin="Silk" CssClass="form-control" Width="100%" />
+<telerik:RadDatePicker runat="server" Skin="Silk" DateInput-CssClass="form-control" Width="100%" />
+<telerik:RadDateTimePicker runat="server" Skin="Silk" DateInput-CssClass="form-control" Width="100%" />
+<telerik:RadComboBox runat="server" Skin="Silk" CssClass="form-control" Width="100%" />
+<telerik:RadDropDownTree runat="server" Skin="Silk"  Width="100%" CssClass="form-control" />
+<telerik:RadWindow runat="server" Skin="Silk" CssClass="miles-window" />
+<telerik:RadMenu runat="server" Skin="Silk" />
+<telerik:RadToolBar runat="server" Skin="Silk" CssClass="miles-toolbar" />
+<telerik:RadAsyncUpload runat="server" Skin="Silk" CssClass="miles-fileupload" />
+<telerik:RadToolTip runat="server" Skin="Silk" />
+<telerik:RadButton runat="server" Skin="Silk"/>
+<telerik:RadTreeView runat="server" Skin="Silk" CssClass="miles-tree-view"/>
+<telerik:RadTreeList runat="server" Skin="Silk" Width="100%" CssClass="miles-tree-list" />
+<telerik:RadTreeViewContextMenu runat="server" Skin="Silk" />
+<telerik:RadColorPicker runat="server" Skin="Silk" />
+
+
+<%--asp controls--%>
+<asp:RequiredFieldValidator runat="server" Display="None" />
+<asp:RegularExpressionValidator runat="server" Display="None" />
+<asp:CompareValidator runat="server" Display="None" />
+<asp:TextBox runat="server" CssClass="form-control" />
+<asp:DropDownList runat="server" CssClass="form-control" />
+<asp:Button runat="server" SkinID="Cancel" CssClass="btn btn-default"  />
+
+<asp:Button runat="server" SkinID="CardListCancel" CssClass="btn btn-default " ToolTip="Cancel" Text="Cancel"  />
+<miles:MilesButton runat="server" Skin="Silk" SkinID="CardListSave" CssClass="btn btn-primary " ToolTip="Save" Text="Save" />
+<asp:LinkButton runat="server" SkinID="CardListCancel" CssClass="btn btn-default btn-xs" ToolTip="Cancel" Text="Cancel"  />
+<asp:LinkButton runat="server" SkinID="CardListSave" CssClass="btn btn-primary btn-xs" ToolTip="Save" Text="Save" />
+<asp:ImageButton runat="server" SkinID="CardListEdit" ImageUrl="~/Images/24x24/document-edit.png" ToolTip="Edit"  />
+<asp:ImageButton runat="server" SkinID="CardListSave" ImageUrl="~/Images/24x24/save.png" ToolTip="Save"  />
+<asp:ImageButton runat="server" SkinID="CardListCancel" ImageUrl="~/Images/24x24/delete.png" ToolTip="Cancel"  />
+<asp:Label SkinID="Required" runat="server" Text="" CssClass="required glyphicon glyphicon-asterisk" ToolTip="Required" />

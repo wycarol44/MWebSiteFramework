@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+
+  <siteMapNode url="~/default.aspx" title="Home" description="Home">
+
+    <siteMapNode url="~/Help/SubmitRequest.aspx" title="Submit Request"  description="Submit Request" />
+    
+    <siteMapNode url="~/SystemPages/Error.aspx" title="Error"  description="Error" />
+    <siteMapNode url="~/SystemPages/DialogNoAccess.aspx" title="No Access"  description="Dialog No Access" />
+    <siteMapNode url="~/SystemPages/NoAccess.aspx" title="No Access"  description="No Access" />
+
+    <siteMapNode url="~/CommonDialogs/DialogAddEditNotes.aspx" title="Add Edit Notes"  description="Add Edit Notes Dialog" shared="true"  />
+    <siteMapNode url="~/CommonDialogs/DialogAuditLog.aspx" title="Audit Log"  description="Audit Log Dialog" shared="true"  />
+    <siteMapNode url="~/CommonDialogs/DialogChangeUserPassword.aspx" title="Change Password"  description="Change Password" shared="true"  />
+    <siteMapNode url="~/CommonDialogs/DialogUploadImage.aspx" title="Upload Image"  description="Upload Image" shared="true"  />
+
+    <siteMapNode url="~/Admin/DialogManageFavorites.aspx" title="Manage Favorite"  description="Manage Favorite" shared="true"  />
+   
+    <siteMapNode url="~/HR/MyInfo.aspx" title="My Info"  description="My Info" shared="true" >
+      <siteMapNode url="~/HR/EditMyInfo.aspx" title="Edit My Info"  description="Edit My Info" />
+    </siteMapNode>
+    
+    <siteMapNode url="~/Admin/CompanyInfo.aspx" title="Company Info"  description="Company Information" />
+
+    <siteMapNode url="~/Admin/ManageContent.aspx" title="Manage Content"  description="Manage Content" >
+      <siteMapNode url="~/Admin/DialogContentInfo.aspx" title="Content Info"  description="Content Info - Dialog" />
+    </siteMapNode>
+
+    <!--I add this-->
+    <siteMapNode url="~/Admin/ManageCategories.aspx" title="Manage Category"  description="Manage Category" >
+      <siteMapNode url="~/Admin/DialogCategories.aspx" title="Category Info"  description="Category Info" />
+    </siteMapNode>
+    
+    <siteMapNode url="~/Admin/CategoryRadTree.aspx" title="Category RadTree"  description="Category RadTree" >
+    </siteMapNode>
+    <!--I add this-->
+
+    <!--I also add this-->
+    <siteMapNode url="~/Products/ManageProducts.aspx" title="Manage Products"  description="Manage Products" >
+      <siteMapNode url="~/Products/ProductsInfo.aspx" title="Products Info"  description="Products Info" />
+      <siteMapNode url="~/Products/ProductImage.aspx" title="Product Image"  description="Product Image" />
+    </siteMapNode>
+
+    <siteMapNode url="~/CRM/ManageCustomerAddress.aspx" title="Manage Customer Address"  description="Manage Customer Address" />
+    
+    <siteMapNode url="~/Orders/ManageOrders.aspx" title="Manage Orders"  description="Manage Orders" >
+      <siteMapNode url="~/Orders/OrderInfo.aspx" title="Order Info"  description="Order Info" />
+      <siteMapNode url="~/Orders/OrderPad.aspx" title="Order Pad"  description="Order Pad" />
+    </siteMapNode>
+    <!--I also add this-->
+    
+    
+    
+    
+    
+
+    <siteMapNode url="~/Admin/ManageListItem.aspx" title="Manage List Items"  description="Manage List Items" >
+    </siteMapNode>
+    <siteMapNode url="~/Meta/Utility.aspx" title="Utility"  description="Utility"  />
+    
+    
+    <siteMapNode url="~/Meta/ManageFunctions.aspx" title="Manage Functions"  description="Manage Functions" >
+      <siteMapNode url="~/Meta/DialogFunctionInfo.aspx" title="Function Info"  description="Function Info - Dialog" />
+    </siteMapNode>
+
+    <siteMapNode url="~/Meta/ManageForms.aspx" title="Manage Forms"  description="Manage Forms" >
+      <siteMapNode url="~/Meta/DialogFormInfo.aspx" title="Form Info"  description="Form Info - Dialog" />
+    </siteMapNode>
+
+    <siteMapNode url="~/Meta/ManageToolTips.aspx" title="Manage ToolTips"  description="Manage ToolTips" >
+      <siteMapNode url="~/Meta/DialogToolTipInfo.aspx" title="ToolTip Info"  description="ToolTip Info - Dialog" />
+    </siteMapNode>
+
+    <siteMapNode url="~/Meta/ManageTypes.aspx" title="Manage Types"  description="Manage Types" >
+      <siteMapNode url="~/Meta/DialogTypeInfo.aspx" title="Add/Edit Type Items"  description="Add/Edit Type Items" />
+    </siteMapNode>
+
+    <siteMapNode url="~/Meta/ManageManagedTypes.aspx" title="Manage Managed Types"  description="Manage Managed Types" >
+    </siteMapNode>
+
+    <siteMapNode url="~/Meta/ManageMenu.aspx" title="Manage Menu"  description="Manage Menu" >
+      <siteMapNode url="~/Meta/DialogMenuInfo.aspx" title="Menu Info"  description="Menu Info - Dialog" />
+    </siteMapNode>
+    
+    
+    
+    <siteMapNode url="~/Meta/ManageCMSCategories.aspx" title="Manage CMS Categories"  description="Manage CMS Categories" >
+      <siteMapNode url="~/Meta/DialogCMSCategoryInfo.aspx" title="CMS Category Info"  description="CMS Category Info - Dialog" />
+    </siteMapNode>
+
+    <siteMapNode url="~/HR/ManageUserRoles.aspx" title="Manage User Roles"  description="Manage User Roles" >
+      <siteMapNode url="~/HR/DialogUserRoleFunctionAccess.aspx" title="Manage Function Access"  description="Manage Function Access - Dialog" />
+
+      <siteMapNode url="~/HR/ManageAccess.aspx" title="Manage User Access"  description="Manage User Access" />
+      <siteMapNode url="~/HR/DialogFunctionUserRoles.aspx" title="Manage User Role For Function"  description="Manage User Role For Function - Dialog" />
+    </siteMapNode>
+
+    <siteMapNode url="~/HR/ManageUsers.aspx" title="Manage Users"  description="Manage Users" >
+      <siteMapNode url="~/HR/UserDashboard.aspx" title="User Dashboard"  description="User Dashboard" >
+        <siteMapNode url="~/HR/UserInfo.aspx" title="User Info"  description="User Info" />
+        <siteMapNode url="~/HR/UserNotes.aspx" title="User Notes"  description="User Notes" />
+        <siteMapNode url="~/HR/UserDocuments.aspx" title="User Documents"  description="User Documents" />
+      </siteMapNode>
+    </siteMapNode>
+    
+    <siteMapNode url="~/HR/ManageJobTitles.aspx" title="Manage Job Titles"  description="Manage Job Titles" >
+    </siteMapNode>
+
+    <siteMapNode url="~/CRM/ManageCustomers.aspx" title="Manage Customers"  description="Manage Customers" >
+      <siteMapNode url="~/CRM/CustomerDashboard.aspx" title="Customer Dashboard"  description="Customer Dashboard">
+        <siteMapNode url="~/CRM/CustomerInfo.aspx" title="Customer Info"  description="Customer Info"/>
+        <siteMapNode url="~/CRM/CustomerNotes.aspx" title="Customer Notes"  description="Customer Notes"/>
+        <siteMapNode url="~/CRM/CustomerDocuments.aspx" title="Customer Documents"  description="Customer Documents"/>
+        <siteMapNode url="~/CRM/ManageContacts.aspx" title="Manage Contacts"  description="Manage Contacts">
+          <siteMapNode url="~/CRM/ContactDashboard.aspx" title="Contact Dashboard"  description="Contact Dashboard">
+            <siteMapNode url="~/CRM/ContactInfo.aspx" title="Contact Info"  description="Contact Info"/>
+          </siteMapNode>
+        </siteMapNode>
+      </siteMapNode>
+
+    </siteMapNode>
+
+  </siteMapNode>
+
+</siteMap>

@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6909F6BE-3402-496E-A131-08B8B58431C6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>BusinessLibrary</RootNamespace>
+    <AssemblyName>BusinessLibrary</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>BusinessLibrary.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <WarningsAsErrors>41998,42004,42024,42025,42026,42029,42030,42031,42099,42104,42105,42106,42107,42108,42109,42353,42354,42355</WarningsAsErrors>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>BusinessLibrary.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <WarningsAsErrors>41998,42004,42024,42025,42026,42029,42030,42031,42099,42104,42105,42106,42107,42108,42109,42353,42354,42355</WarningsAsErrors>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\CMSCategoryManager.vb" />
+    <Compile Include="Admin\CompanyInfoManager.vb" />
+    <Compile Include="Admin\ManagedTypeItemManager.vb" />
+    <Compile Include="Admin\ManagedTypeManager.vb" />
+    <Compile Include="Core\AttachmentManager.vb" />
+    <Compile Include="Core\AuditLogManager.vb" />
+    <Compile Include="Core\DocumentManager.vb" />
+    <Compile Include="Core\EmailLogManager.vb" />
+    <Compile Include="Core\NoteManager.vb" />
+    <Compile Include="Core\AddressManager.vb" />
+    <Compile Include="CRM\CartsManager.vb" />
+    <Compile Include="CRM\CategoryManager.vb" />
+    <Compile Include="CRM\CategoryMenuManager.vb" />
+    <Compile Include="CRM\CustomerAddressManager.vb" />
+    <Compile Include="CRM\CustomerContactManager.vb" />
+    <Compile Include="CRM\CustomerManager.vb" />
+    <Compile Include="CRM\FeaturedProductsImageManager.vb" />
+    <Compile Include="CRM\OrderDetailManager.vb" />
+    <Compile Include="CRM\OrderManager.vb" />
+    <Compile Include="CRM\OrderShipmentManager.vb" />
+    <Compile Include="CRM\OrderStatusManager.vb" />
+    <Compile Include="CRM\ProductImageManager.vb" />
+    <Compile Include="CRM\ProductManager.vb" />
+    <Compile Include="Enums\Enumerators.vb" />
+    <Compile Include="HR\PictureManager.vb" />
+    <Compile Include="HR\UserFavoriteManager.vb" />
+    <Compile Include="HR\UserJobTitleManager.vb" />
+    <Compile Include="HR\UserLoginLogManager.vb" />
+    <Compile Include="HR\UserManager.vb" />
+    <Compile Include="HR\UserRoleManager.vb" />
+    <Compile Include="HR\UserSearchFilterManager.vb" />
+    <Compile Include="Meta\MetaAuditLogAttributeManager.vb" />
+    <Compile Include="Meta\MetaFunctionManager.vb" />
+    <Compile Include="Admin\CMSMergeFieldManager.vb" />
+    <Compile Include="Meta\MetaModuleManager.vb" />
+    <Compile Include="Meta\MetaStateManager.vb" />
+    <Compile Include="Meta\MetaCountryManager.vb" />
+    <Compile Include="Meta\MetaFormManager.vb" />
+    <Compile Include="Meta\MetaMenuManager.vb" />
+    <Compile Include="Meta\MetaToolTipManager.vb" />
+    <Compile Include="Meta\MetaTypeItemManager.vb" />
+    <Compile Include="Meta\MetaTypeManager.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="HR\UserAuthentication.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommonLibrary\CommonLibrary.vbproj">
+      <Project>{39731b4f-0ca8-454f-a144-2c582bdc9655}</Project>
+      <Name>CommonLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataLibrary\DataLibrary.vbproj">
+      <Project>{009cdbf3-1a3a-4716-8047-acca22c1807e}</Project>
+      <Name>DataLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

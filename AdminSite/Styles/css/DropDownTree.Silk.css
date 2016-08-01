@@ -1,0 +1,50 @@
+﻿.RadDropDownTree_Silk.form-control .rddtInner {
+    background: none;
+    border: none;
+    color: #000;
+    padding-left: 12px;
+}
+
+    .RadDropDownTree_Silk.form-control .rddtInner.rddtHovered,
+    .RadDropDownTree_Silk.form-control .rddtInner.rddtFocused {
+        color: #000;
+    }
+
+.RadDropDownTree_Silk.form-control .rddtFakeInput {
+    height: 30px;
+    line-height: 30px;
+}
+
+    .RadDropDownTree_Silk.form-control .rddtFakeInput.rddtEmptyMessage {
+        color: #000;
+    }
+
+.RadDropDownTree_Silk.form-control .rddtIcon {
+    top: 3px;
+}
+
+.RadTreeView_Silk .rtIn,
+.rddtSlide .rddtPopup_Silk .rddtCheckAll label {
+    font-weight: normal;
+}
+
+.rddtSlide .rddtPopup_Silk .rddtCheckAll input[type=checkbox] {
+    margin-right: 5px;
+}
+
+.RadDropDownTree_Silk.miles-tab-nav .rddtInner {
+    background-image: none;
+    background-color: #3f3f3f;
+    color: #fff;
+    border: none;
+}
+
+.RadDropDownTree_Silk.miles-tab-nav .rddtFakeInput {
+    height: 32px;
+    line-height: 32px;
+    padding-left: 10px;
+}
+
+.RadDropDownTree_Silk.miles-tab-nav .rddtIcon {
+    top: 6px;
+}

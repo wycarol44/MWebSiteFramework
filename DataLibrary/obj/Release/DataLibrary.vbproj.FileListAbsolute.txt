@@ -1,0 +1,13 @@
+E:\WebApps\Template\DataLibrary\bin\Release\DataLibrary.dll.config
+E:\WebApps\Template\DataLibrary\bin\Release\DataLibrary.dll
+E:\WebApps\Template\DataLibrary\bin\Release\DataLibrary.pdb
+E:\WebApps\Template\DataLibrary\bin\Release\DataLibrary.xml
+E:\WebApps\Template\DataLibrary\bin\Release\EntityFramework.dll
+E:\WebApps\Template\DataLibrary\bin\Release\EntityFramework.SqlServer.dll
+E:\WebApps\Template\DataLibrary\bin\Release\EntityFramework.xml
+E:\WebApps\Template\DataLibrary\bin\Release\EntityFramework.SqlServer.xml
+E:\WebApps\Template\DataLibrary\obj\Release\DataLibrary.Resources.resources
+E:\WebApps\Template\DataLibrary\obj\Release\DataLibrary.vbproj.GenerateResource.Cache
+E:\WebApps\Template\DataLibrary\obj\Release\DataLibrary.dll
+E:\WebApps\Template\DataLibrary\obj\Release\DataLibrary.xml
+E:\WebApps\Template\DataLibrary\obj\Release\DataLibrary.pdb

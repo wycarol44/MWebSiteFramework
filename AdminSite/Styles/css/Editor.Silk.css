@@ -1,0 +1,39 @@
+﻿.RadEditor.Silk.miles-editor
+{
+    border-color: #9ce1ff;
+    /*min-width:0 !important;
+    height: 100% !important;*/
+}
+
+    .RadEditor.Silk.miles-editor .reLayoutWrapper .reToolbarWrapper .reToolbar
+    {
+        /*width: 100% !important;*/
+    }
+
+    .RadEditor.Silk.miles-editor .reEditorModes
+    {
+        margin-bottom: 1px; /*fix border overlap*/
+    }
+
+    .RadEditor.Silk.miles-editor,
+    .RadEditor.Silk.miles-editor .reEditorModes
+    {
+        background-color: #d9edf7;
+    }
+
+        .RadEditor.Silk.miles-editor .reToolbarWrapper ul,
+        /*toolbar inside radwindow*/
+        .RadWindow_Silk.miles-window.reToolbarWindow .reToolbar.Silk
+        {
+            background-image: none;
+            background-color: #e7f1f7;
+            height: auto;
+            
+        }
+
+
+        .RadEditor.Silk.miles-editor .reToolbar
+        {
+            width: auto !important;
+        }
+

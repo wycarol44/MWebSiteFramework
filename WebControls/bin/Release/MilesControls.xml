@@ -1,0 +1,246 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+MilesControls
+</name>
+</assembly>
+<members>
+<member name="M:MilesControls.ControlBinding.BindListControl(System.Web.UI.WebControls.ListControl,System.Object,System.String,System.String,System.Boolean,System.String,System.String)">
+	<summary>
+ Binds a list control to a data source and optionally adds a default item
+ </summary>
+	<param name="list"></param>
+	<param name="source"></param>
+	<param name="dataTextField"></param>
+	<param name="dataValueField"></param>
+	<param name="defaultItem"></param>
+	<param name="defaultText"></param>
+	<param name="defaultValue"></param>
+	<remarks></remarks>
+</member><member name="P:MilesControls.MilesGrid.AddNewOnClientClick">
+	<summary>
+ Gets or sets the script executed when the add new button is clicked
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:MilesControls.MilesGrid.RadAjaxManagerID">
+	<summary>
+ Gets or sets the grid's associated ajax manager proxy. If set, history points will be enabled
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:MilesControls.MilesGrid.EnableHistory">
+	<summary>
+ Gets or sets whether history points will be added to the script manager
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:MilesControls.MilesGrid.GetSortExpression">
+	<summary>
+ Gets the current sort expression
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:MilesControls.MilesGrid.OnItemCommand(Telerik.Web.UI.GridCommandEventArgs)">
+	<summary>
+ Overrides the item command and raises appropriate events
+ </summary>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:MilesControls.MilesGrid.OnItemDataBound(Telerik.Web.UI.GridItemEventArgs)">
+	<summary>
+ Overrides the item data bound event to perform custom actions
+ </summary>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:MilesControls.MilesGrid.OnNeedDataSource(Telerik.Web.UI.GridNeedDataSourceEventArgs)">
+	<summary>
+ overrides the onNeedDataSource event
+ </summary>
+	<param name="e"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:MilesControls.MilesTabStrip.LoadTabs">
+	<summary>
+ Loads an xml file and creates tabs
+ </summary>
+	<remarks></remarks>
+</member><member name="M:MilesControls.MilesTabStrip.AddQueryParameter(System.String,System.String)">
+	<summary>
+ Adds a custom query parameter to the tabs' NavigateUrl property
+ </summary>
+	<param name="key"></param>
+	<param name="value"></param>
+	<remarks></remarks>
+</member><member name="P:MilesControls.MilesImageCrop.ImageUrl">
+	<summary>
+ Gets or sets the image url of the image to crop
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:MilesControls.MilesImageCrop.AspectRatio">
+	<summary>
+ Get's or sets the locked aspect ratio of the selection
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:MilesControls.MilesImageCrop.ShowPreview">
+	<summary>
+ Gets or sets whether the preview pane is visible
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:MilesControls.MilesImageCrop.ImagePath">
+	<summary>
+ Gets the server mapped image path
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:MilesControls.MilesImageCrop.Crop">
+	<summary>
+ Takes an image and crops it
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:MilesControls.MilesToggleArchiveImageButton.Archived">
+	<summary>
+ Gets or sets the archived value. If true, button switched to unarchive mode
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:MilesControls.MilesButton.RelatedButtons">
+	<summary>
+ Gets or sets buttons of similar action. All buttons will be disabled when this button is clicked
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:MilesControls.MilesButton.ActionType">
+	<summary>
+ Gets or sets the action type of the button. Skin will be automatically set if EnableAutoSkins is true
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:MilesControls.MilesButton.AutoDisableSameButtonType">
+	<summary>
+ Gets or sets whether other buttons of the same action are disabled
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:MilesControls.MilesCardList.CardMinHeight">
+	<summary>
+ Gets or sets the minimum height of the card
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:MilesControls.MilesCardList.ShowCommandRow">
+	<summary>
+ Gets or sets whether the command row is visible
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:MilesControls.MilesCardList.ShowAddNewRecordButton">
+	<summary>
+ Gets or sets whether the add new record button is visible
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:MilesControls.MilesCardList.AddNewRecordText">
+	<summary>
+ Gets or sets the add new record button text
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:MilesControls.MilesCardList.OnAddNewRecordClientClick">
+	<summary>
+ Gets or sets the client event for the add new record button
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:MilesControls.MilesCardList.NumberOfColumns">
+	<summary>
+ Gets or sets the number of columns
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:MilesControls.MilesCardList.MilesCardListCardTemplate">
+	<summary>
+ Layout class for CardList
+ </summary>
+	<remarks></remarks>
+</member><member name="M:MilesControls.MilesCardList.MilesCardListItemTemplate.GetActionPosCssClass">
+	<summary>
+ Gets the positioning css class
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:MilesControls.MilesCardList.MilesCardListItemTemplate">
+	<summary>
+ Default ItemTemplate
+ </summary>
+	<remarks></remarks>
+</member><member name="T:MilesControls.MilesCardList.MilesCardListLayoutTemplate.MilesCardListPagerTemplate">
+	<summary>
+ Pager item template
+ </summary>
+	<remarks></remarks>
+</member><member name="T:MilesControls.MilesCardList.MilesCardListLayoutTemplate">
+	<summary>
+ Default LayoutTemplate
+ </summary>
+	<remarks></remarks>
+</member><member name="P:MilesControls.MilesNoteInGrid.MaxSize">
+	<summary>
+ Lenght of the Note need to be displayed on grid
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:MilesControls.MilesNoteInGrid">
+	<summary>
+ Author: Pashupati Shrestha
+ </summary>
+	<remarks></remarks>
+</member><member name="P:MilesControls.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:MilesControls.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:MilesControls.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="T:MilesControls.WarningException">
+	<summary>
+ Indicates an exception to be used as a warning
+ </summary>
+	<remarks></remarks>
+</member><member name="M:MilesControls.MilesEditor.SetEditorPaths">
+	<summary>
+ Set the editor paths for the RAD Editor
+ </summary>
+	<remarks></remarks>
+</member>
+</members>
+</doc>

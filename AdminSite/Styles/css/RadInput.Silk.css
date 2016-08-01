@@ -1,0 +1,50 @@
+﻿.RadInput.RadInput_Silk
+{
+    width: 100%;
+}
+
+    .RadInput.RadInput_Silk .riTextBox.form-control
+    {
+        width: 100%;
+        height: 34px;
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 1.4285;
+        color: #555555;
+        vertical-align: middle;
+        background-color: #ffffff;
+    }
+
+    .RadInput.RadInput_Silk .riTextBox.riEnabled.form-control
+    {
+        border: 1px solid #cccccc;
+    }
+
+    .RadInput.RadInput_Silk .riTextBox.form-control[readonly],
+    .RadInput.RadInput_Silk .riTextBox.riRead.form-control
+    {
+        background-color: #eeeeee;
+        border: 1px solid #cccccc;
+    }
+
+   
+    .RadInput.RadInput_Silk .riTextBox.form-control[disabled],
+    .RadInput.RadInput_Silk .riTextBox.riDisabled.form-control
+    {
+        background-color: #eeeeee;
+        border: 1px solid #cccccc;
+        cursor: not-allowed;
+        opacity: 1;
+    }
+
+    .RadInput.RadInput_Silk .riTextBox.riEnabled.form-control:hover
+    {
+        border: 1px solid #cccccc;
+    }
+
+    .RadInput.RadInput_Silk .riTextBox.riEnabled.form-control:focus,
+    .RadInput.RadInput_Silk .riTextBox.riFocused.form-control,
+    .RadInput.RadInput_Silk .riTextBox.riRead.form-control:focus
+    {
+        border: 1px solid #66afe9;
+    }
